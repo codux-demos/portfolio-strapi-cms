@@ -5,7 +5,12 @@
     "es2020": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react/jsx-runtime", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "prettier"
+  ],
   "plugins": ["react-hooks", "no-only-tests"],
   "parserOptions": {
     "sourceType": "module",
@@ -35,7 +40,10 @@
       ],
       "rules": {
         "@typescript-eslint/no-use-before-define": "off",
-        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }]
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+        ]
       }
     },
     {

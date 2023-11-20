@@ -1,6 +1,6 @@
 import { Connection } from './types';
 
-const API_URL = 'http://localhost:1337/api/';
+const API_URL = 'http://localhost:5000/api/';
 
 function buildUrl(apiName: string, params?: Record<string, string>) {
   const searchParams = new URLSearchParams(params);

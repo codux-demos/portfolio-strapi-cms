@@ -5,11 +5,16 @@ import { Items } from '../../../views/items/items';
 export default createBoard({
   name: 'Items',
   Board: () => (
-    <FakeDataRealRoutes>
+    <FakeDataRealRoutes
+      path="/"
+      settings={{
+        numberOfItems: 30,
+      }}
+    >
       <Items />
     </FakeDataRealRoutes>
   ),
-  isSnippet: true,
+  isSnippet: false,
   environmentProps: {
     canvasWidth: 800,
   },

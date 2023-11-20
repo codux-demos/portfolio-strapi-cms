@@ -3,10 +3,7 @@ import { createApi, APIContext } from '../items-api';
 import { FakeConnection } from './fake-connection';
 import { FakeDataSettings } from './fake-data';
 
-export function FakeAPIContextProvider(props: {
-  settings?: FakeDataSettings;
-  children: ReactNode;
-}) {
+export function FakeAPIContextProvider(props: { settings?: FakeDataSettings; children: ReactNode }) {
   const api = useMemo(() => {
     const connection = new FakeConnection(props.settings);
     return createApi(connection);

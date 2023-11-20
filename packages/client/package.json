@@ -1,0 +1,29 @@
+{
+  "name": "@portfolio/client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wixplosives/sample-monorepo.git",
+    "directory": "packages/client"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "tsc": "tsc",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0",
+    "swr": "^2.2.4",
+    "vite-plugin-svgr": "^3.2.0"
+  }
+}

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "todo",
     "pluralName": "todos",
-    "displayName": "Todo"
+    "displayName": "Todo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,12 @@
   "attributes": {
     "Title": {
       "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "isDone": {
+      "type": "boolean"
     }
   }
 }

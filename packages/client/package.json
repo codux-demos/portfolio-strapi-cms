@@ -25,5 +25,8 @@
     "react-router-dom": "^6.18.0",
     "swr": "^2.2.4",
     "vite-plugin-svgr": "^3.2.0"
+  },
+  "devDependencies": {
+    "@portfolio/strapi": "^0.1.0"
   }
 }

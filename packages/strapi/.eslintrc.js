@@ -2,7 +2,7 @@
 module.exports = {
   'parser': '@babel/eslint-parser',
   'extends': 'eslint:recommended',
-  'ignorePatterns': ['**/generated/*', '.cache', 'build', '**/node_modules/**'],
+  'ignorePatterns': ['**/generated/*', '.cache', 'build', '**/node_modules/**', '*.ts'],
   'env': {
     'commonjs': true,
     'es6': true,
@@ -23,7 +23,7 @@ module.exports = {
   },
   'rules': {
     'indent': ['error', 2, { 'SwitchCase': 1 }],
-    'linebreak-style': ['error', 'unix'],
+    // 'linebreak-style': ['error', 'unix'],
     // 'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
     'no-console': 0,
     'quotes': ['error', 'single'],

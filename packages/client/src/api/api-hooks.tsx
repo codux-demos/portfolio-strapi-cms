@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { APIContext } from './items-api';
 import useSWR, { useSWRConfig } from 'swr';
-import { StrapiItem, Todo } from './types';
+import { Todo } from '@portfolio/strapi';
 
-type ItemsMap = { [k: string]: StrapiItem<Todo> };
+type ItemsMap = { [k: string]: Todo };
 
 export function useItems() {
   const api = useContext(APIContext);

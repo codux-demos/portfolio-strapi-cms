@@ -2,6 +2,7 @@ import { Navigate, RouteObject } from 'react-router-dom';
 import { SiteWrapper } from '../views/site-wrapper/site-wrapper';
 import { ProjectsPage } from '../views/projects-page/projects-page';
 import { ProjectPage } from '../views/project-page/project-page';
+import { ROUTES } from './config';
 
 export const routes: RouteObject[] = [
   {
@@ -9,8 +10,8 @@ export const routes: RouteObject[] = [
     element: <SiteWrapper />,
     children: [
       { index: true, element: <Navigate to="projects" /> },
-      { path: 'projects', index: true, element: <ProjectsPage /> },
-      { path: 'projects/:id', element: <ProjectPage /> },
+      { path: ROUTES.projects.path, index: true, element: <ProjectsPage /> },
+      { path: ROUTES.project.path, element: <ProjectPage /> },
     ],
   },
 ];

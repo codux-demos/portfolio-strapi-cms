@@ -1,6 +1,7 @@
 import styles from './project-page.module.scss';
 import { apiHooks } from '../../api';
 import { useParams } from 'react-router-dom';
+import { RouteParams } from '../../router/config';
 
 export interface ItemProps {
   className?: string;
@@ -11,7 +12,7 @@ export interface ItemProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const ProjectPage = ({ className }: ItemProps) => {
-  const { id: strId } = useParams<{ id: string }>();
+  const { id: strId } = useParams<RouteParams['/project/:id']>();
   const id = strId ? parseInt(strId) : -1;
   const { data } = apiHooks.useProject(id);
 

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { StrapiError, StrapiTodo, CollectionMetaData, StrapiImage, StrapiProject, StrapiProjectItem } from '../types';
+import { StrapiError, CollectionMetaData, StrapiImage, StrapiProject, StrapiProjectItem } from '../types';
 
 export type FakeDataSettings = {
   numberOfItems?: number;
@@ -8,15 +8,16 @@ export type FakeDataSettings = {
 export function getFakeData(settings?: FakeDataSettings) {
   const numberOfProjects = settings?.numberOfItems || 10;
   return {
-    todos: Array.from(Array(settings?.numberOfItems || 10)).map((val, i) => createTodo(i)),
     projects: Array.from(Array(numberOfProjects)).map((val, i) => createProject(i)),
     'project-items': createProjectItems(numberOfProjects, settings?.numberOfItems || 10),
   };
 }
 export type FakeData = ReturnType<typeof getFakeData>;
+type ProjectItemExtended = StrapiProjectItem | { [key: string]: string };
+type ProjectExtended = StrapiProject | { [key: string]: string };
 
 function createProjectItems(numberOfProjects: number, numberOfItems?: number) {
-  const items: StrapiProjectItem[] = [];
+  const items: ProjectItemExtended[] = [];
 
   for (let projectId = 0; projectId < numberOfProjects; projectId++) {
     const itemsCount = numberOfItems || faker.number.int({ min: 1, max: 10 });
@@ -26,20 +27,7 @@ function createProjectItems(numberOfProjects: number, numberOfItems?: number) {
   return items;
 }
 
-function createTodo(id: number): StrapiTodo {
-  const item = {
-    id,
-    attributes: {
-      Title: faker.lorem.words(2),
-      description: faker.lorem.paragraph(3),
-      isDone: false,
-      ...getDates(),
-    },
-  };
-  return item;
-}
-
-function createProject(id: number): StrapiProject {
+function createProject(id: number): ProjectExtended {
   return {
     id,
     attributes: {
@@ -51,10 +39,10 @@ function createProject(id: number): StrapiProject {
   };
 }
 
-function createProjectItem(id: number, projectId: number): StrapiProjectItem & { 'filters[project]': number } {
+function createProjectItem(id: number, projectId: number): ProjectItemExtended {
   return {
     id,
-    'filters[project]': projectId,
+    'filters[project]': projectId.toString(),
     attributes: {
       title: faker.lorem.words({ min: 1, max: 3 }),
       description: faker.lorem.paragraphs({ min: 0, max: 3 }),

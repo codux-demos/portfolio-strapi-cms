@@ -3,25 +3,25 @@ import { describe, expect, it } from 'vitest';
 import { FakeConnection } from './fake/fake-connection';
 import { createApi } from './items-api';
 
-describe('items api', () => {
-  describe('get items', () => {
-    it('should get all items', async () => {
+describe('projects api', () => {
+  describe('get projects', () => {
+    it('should get all projects', async () => {
       const fakeConnection = new FakeConnection({ numberOfItems: 10 });
       const api = createApi(fakeConnection);
 
-      const items = await api.getItems();
-      expect(items.data?.length).toBe(10);
-      expect('meta' in items).toBeTruthy();
+      const projects = await api.getProjects();
+      expect(projects.data?.length).toBe(10);
+      expect('meta' in projects).toBeTruthy();
     });
   });
 
-  describe('get single item', () => {
-    it('should get single item', async () => {
+  describe('get single project', () => {
+    it('should get single project', async () => {
       const fakeConnection = new FakeConnection();
       const api = createApi(fakeConnection);
 
-      const item = await api.getItem(1);
-      expect(item.data?.id).toBe(1);
+      const project = await api.getProject(1);
+      expect(project.data?.id).toBe(1);
     });
 
     it('should throw 404 for non existing item', () => {
@@ -30,7 +30,7 @@ describe('items api', () => {
 
       const err = expect.objectContaining({ status: 404 });
 
-      expect(async () => api.getItem(100)).rejects.toThrow(
+      expect(async () => api.getProject(100)).rejects.toThrow(
         expect.objectContaining({ data: null, error: err }) as Error,
       );
     });

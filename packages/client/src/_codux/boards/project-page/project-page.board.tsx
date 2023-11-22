@@ -1,12 +1,12 @@
 import { createBoard } from '@wixc3/react-board';
 import { FakeDataRealRoutes } from '../../board-wrappers/fake-data-real-routes';
-import { Item } from '../../../views/item/item';
+import { ProjectPage } from '../../../views/project-page/project-page';
 
 export default createBoard({
-  name: 'Item',
+  name: 'Project Page',
   Board: () => (
-    <FakeDataRealRoutes path="/item/3">
-      <Item />
+    <FakeDataRealRoutes path="/project/3">
+      <ProjectPage />
     </FakeDataRealRoutes>
   ),
   isSnippet: true,

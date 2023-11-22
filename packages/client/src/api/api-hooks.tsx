@@ -1,30 +1,36 @@
 import { useContext } from 'react';
 import { APIContext } from './items-api';
 import useSWR, { useSWRConfig } from 'swr';
-import { StrapiTodo } from './types';
+import { StrapiProject } from './types';
 
-type ItemsMap = { [k: string]: StrapiTodo };
+type ProjectsMap = { [k: string]: StrapiProject };
+const PROJECTS_MAP_KEY = 'project/map';
 
-export function useItems() {
+export function useProjects() {
   const api = useContext(APIContext);
   const { mutate } = useSWRConfig();
-  return useSWR('items/list', api.getItems, {
-    onSuccess: (items) => {
-      const itemsMap: ItemsMap = Object.fromEntries(items.data.map((it) => [it.id, it]));
-      mutate('items/map', itemsMap).catch((e) => {
+
+  return useSWR('project/list', api.getProjects, {
+    //here we add a map of items to the cache so we can read a single item from it later
+    onSuccess: (projects) => {
+      const projectsMap: ProjectsMap = Object.fromEntries(projects.data.map((it) => [it.id, it]));
+      mutate(PROJECTS_MAP_KEY, projectsMap).catch((e) => {
         console.error('mutate failed', e);
       });
     },
   });
 }
 
-export function useItem(id: number) {
+export function useProject(id: number) {
   const api = useContext(APIContext);
   const { cache } = useSWRConfig();
-  const itemsMap = cache.get('items/map');
-  const item = (itemsMap?.data as ItemsMap | undefined)?.[id];
+  const projectsMap = cache.get(PROJECTS_MAP_KEY);
+  const projectFromCache = (projectsMap?.data as ProjectsMap | undefined)?.[id];
 
-  const fetched = useSWR(!item ? `item/${id}` : null, () => api.getItem(id));
+  //we fetch the item from the server only if we don't have it in the cached map
+  const fetched = useSWR(!projectFromCache ? `project/${id}` : null, () => api.getProject(id));
 
-  return item ? { data: item, isLoading: false } : { isLoading: fetched.isLoading, data: fetched.data?.data };
+  return projectFromCache
+    ? { data: projectFromCache, isLoading: false }
+    : { isLoading: fetched.isLoading, data: fetched.data?.data };
 }

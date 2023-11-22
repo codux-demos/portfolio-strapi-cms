@@ -6,7 +6,6 @@ export interface Connection {
   sendGetRequest<T>(apiPath: string[], params?: { [key: string]: string }): Promise<T>;
 }
 
-export type StrapiTodo = APIResponseData<'api::todo.todo'>;
 export type StrapiProject = APIResponseData<'api::project.project'>;
 export type StrapiProjectItem = APIResponseData<'api::project-item.project-item'>;
 export type StrapiAbout = APIResponseData<'api::about.about'>;

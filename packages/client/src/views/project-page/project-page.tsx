@@ -12,7 +12,7 @@ export interface ItemProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const ProjectPage = ({ className }: ItemProps) => {
-  const { id: strId } = useParams<RouteParams['/project/:id']>();
+  const { id: strId } = useParams<RouteParams['/projects/:id']>();
   const id = strId ? parseInt(strId) : -1;
   const { data } = apiHooks.useProject(id);
 

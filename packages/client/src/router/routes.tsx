@@ -9,7 +9,7 @@ export const routes: RouteObject[] = [
     path: '/',
     element: <SiteWrapper />,
     children: [
-      { index: true, element: <Navigate to="projects" /> },
+      { index: true, element: <Navigate to={ROUTES.projects.to()} /> },
       { path: ROUTES.projects.path, index: true, element: <ProjectsPage /> },
       { path: ROUTES.project.path, element: <ProjectPage /> },
     ],

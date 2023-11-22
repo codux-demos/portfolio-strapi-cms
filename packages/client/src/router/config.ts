@@ -1,6 +1,6 @@
 import { generatePath } from 'react-router-dom';
 
-const PROJECTS = '/project';
+const PROJECTS = '/projects';
 const PROJECT = `${PROJECTS}/:id`;
 
 export const ROUTES = {

@@ -4,19 +4,19 @@ import { ProjectsPage } from '../../../views/projects-page/projects-page';
 import { ROUTES } from '../../../router/config';
 
 export default createBoard({
-  name: 'Projects Page',
-  Board: () => (
-    <FakeDataRealRoutes
-      path={ROUTES.projects.to()}
-      settings={{
-        numberOfItems: 30,
-      }}
-    >
-      <ProjectsPage />
-    </FakeDataRealRoutes>
-  ),
-  isSnippet: false,
-  environmentProps: {
-    canvasWidth: 800,
-  },
+    name: 'Projects Page',
+    Board: () => (
+        <FakeDataRealRoutes
+            path={ROUTES.projects.to()}
+            settings={{
+                numberOfItems: 4,
+            }}
+        >
+            <ProjectsPage />
+        </FakeDataRealRoutes>
+    ),
+    isSnippet: false,
+    environmentProps: {
+        canvasWidth: 800,
+    },
 });

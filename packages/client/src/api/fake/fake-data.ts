@@ -3,9 +3,19 @@ import { StrapiError, CollectionMetaData, StrapiImage, StrapiProject, StrapiProj
 
 export type FakeDataSettings = {
   numberOfItems?: number;
+  fakerSeed?: number;
 };
 
 export function getFakeData(settings?: FakeDataSettings) {
+  /**
+   * setting a faker.seed will generate the same response each time (with some conditions)
+   * we need it to run in codux otherwise it changes the data on each change in the property panel.
+   * on the other hand we want to generate different data in most test cases to avoid accidental passing tests.
+   */
+  if (import.meta.env.MODE === 'development' || settings?.fakerSeed) {
+    faker.seed(settings?.fakerSeed || 111);
+  }
+
   const numberOfProjects = settings?.numberOfItems || 10;
   return {
     projects: Array.from(Array(numberOfProjects)).map((val, i) => createProject(i)),

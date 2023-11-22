@@ -8,6 +8,8 @@ export const ROUTES = {
   project: { path: PROJECT, to: (projectId: number) => generatePath(PROJECT, { id: projectId.toString() }) },
 };
 
+export type ROUTE_KEYS = keyof typeof ROUTES;
+
 export type RouteParams = {
   [PROJECT]: { id: string };
 };

@@ -3,9 +3,11 @@ import { Footer } from '../../components/footer/footer';
 import { Header } from '../../components/header/header';
 
 export function SiteWrapper() {
-    return (
-        <div><Header /><Outlet />
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
+  );
 }

@@ -7,6 +7,13 @@ export function createApi(connection: Connection) {
   return {
     getItems: () => connection.sendGetRequest<APIResponseCollection<'api::todo.todo'>>(['todos']),
     getItem: (id: number) => connection.sendGetRequest<APIResponse<'api::todo.todo'>>(['todos', id.toString()]),
+    getProject: (id: number) =>
+      connection.sendGetRequest<APIResponse<'api::project.project'>>(['projects', id.toString()]),
+    getProjects: () => connection.sendGetRequest<APIResponseCollection<'api::project.project'>>(['projects']),
+    getProjectItemsByProject: (projectId: number) =>
+      connection.sendGetRequest<APIResponseCollection<'api::project-item.project-item'>>(['project-items'], {
+        'filters[project]': projectId.toString(),
+      }),
   };
 }
 

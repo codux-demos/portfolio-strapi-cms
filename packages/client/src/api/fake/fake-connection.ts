@@ -7,7 +7,7 @@ export class FakeConnection implements Connection {
     this.data = getFakeData(setting);
   }
 
-  sendGetRequest<T>(apiPath: string[]) {
+  sendGetRequest<T>(apiPath: string[], params?: { [key: string]: string }) {
     if (apiPath.length === 0 || apiPath.length > 2) {
       throw new Error('path has to have at least one segment and no more than 2');
     }
@@ -18,6 +18,15 @@ export class FakeConnection implements Connection {
     const collection = this.data[collectionKey as keyof FakeData];
 
     if (apiPath.length === 1) {
+      const filterName = params ? Object.keys(params).find((key) => key.startsWith('filters')) : null;
+      if (filterName && params) {
+        const filterValue = params[filterName];
+
+        return Promise.resolve({
+          data: collection.filter((it) => it[filterName as keyof typeof it] === filterValue),
+          meta: cloneDeep(fakePaginationMeta),
+        } as T);
+      }
       return Promise.resolve({
         data: cloneDeep(collection),
         meta: cloneDeep(fakePaginationMeta),

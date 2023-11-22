@@ -1,3 +1,13 @@
+/**
+ * this is copied from
+ * https://strapi.io/blog/improve-your-frontend-experience-with-strapi-types-and-type-script
+ * it uses the strapi contentTypes.d.ts to generate the types for the API
+ * hopefully it will be part of strapi soon
+ *
+ * the only difference is that instead of copying the types from the strapi project we just add a dev dependency
+ * on the strapi module and import the types.
+ */
+
 import type { Attribute, Common, Utils } from '@strapi/types';
 import '@portfolio/strapi';
 

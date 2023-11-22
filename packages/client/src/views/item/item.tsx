@@ -14,6 +14,7 @@ export const Item = ({ className }: ItemProps) => {
   const { id: strId } = useParams<{ id: string }>();
   const id = strId ? parseInt(strId) : -1;
   const { data } = apiHooks.useItem(id);
+
   return (
     <div className={`${styles.root} ${className}`}>
       <h3>{data?.attributes.Title}</h3>

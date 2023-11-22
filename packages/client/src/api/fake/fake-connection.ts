@@ -19,9 +19,9 @@ export class FakeConnection implements Connection {
 
     if (apiPath.length === 1) {
       return Promise.resolve({
-        data: cloneDeep(collection) as T,
+        data: cloneDeep(collection),
         meta: cloneDeep(fakePaginationMeta),
-      });
+      } as T);
     }
 
     const id = parseInt(apiPath[1]);
@@ -33,7 +33,7 @@ export class FakeConnection implements Connection {
         error: cloneDeep(fake404),
       });
     }
-    return Promise.resolve({ data: cloneDeep(item) as T, meta: {} });
+    return Promise.resolve({ data: cloneDeep(item), meta: {} } as T);
   }
 }
 

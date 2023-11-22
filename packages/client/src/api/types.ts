@@ -1,13 +1,11 @@
-import { Payload } from '@portfolio/strapi';
+import { APIResponseData, APIResponseCollectionMetadata } from './strapi-types';
 
 export type StrapiError = { status: number; name: string; message: string; details: unknown };
 
-export type ItemFieldsByStrapi = {
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-};
-
 export interface Connection {
-  sendGetRequest<T>(apiPath: string[]): Promise<Payload<T>>;
+  sendGetRequest<T>(apiPath: string[]): Promise<T>;
 }
+
+export type StrapiTodo = APIResponseData<'api::todo.todo'>;
+
+export type CollectionMetaData = APIResponseCollectionMetadata;

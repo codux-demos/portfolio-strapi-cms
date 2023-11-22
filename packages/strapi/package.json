@@ -9,7 +9,7 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "types": "types/responseTypes.d.ts",
+  "types": "types/generated/contentTypes.d.ts",
   "dependencies": {
     "@strapi/plugin-cloud": "4.15.4",
     "@strapi/plugin-documentation": "^4.15.4",
@@ -20,7 +20,6 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
-    "strapi-plugin-schemas-to-ts": "^1.1.10",
     "styled-components": "5.3.3"
   },
   "author": {

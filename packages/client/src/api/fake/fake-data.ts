@@ -1,6 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { StrapiError } from '../types';
-import { Todo, Payload } from '@portfolio/strapi';
+import { StrapiError, StrapiTodo, CollectionMetaData } from '../types';
 
 export type FakeDataSettings = {
   numberOfItems?: number;
@@ -13,7 +12,7 @@ export function getFakeData(settings?: FakeDataSettings) {
 }
 export type FakeData = ReturnType<typeof getFakeData>;
 
-function createTodo(id: number): Todo {
+function createTodo(id: number): StrapiTodo {
   const created = faker.date.past({ years: 1 });
   const item = {
     id,
@@ -28,7 +27,7 @@ function createTodo(id: number): Todo {
   };
   return item;
 }
-export const fakePaginationMeta: Payload<number>['meta'] = {
+export const fakePaginationMeta: CollectionMetaData = {
   pagination: { page: 1, pageSize: 25, pageCount: 1, total: 1 },
 };
 export const fake404: StrapiError = {

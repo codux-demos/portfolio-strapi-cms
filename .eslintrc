@@ -35,6 +35,8 @@
       ],
       "rules": {
         "@typescript-eslint/no-use-before-define": "off",
+        //strapi types cause this error
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }]
       }
     },

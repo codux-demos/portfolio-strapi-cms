@@ -1,12 +1,12 @@
 import { createContext, useMemo } from 'react';
 import { StrapiConnection } from './strapi-connection';
 import { Connection } from './types';
-import { Todo } from '@portfolio/strapi';
+import { APIResponse, APIResponseCollection } from './strapi-types';
 
 export function createApi(connection: Connection) {
   return {
-    getItems: () => connection.sendGetRequest<Todo[]>(['todos']),
-    getItem: (id: number) => connection.sendGetRequest<Todo>(['todos', id.toString()]),
+    getItems: () => connection.sendGetRequest<APIResponseCollection<'api::todo.todo'>>(['todos']),
+    getItem: (id: number) => connection.sendGetRequest<APIResponse<'api::todo.todo'>>(['todos', id.toString()]),
   };
 }
 

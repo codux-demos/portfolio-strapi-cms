@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { APIContext } from './items-api';
 import useSWR, { useSWRConfig } from 'swr';
-import { Todo } from '@portfolio/strapi';
+import { StrapiTodo } from './types';
 
-type ItemsMap = { [k: string]: Todo };
+type ItemsMap = { [k: string]: StrapiTodo };
 
 export function useItems() {
   const api = useContext(APIContext);
@@ -26,5 +26,5 @@ export function useItem(id: number) {
 
   const fetched = useSWR(!item ? `item/${id}` : null, () => api.getItem(id));
 
-  return item ? { data: item, loading: false } : { ...fetched, data: fetched.data?.data };
+  return item ? { data: item, isLoading: false } : { isLoading: fetched.isLoading, data: fetched.data?.data };
 }

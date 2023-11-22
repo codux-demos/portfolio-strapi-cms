@@ -16,7 +16,7 @@ export const ProjectsPage = ({ className }: ItemsProps) => {
   return (
     <div className={`${styles.root} ${className}`}>
       {items?.data.map((it) => (
-        <Link key={it.id} to={`project/${it.id}`}>
+        <Link key={it.id} to={it.id.toString()}>
           <h3>{it.attributes.title}</h3>
         </Link>
       ))}

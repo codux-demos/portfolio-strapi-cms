@@ -1,6 +1,6 @@
 import { FakeAPIContextProvider } from '../../api/fake/fake-provider';
 import { RouterProvider, createMemoryRouter, matchRoutes } from 'react-router';
-import { routes } from '../../router';
+import { routes } from '../../router/routes';
 import { ReactNode } from 'react';
 import { FakeDataSettings } from '../../api/fake/fake-data';
 

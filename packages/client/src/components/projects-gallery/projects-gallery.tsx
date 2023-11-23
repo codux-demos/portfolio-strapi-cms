@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useProjects } from '../../api/api-hooks';
 import styles from './projects-gallery.module.scss';
 import { ROUTES } from '../../router/config';
+import { getImageUrl } from '../../api/strapi-connection';
 
 export interface ProjectsGalleryProps {
   className?: string;
@@ -17,7 +18,7 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
     <div className={`${styles.root} ${className}`}>
       {projects?.data.map((project) => (
         <Link to={ROUTES.project.to(project.id)} key={project.id}>
-          <img src={project.attributes.coverImage?.data.attributes.url} />
+          <img src={getImageUrl(project.attributes.coverImage)} />
         </Link>
       ))}
     </div>

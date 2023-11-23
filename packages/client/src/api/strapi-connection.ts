@@ -1,10 +1,8 @@
-import { Connection } from './types';
-
-const API_URL = 'http://localhost:5000/api/';
+import { Connection, StrapiImage } from './types';
 
 function buildUrl(apiName: string, params?: Record<string, string>) {
   const searchParams = new URLSearchParams(params);
-  return `${API_URL}${apiName}?${searchParams.toString()}`;
+  return `${import.meta.env.VITE_API}${apiName}?${searchParams.toString()}`;
 }
 
 const reISO = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*))(?:Z|(\+|-)([\d|:]*))?$/;
@@ -32,4 +30,12 @@ export class StrapiConnection implements Connection {
       throw e;
     }
   }
+}
+
+export function getImageUrl(image: StrapiImage | undefined) {
+  const provider = image?.data.attributes.provider;
+  if (provider !== 'local') {
+    throw new Error(`image provider ${provider} not implemented`);
+  }
+  return `${import.meta.env.VITE_MEDIA}${image?.data.attributes.url}`;
 }

@@ -71,7 +71,7 @@ function createImage(): StrapiImage {
         mime: faker.system.mimeType(),
         name: faker.word.noun(),
         size: faker.number.int(100),
-        provider: '',
+        provider: 'local',
       },
     },
   };

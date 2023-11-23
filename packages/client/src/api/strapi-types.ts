@@ -72,7 +72,7 @@ type MediaValue<TAttribute extends Attribute.Attribute> = TAttribute extends Att
   infer _TKind,
   infer TMultiple
 >
-  ? Utils.Expression.If<TMultiple, APIResponseData<'plugin::upload.file'>[], APIResponseData<'plugin::upload.file'>>
+  ? Utils.Expression.If<TMultiple, APIResponse<'plugin::upload.file'>[], APIResponse<'plugin::upload.file'>>
   : never;
 
 export type GetValue<TAttribute extends Attribute.Attribute> = Utils.Expression.If<

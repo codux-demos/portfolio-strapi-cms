@@ -10,5 +10,5 @@ export default createBoard({
       <ProjectPage />
     </FakeDataRealRoutes>
   ),
-  isSnippet: true,
+  isSnippet: false,
 });

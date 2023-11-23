@@ -39,3 +39,8 @@ export function useAbout() {
   const api = useContext(APIContext);
   return useSWR('about', api.getAbout);
 }
+
+export function useProjectItems(projectId: number) {
+  const api = useContext(APIContext);
+  return useSWR(`project-items/${projectId}`, () => api.getProjectItemsByProject(projectId));
+}

@@ -1,7 +1,5 @@
 import styles from './projects-page.module.scss';
-import { apiHooks } from '../../api';
-import { Link } from 'react-router-dom';
-import { ROUTES } from '../../router/config';
+import { ProjectsGallery } from '../../components/projects-gallery/projects-gallery';
 
 export interface ItemsProps {
   className?: string;
@@ -11,15 +9,10 @@ export interface ItemsProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const ProjectsPage = ({ className }: ItemsProps) => {
-  const { data: items } = apiHooks.useProjects();
-
   return (
     <div className={`${styles.root} ${className}`}>
-      {items?.data.map((it) => (
-        <Link key={it.id} to={ROUTES.project.to(it.id)}>
-          <h3>{it.attributes.title}</h3>
-        </Link>
-      ))}
+      <h3>some static description of my portfolio</h3>
+      <ProjectsGallery />
     </div>
   );
 };

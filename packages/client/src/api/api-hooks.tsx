@@ -34,3 +34,8 @@ export function useProject(id: number) {
     ? { data: projectFromCache, isLoading: false }
     : { isLoading: fetched.isLoading, data: fetched.data?.data };
 }
+
+export function useProjectItems(projectId: number) {
+  const api = useContext(APIContext);
+  return useSWR(`project-items/${projectId}`, () => api.getProjectItemsByProject(projectId));
+}

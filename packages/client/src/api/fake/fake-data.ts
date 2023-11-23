@@ -61,7 +61,7 @@ function createProjectItem(id: number, projectId: number): ProjectItemExtended {
   };
 }
 
-function createImage(): StrapiImage {
+export function createImage(): StrapiImage {
   return {
     data: {
       id: faker.number.int(1000),
@@ -71,7 +71,7 @@ function createImage(): StrapiImage {
         mime: faker.system.mimeType(),
         name: faker.word.noun(),
         size: faker.number.int(100),
-        provider: 'local',
+        provider: 'faker',
       },
     },
   };

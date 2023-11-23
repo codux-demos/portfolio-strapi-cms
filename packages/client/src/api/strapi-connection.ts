@@ -34,8 +34,11 @@ export class StrapiConnection implements Connection {
 
 export function getImageUrl(image: StrapiImage | undefined) {
   const provider = image?.data.attributes.provider;
-  if (provider !== 'local') {
-    throw new Error(`image provider ${provider} not implemented`);
+  if (provider === 'local') {
+    return `${import.meta.env.VITE_MEDIA}${image?.data.attributes.url}`;
   }
-  return `${import.meta.env.VITE_MEDIA}${image?.data.attributes.url}`;
+  if (provider === 'faker') {
+    return image?.data.attributes.url;
+  }
+  throw new Error(`image provider ${provider} not implemented`);
 }

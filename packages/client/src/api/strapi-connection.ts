@@ -6,6 +6,10 @@ function buildUrl(apiName: string, params?: Record<string, string>) {
 }
 
 const reISO = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*))(?:Z|(\+|-)([\d|:]*))?$/;
+/**
+ * this function is passed to the `JSON.parse`. It attempts to recognise date ISO strings and parse them into dates
+ * so they will be easier to work with.
+ */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function parseJsonDates(key: string, value: any): any {
   if (typeof value === 'string') {

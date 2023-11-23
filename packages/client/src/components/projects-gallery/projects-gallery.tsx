@@ -17,7 +17,17 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
   const { data: projects } = useProjects();
   const rootRef = useRef<HTMLDivElement>(null);
 
-  const boxHeight = `min(calc(100vh / ${projects?.data.length}), 30px)`;
+  /**
+   * the idea behind this strange accordion is that each project description box has
+   * position sticky and top = bottom of the project description box before it.
+   *
+   * in addition the height of the project description boxes is dynamic so it will behave well
+   * on a smaller screen / more projects
+   *
+   * so, since the top and height of the projects depends on the amount of the projects we have to do it
+   * with inlint style.
+   */
+  const boxHeight = `min(calc(100vh / ${projects?.data.length}), 40px)`;
   return (
     <div className={`${styles.root} ${className}`} ref={rootRef}>
       {projects?.data.map((project, index) => [
@@ -25,14 +35,14 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
           to={ROUTES.project.to(project.id)}
           key={`link_${project.id}`}
           className={styles.box}
-          style={{ top: `calc(${index} * ${boxHeight}`, height: boxHeight }}
+          style={{ top: `calc(${index} * ${boxHeight}`, height: boxHeight, position: 'sticky' }}
         >
           {project.attributes.title}
         </Link>,
         <img
           key={`img_${project.id}`}
           src={getImageUrl(project.attributes.coverImage)}
-          style={{ top: `calc(${index + 1} * ${boxHeight})` }}
+          style={{ top: `calc(${index + 1} * ${boxHeight})`, position: 'sticky' }}
         />,
       ])}
     </div>

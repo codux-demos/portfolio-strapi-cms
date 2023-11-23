@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
 import { useProjects } from '../../api/api-hooks';
 import styles from './projects-gallery.module.scss';
-import { ROUTES } from '../../router/config';
 import { getImageUrl } from '../../api/strapi-connection';
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { ROUTES } from '../../router/config';
 
 export interface ProjectsGalleryProps {
   className?: string;
@@ -14,13 +15,25 @@ export interface ProjectsGalleryProps {
  */
 export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
   const { data: projects } = useProjects();
+  const rootRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className={`${styles.root} ${className}`}>
-      {projects?.data.map((project) => (
-        <Link to={ROUTES.project.to(project.id)} key={project.id}>
-          <img src={getImageUrl(project.attributes.coverImage)} />
-        </Link>
-      ))}
+    <div className={`${styles.root} ${className}`} ref={rootRef}>
+      {projects?.data.map((project, index) => [
+        <Link
+          to={ROUTES.project.to(project.id)}
+          key={`link_${project.id}`}
+          className={styles.box}
+          style={{ top: index * 20, height: 20 }}
+        >
+          {project.attributes.title}
+        </Link>,
+        <img
+          key={`img_${project.id}`}
+          src={getImageUrl(project.attributes.coverImage)}
+          style={{ top: (index + 1) * 20 }}
+        />,
+      ])}
     </div>
   );
 };

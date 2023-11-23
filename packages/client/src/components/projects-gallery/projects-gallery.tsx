@@ -17,6 +17,7 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
   const { data: projects } = useProjects();
   const rootRef = useRef<HTMLDivElement>(null);
 
+  const boxHeight = `min(calc(100vh / ${projects?.data.length}), 30px)`;
   return (
     <div className={`${styles.root} ${className}`} ref={rootRef}>
       {projects?.data.map((project, index) => [
@@ -24,14 +25,14 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
           to={ROUTES.project.to(project.id)}
           key={`link_${project.id}`}
           className={styles.box}
-          style={{ top: index * 20, height: 20 }}
+          style={{ top: `calc(${index} * ${boxHeight}`, height: boxHeight }}
         >
           {project.attributes.title}
         </Link>,
         <img
           key={`img_${project.id}`}
           src={getImageUrl(project.attributes.coverImage)}
-          style={{ top: (index + 1) * 20 }}
+          style={{ top: `calc(${index + 1} * ${boxHeight})` }}
         />,
       ])}
     </div>

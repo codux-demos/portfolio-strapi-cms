@@ -20,8 +20,8 @@ export const Header = ({ className }: HeaderProps) => {
         <NavLink to={ROUTES.projects.to()} end className={navLinkClass}>
           Home
         </NavLink>
-        <NavLink to="/non-existant" end className={navLinkClass}>
-          Other
+        <NavLink to="/about" end className={navLinkClass}>
+          About
         </NavLink>
       </div>
     </div>

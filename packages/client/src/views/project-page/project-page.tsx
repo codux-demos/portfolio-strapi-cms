@@ -20,6 +20,7 @@ export const ProjectPage = ({ className }: ItemProps) => {
     <div className={`${styles.root} ${className}`}>
       <h3>{data?.attributes.title}</h3>
       <p className={styles.desc}>{data?.attributes.description}</p>
+      <img src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg" alt="" />
     </div>
   );
 };

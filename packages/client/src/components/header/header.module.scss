@@ -1,0 +1,15 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-link {
+    color: var(--color-black);
+
+    &.active {
+        color: aqua;
+    }
+
+    padding:10px;
+}

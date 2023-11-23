@@ -9,7 +9,7 @@ export default createBoard({
     <FakeDataRealRoutes
       path={ROUTES.projects.to()}
       settings={{
-        numberOfItems: 30,
+        numberOfItems: 4,
       }}
     >
       <ProjectsPage />

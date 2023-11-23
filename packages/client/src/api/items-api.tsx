@@ -12,6 +12,10 @@ export function createApi(connection: Connection) {
       connection.sendGetRequest<APIResponseCollection<'api::project-item.project-item'>>(['project-items'], {
         'filters[project]': projectId.toString(),
       }),
+    getAbout: () =>
+      connection.sendGetRequest<APIResponse<'api::about.about'>>(['about'], {
+        populate: 'image',
+      }),
   };
 }
 

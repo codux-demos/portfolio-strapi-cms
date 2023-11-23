@@ -25,6 +25,7 @@ export const AboutPage = ({ className }: AboutPageProps) => {
       </div>
       <div>
         <strong>Image:</strong>
+        <img src={getImageUrl(aboutItem?.data.attributes.image)} />
       </div>
     </div>
   );

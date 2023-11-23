@@ -20,7 +20,7 @@ export const Header = ({ className }: HeaderProps) => {
         <NavLink to={ROUTES.projects.to()} end className={navLinkClass}>
           Home
         </NavLink>
-        <NavLink to="/about" end className={navLinkClass}>
+        <NavLink to={ROUTES.about.to()} end className={navLinkClass}>
           About
         </NavLink>
       </div>

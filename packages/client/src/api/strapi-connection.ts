@@ -17,9 +17,9 @@ function parseJsonDates(key: string, value: any): any {
   return value;
 }
 export class StrapiConnection implements Connection {
-  async sendGetRequest<T>(apiPath: string[]) {
+  async sendGetRequest<T>(apiPath: string[], params?: { [key: string]: string }) {
     try {
-      const res = await fetch(buildUrl(apiPath.join('/')), {
+      const res = await fetch(buildUrl(apiPath.join('/'), params), {
         method: 'GET',
       });
       if (res.ok) {

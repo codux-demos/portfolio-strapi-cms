@@ -63,14 +63,16 @@ function createProjectItem(id: number, projectId: number): ProjectItemExtended {
 
 function createImage(): StrapiImage {
   return {
-    id: faker.number.int(1000),
-    attributes: {
-      url: faker.image.url(),
-      hash: faker.string.sample(10),
-      mime: faker.system.mimeType(),
-      name: faker.word.noun(),
-      size: faker.number.int(100),
-      provider: '',
+    data: {
+      id: faker.number.int(1000),
+      attributes: {
+        url: faker.image.url(),
+        hash: faker.string.sample(10),
+        mime: faker.system.mimeType(),
+        name: faker.word.noun(),
+        size: faker.number.int(100),
+        provider: '',
+      },
     },
   };
 }

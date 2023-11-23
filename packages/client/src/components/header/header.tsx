@@ -6,6 +6,8 @@ export interface HeaderProps {
   className?: string;
 }
 
+const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  [styles['nav-link'], isActive ? styles.active : ''].join(' ');
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
@@ -15,8 +17,11 @@ export const Header = ({ className }: HeaderProps) => {
     <div className={`${styles.root} ${className}`}>
       Header Stuff
       <div>
-        <NavLink to={ROUTES.projects.to()} end>
+        <NavLink to={ROUTES.projects.to()} end className={navLinkClass}>
           Home
+        </NavLink>
+        <NavLink to="/non-existant" end className={navLinkClass}>
+          Other
         </NavLink>
       </div>
     </div>

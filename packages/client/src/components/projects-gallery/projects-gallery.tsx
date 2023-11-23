@@ -17,7 +17,7 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
     <div className={`${styles.root} ${className}`}>
       {projects?.data.map((project) => (
         <Link to={ROUTES.project.to(project.id)} key={project.id}>
-          <img src={project.attributes.coverImage.attributes.url} />
+          <img src={project.attributes.coverImage?.data.attributes.url} />
         </Link>
       ))}
     </div>

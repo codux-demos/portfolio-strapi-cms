@@ -3,11 +3,14 @@ import { ProjectsGallery } from '../../../components/projects-gallery/projects-g
 import { FakeDataFakeRoutes } from '../../board-wrappers/fake-data-fake-routes';
 
 export default createBoard({
-  name: 'ProjectsGallery',
-  Board: () => (
-    <FakeDataFakeRoutes>
-      <ProjectsGallery />
-    </FakeDataFakeRoutes>
-  ),
-  isSnippet: true,
+    name: 'ProjectsGallery',
+    Board: () => (
+        <FakeDataFakeRoutes>
+            <ProjectsGallery />
+        </FakeDataFakeRoutes>
+    ),
+    isSnippet: true,
+    environmentProps: {
+        canvasWidth: 800
+    }
 });

@@ -1,0 +1,19 @@
+.root {
+  & ul {
+    list-style: none;
+  }
+}
+
+.topMenu {
+  display: flex;
+  gap: 16px;
+}
+
+.content {
+  background: yellow;
+  padding: 8px;
+}
+
+.active {
+  background-color: pink;
+}

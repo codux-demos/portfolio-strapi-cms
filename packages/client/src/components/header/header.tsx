@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
 import styles from './header.module.scss';
+import { SiteMenu } from '../site-menu/site-menu';
 
 export interface HeaderProps {
   className?: string;
@@ -16,6 +17,7 @@ export const Header = ({ className }: HeaderProps) => {
   return (
     <div className={`${styles.root} ${className}`}>
       Header Stuff
+      <SiteMenu />
       <div>
         <NavLink to={ROUTES.projects.to()} end className={navLinkClass}>
           Home

@@ -19,16 +19,18 @@ in the Admin go to settting -> USERS & PERMISSIONS PLUGIN.Roles -> Public ->
 in Project, ProjectItem, and About check find and findOne.
 
 ## stack
-- strapi: to store our content and serve it to the client app
-- vite: a front end development environment to build our client app
-- npm: to create a monorepo and manage dependencies
-- eslint: to avoid mistakes by static analysis of the code
-- vitest: to write and run unit tests
-- faker: to generate mock content. both for codux boards and unit tests
-- SWR: to cache content in the client app, to fetch new content every once in a while (polling).  
+- [strapi](https://docs.strapi.io/): to store our content and serve it to the client app
+- [vite](https://vitejs.dev/): a front end development environment to build our client app
+- [npm](https://docs.npmjs.com/cli/v10/using-npm/workspaces): to create a monorepo and manage dependencies
+- [eslint](https://eslint.org/): to avoid mistakes by static analysis of the code
+- [vitest](https://vitest.dev/guide/): to write and run unit tests
+- [faker](https://fakerjs.dev/): to generate mock content. both for codux boards and unit tests
+- [SWR](https://swr.vercel.app/docs/getting-started): to cache content in the client app, to fetch new content every once in a while (polling).  
   And to have a simple api between the content cache and react components.  
-- react router: to create multiple routes (pages) and navigate between them
-- scss modules: to write scoped css with more ease
+- [react router](https://reactrouter.com/en/main): to create multiple routes (pages) and navigate between them
+- [scss](https://sass-lang.com/guide/) [modules](https://github.com/css-modules/css-modules): to write scoped css with more ease
+- [radix-ui navigation menu](https://www.radix-ui.com/primitives/docs/components/navigation-menu): to create an accessible site navigation menu. this component comes unstyled
+- [floatin-ui](https://floating-ui.com/docs/useFloating): to position floating elements, like sub-menus, tooltips, popovers, etc.
 
 ## concepts
 ### why use fake data in boards

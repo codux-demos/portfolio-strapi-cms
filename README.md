@@ -30,7 +30,7 @@ in Project, ProjectItem, and About check find and findOne.
 - [react router](https://reactrouter.com/en/main): to create multiple routes (pages) and navigate between them
 - [scss](https://sass-lang.com/guide/) [modules](https://github.com/css-modules/css-modules): to write scoped css with more ease
 - [radix-ui navigation menu](https://www.radix-ui.com/primitives/docs/components/navigation-menu): to create an accessible site navigation menu. this component comes unstyled
-- [floatin-ui](https://floating-ui.com/docs/useFloating): to position floating elements, like sub-menus, tooltips, popovers, etc.
+- [floatin-ui](https://floating-ui.com/docs/react): to position floating elements, like sub-menus, tooltips, popovers, etc.
 
 ## concepts
 ### why use fake data in boards

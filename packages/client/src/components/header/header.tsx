@@ -18,14 +18,6 @@ export const Header = ({ className }: HeaderProps) => {
     <div className={`${styles.root} ${className}`}>
       Header Stuff
       <SiteMenu />
-      <div>
-        <NavLink to={ROUTES.projects.to()} end className={navLinkClass}>
-          Home
-        </NavLink>
-        <NavLink to="/non-existant" end className={navLinkClass}>
-          Other
-        </NavLink>
-      </div>
     </div>
   );
 };

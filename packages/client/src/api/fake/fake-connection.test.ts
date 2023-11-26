@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { FakeConnection } from './fake-connection';
 import { APIResponse, APIResponseCollection } from '../strapi-types';
-import { Item } from '@radix-ui/react-navigation-menu';
 
 describe('FakeConnection sendGetRequest', () => {
   it('should fetch a collection', async () => {

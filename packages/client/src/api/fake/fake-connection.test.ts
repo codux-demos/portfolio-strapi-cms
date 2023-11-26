@@ -53,4 +53,23 @@ describe('FakeConnection sendGetRequest', () => {
     expect(JSON.stringify(response.data)).to.equal(JSON.stringify(expectedData));
     expect(response.data).not.toBe(expectedData);
   });
+
+  it('should throw error for non existing item', async () => {
+    const connection = new FakeConnection({ numberOfItems: 2 });
+
+    const err = expect.objectContaining({ status: 404 });
+    expect(
+      async () => await connection.sendGetRequest<APIResponse<'api::project.project'>>(['projects', '5']),
+    ).rejects.toThrow(expect.objectContaining({ data: null, error: err }) as Error);
+  });
+
+  it('should fetch item from single item entry', async () => {
+    const connection = new FakeConnection({ numberOfItems: 2 });
+    const expectedData = globalThis.FAKE_DATA.about;
+
+    const response = await connection.sendGetRequest<APIResponse<'api::about.about'>>(['about']);
+
+    expect(JSON.stringify(response.data)).to.equal(JSON.stringify(expectedData));
+    expect(response.data).not.toBe(expectedData);
+  });
 });

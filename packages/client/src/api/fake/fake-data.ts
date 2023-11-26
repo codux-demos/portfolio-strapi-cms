@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { StrapiError, CollectionMetaData, StrapiImage, StrapiProject, StrapiProjectItem, StrapiPaths } from '../types';
+import { StrapiError, CollectionMetaData, StrapiImage, StrapiProject, StrapiProjectItem, StrapiPath } from '../types';
 
 export type FakeDataSettings = {
   numberOfItems?: number;
@@ -25,7 +25,8 @@ export function getFakeData(settings?: FakeDataSettings) {
   const data = {
     projects: Array.from(Array(numberOfProjects)).map((val, i) => createProject(i)),
     'project-items': createProjectItems(numberOfProjects, settings?.numberOfItems || 10),
-  } satisfies Record<StrapiPaths, unknown>;
+    single: { id: 'something' },
+  } satisfies Record<StrapiPath, unknown>;
 
   globalThis.FAKE_DATA = data;
   return data;

@@ -9,7 +9,7 @@ export type StrapiImage = StrapiProject['attributes']['coverImage'];
 
 export type CollectionMetaData = APIResponseCollectionMetadata;
 
-export type StrapiPaths = 'projects' | 'project-items';
+export type StrapiPath = 'projects' | 'project-items' | 'single';
 
 type StrapiProjectAttrKey = keyof StrapiProject['attributes'];
 type StrapiProjectItemAttrKey = keyof StrapiProjectItem['attributes'];
@@ -18,5 +18,5 @@ type StrapiParamKey = 'populate' | StrapiFilterParamKey;
 export type StrapiParams = Partial<Record<StrapiParamKey, string>>;
 
 export interface Connection {
-  sendGetRequest<T>(apiPath: [StrapiPaths, ...string[]], params?: Partial<Record<StrapiParamKey, string>>): Promise<T>;
+  sendGetRequest<T>(apiPath: [StrapiPath, ...string[]], params?: Partial<Record<StrapiParamKey, string>>): Promise<T>;
 }

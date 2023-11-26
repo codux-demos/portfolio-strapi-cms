@@ -1,10 +1,15 @@
 import { faker } from '@faker-js/faker';
-import { StrapiError, CollectionMetaData, StrapiImage, StrapiProject, StrapiProjectItem } from '../types';
+import { StrapiError, CollectionMetaData, StrapiImage, StrapiProject, StrapiProjectItem, StrapiPaths } from '../types';
 
 export type FakeDataSettings = {
   numberOfItems?: number;
   fakerSeed?: number;
 };
+
+declare global {
+  // eslint-disable-next-line no-var
+  var FAKE_DATA: FakeData;
+}
 
 export function getFakeData(settings?: FakeDataSettings) {
   /**
@@ -17,10 +22,13 @@ export function getFakeData(settings?: FakeDataSettings) {
   }
 
   const numberOfProjects = settings?.numberOfItems || 10;
-  return {
+  const data = {
     projects: Array.from(Array(numberOfProjects)).map((val, i) => createProject(i)),
     'project-items': createProjectItems(numberOfProjects, settings?.numberOfItems || 10),
-  };
+  } satisfies Record<StrapiPaths, unknown>;
+
+  globalThis.FAKE_DATA = data;
+  return data;
 }
 export type FakeData = ReturnType<typeof getFakeData>;
 type ProjectItemExtended = StrapiProjectItem | { [key: string]: string };

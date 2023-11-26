@@ -22,7 +22,7 @@ export const SiteMenu = () => {
     <RadixMenu.Root className={styles.root}>
       <RadixMenu.List className={styles.topMenu}>
         <MenuItem to={ROUTES.projects.to()} text="Home" />
-        <MenuItem to={'/to-nowhere'} text="Other" />
+        <MenuItem to={ROUTES.about.to()} text="About" />
         <RadixMenu.Item>
           <FloatingContentWithTrigger text="Projects">
             {isLoading ? (

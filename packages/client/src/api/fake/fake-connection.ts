@@ -1,4 +1,4 @@
-import { Connection, StrapiPaths } from '../types';
+import { Connection, StrapiFilterParamKey, StrapiParams, StrapiPaths } from '../types';
 import { FakeData, FakeDataSettings, fake404, fakePaginationMeta, getFakeData } from './fake-data';
 
 export class FakeConnection implements Connection {
@@ -7,7 +7,7 @@ export class FakeConnection implements Connection {
     this.data = getFakeData(setting);
   }
 
-  sendGetRequest<T>(apiPath: [StrapiPaths, ...string[]], params?: { [key: string]: string }) {
+  sendGetRequest<T>(apiPath: [StrapiPaths, ...string[]], params?: StrapiParams) {
     if (apiPath.length === 0 || apiPath.length > 2) {
       throw new Error('path has to have at least one segment and no more than 2');
     }
@@ -15,15 +15,18 @@ export class FakeConnection implements Connection {
     if (!(collectionKey in this.data)) {
       throw new Error(`there is no such collection ${collectionKey}`);
     }
-    const collection = this.data[collectionKey as keyof FakeData];
+    const collection = this.data[collectionKey];
 
     if (apiPath.length === 1) {
-      const filterName = params ? Object.keys(params).find((key) => key.startsWith('filters')) : null;
+      const filterName = params
+        ? (Object.keys(params).find((key) => key.startsWith('filters')) as StrapiFilterParamKey)
+        : null;
       if (filterName && params) {
         const filterValue = params[filterName];
+        const filterBy = filterName.split('[')[1].replace(']', '');
 
         return Promise.resolve({
-          data: collection.filter((it) => it[filterName as keyof typeof it] === filterValue),
+          data: collection.filter((it) => it.attributes[filterBy as keyof (typeof it)['attributes']] === filterValue),
           meta: cloneDeep(fakePaginationMeta),
         } as T);
       }

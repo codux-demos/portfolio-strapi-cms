@@ -58,7 +58,7 @@ describe('FakeConnection sendGetRequest', () => {
     const connection = new FakeConnection({ numberOfItems: 2 });
 
     const err = expect.objectContaining({ status: 404 });
-    expect(
+    await expect(
       async () => await connection.sendGetRequest<APIResponse<'api::project.project'>>(['projects', '5']),
     ).rejects.toThrow(expect.objectContaining({ data: null, error: err }) as Error);
   });

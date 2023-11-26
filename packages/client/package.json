@@ -16,8 +16,7 @@
     "build": "tsc && vite build",
     "tsc": "tsc",
     "preview": "vite preview",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "test": "vitest"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.0.4",

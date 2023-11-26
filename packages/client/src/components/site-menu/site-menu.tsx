@@ -1,4 +1,4 @@
-import { NavLink, useMatch } from 'react-router-dom';
+import { Link, useMatch } from 'react-router-dom';
 import styles from './site-menu.module.scss';
 import * as RadixMenu from '@radix-ui/react-navigation-menu';
 import { ROUTES } from '../../router/config';
@@ -44,10 +44,11 @@ export const SiteMenu = () => {
 function MenuItem(props: { text: string; to: string }) {
   const match = useMatch(props.to);
   const isActive = !!match;
+
   return (
     <RadixMenu.Item className={isActive ? styles.active : ''}>
       <RadixMenu.Link active={isActive} asChild>
-        <NavLink to={props.to}>{props.text}</NavLink>
+        <Link to={props.to}>{props.text}</Link>
       </RadixMenu.Link>
     </RadixMenu.Item>
   );
@@ -58,8 +59,8 @@ function MenuItem(props: { text: string; to: string }) {
  *
  * Also we are portalling the content of the menu to the body. which will append it as the last child of the body
  * hence avoiding the z-index issue.
- * If you have more complex floating elements in your project I advise installing `@floating-ui/react` and
- * using [`FloatingPortal`](https://floating-ui.com/docs/FloatingPortal)
+ * If you have more complex floating elements in your project I advise installing `@floating-ui/react`
+ * (not just `@floating-ui/react-dom`) and using [`FloatingPortal`](https://floating-ui.com/docs/FloatingPortal)
  *
  * @param props
  * @property children - the content of the sub menu, normally `RadixMenu.List`

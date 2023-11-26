@@ -1,10 +1,15 @@
 import { faker } from '@faker-js/faker';
-import { StrapiError, CollectionMetaData, StrapiImage, StrapiProject, StrapiProjectItem } from '../types';
+import { StrapiError, CollectionMetaData, StrapiImage, StrapiProject, StrapiProjectItem, StrapiPath } from '../types';
 
 export type FakeDataSettings = {
   numberOfItems?: number;
   fakerSeed?: number;
 };
+
+declare global {
+  // eslint-disable-next-line no-var
+  var FAKE_DATA: FakeData;
+}
 
 export function getFakeData(settings?: FakeDataSettings) {
   /**
@@ -17,17 +22,27 @@ export function getFakeData(settings?: FakeDataSettings) {
   }
 
   const numberOfProjects = settings?.numberOfItems || 10;
-  return {
+  const data = {
     projects: Array.from(Array(numberOfProjects)).map((val, i) => createProject(i)),
     'project-items': createProjectItems(numberOfProjects, settings?.numberOfItems || 10),
-  };
+    about: { id: 'something' },
+  } satisfies Record<StrapiPath, unknown>;
+
+  globalThis.FAKE_DATA = data;
+  return data;
 }
 export type FakeData = ReturnType<typeof getFakeData>;
-type ProjectItemExtended = StrapiProjectItem | { [key: string]: string };
-type ProjectExtended = StrapiProject | { [key: string]: string };
+/**
+ * we don't really receive the projectId from strapi.
+ * if we populate the project we will receive the whole project item
+ * we do this here so we can filter project items by project in the fake connection
+ */
+type ProjectItemWithProjectId = Omit<StrapiProjectItem, 'attributes'> & {
+  attributes: Omit<StrapiProjectItem['attributes'], 'project'> & { project: string };
+};
 
 function createProjectItems(numberOfProjects: number, numberOfItems?: number) {
-  const items: ProjectItemExtended[] = [];
+  const items: ProjectItemWithProjectId[] = [];
 
   for (let projectId = 0; projectId < numberOfProjects; projectId++) {
     const itemsCount = numberOfItems || faker.number.int({ min: 1, max: 10 });
@@ -37,7 +52,7 @@ function createProjectItems(numberOfProjects: number, numberOfItems?: number) {
   return items;
 }
 
-function createProject(id: number): ProjectExtended {
+function createProject(id: number): StrapiProject {
   return {
     id,
     attributes: {
@@ -49,14 +64,14 @@ function createProject(id: number): ProjectExtended {
   };
 }
 
-function createProjectItem(id: number, projectId: number): ProjectItemExtended {
+function createProjectItem(id: number, projectId: number): ProjectItemWithProjectId {
   return {
     id,
-    'filters[project]': projectId.toString(),
     attributes: {
       title: faker.lorem.words({ min: 1, max: 3 }),
       description: faker.lorem.paragraphs({ min: 0, max: 3 }),
       image: createImage(),
+      project: projectId.toString(),
     },
   };
 }

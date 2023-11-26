@@ -1,4 +1,3 @@
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import { apiHooks } from '../../api';
 import { getImageUrl } from '../../api/strapi-connection';
 import styles from './about-page.module.scss';
@@ -14,6 +13,8 @@ export interface AboutPageProps {
 export const AboutPage = ({ className }: AboutPageProps) => {
   const { data: aboutItem } = apiHooks.useAbout();
 
+  if (!aboutItem) return null;
+
   return (
     <div className={`${styles.root} ${className}`}>
       <div>
@@ -23,10 +24,6 @@ export const AboutPage = ({ className }: AboutPageProps) => {
       <div>
         <strong>Subtitle:</strong>
         <span>{aboutItem?.data.attributes.subTitle}</span>
-      </div>
-      <div>
-        <strong>Text:</strong>
-        <span>{aboutItem?.data.attributes.text && <BlocksRenderer content={aboutItem?.data.attributes.text} />}</span>
       </div>
       <div>
         <strong>Image:</strong>

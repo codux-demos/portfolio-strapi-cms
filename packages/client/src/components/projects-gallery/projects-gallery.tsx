@@ -22,12 +22,13 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
    * position sticky and top = bottom of the project description box before it.
    *
    * in addition the height of the project description boxes is dynamic so it will behave well
-   * on a smaller screen / more projects
+   * on a smaller screen / more projects.
+   * otherwise if you have a lot of items the last ones aren't reachable
    *
    * so, since the top and height of the projects depends on the amount of the projects we have to do it
    * with inlint style.
    */
-  const boxHeight = `min(calc(100vh / ${projects?.data.length}), 40px)`;
+  const boxHeight = `min(calc(100vh / ${projects?.data.length}), 4rem)`;
   return (
     <div className={`${styles.root} ${className}`} ref={rootRef}>
       {projects?.data.map((project, index) => [
@@ -35,7 +36,7 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
           to={ROUTES.project.to(project.id)}
           key={`link_${project.id}`}
           className={styles.box}
-          style={{ top: `calc(${index} * ${boxHeight}`, height: boxHeight, position: 'sticky' }}
+          style={{ top: `calc(${index} * ${boxHeight}`, height: boxHeight, position: 'sticky', minHeight: '1.5rem' }}
         >
           {project.attributes.title}
         </Link>,

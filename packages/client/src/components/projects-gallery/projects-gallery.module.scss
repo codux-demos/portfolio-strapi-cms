@@ -1,0 +1,11 @@
+.root {
+
+    & img {
+        width: 100%;
+    }
+
+    .box{
+        background-color: pink;
+        display: block;
+    }
+}

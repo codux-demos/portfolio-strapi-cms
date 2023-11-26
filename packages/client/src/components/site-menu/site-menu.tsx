@@ -5,6 +5,7 @@ import { ROUTES } from '../../router/config';
 import { apiHooks } from '../../api';
 import { autoPlacement, offset, useFloating } from '@floating-ui/react-dom';
 import { ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 
 export interface SiteMenuProps {
   className?: string;
@@ -52,6 +53,19 @@ function MenuItem(props: { text: string; to: string }) {
   );
 }
 
+/**
+ * This component allows for the sub menus to render as floating elements (without affecting the DOM around it).
+ *
+ * Also we are portalling the content of the menu to the body. which will append it as the last child of the body
+ * hence avoiding the z-index issue.
+ * If you have more complex floating elements in your project I advise installing `@floating-ui/react` and
+ * using [`FloatingPortal`](https://floating-ui.com/docs/FloatingPortal)
+ *
+ * @param props
+ * @property children - the content of the sub menu, normally `RadixMenu.List`
+ * @property text - the text on the trigger button
+ * @returns the sub menu wrapped with a trigger button and floating css
+ */
 function FloatingContentWithTrigger(props: { children: ReactNode; text: string }) {
   const { refs, floatingStyles } = useFloating({
     placement: 'bottom',
@@ -62,12 +76,16 @@ function FloatingContentWithTrigger(props: { children: ReactNode; text: string }
       }),
     ],
   });
+
   return (
     <>
       <RadixMenu.Trigger ref={refs.setReference}>{props.text}</RadixMenu.Trigger>
-      <RadixMenu.Content ref={refs.setFloating} style={floatingStyles} className={styles.content}>
-        {props.children}
-      </RadixMenu.Content>
+      {createPortal(
+        <RadixMenu.Content ref={refs.setFloating} style={{ ...floatingStyles }} className={styles.content}>
+          {props.children}
+        </RadixMenu.Content>,
+        document.body,
+      )}
     </>
   );
 }

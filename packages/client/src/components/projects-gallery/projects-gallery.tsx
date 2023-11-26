@@ -14,9 +14,12 @@ export interface ProjectsGalleryProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
-  const { data: projects } = useProjects();
+  const { data: projects, isLoading } = useProjects();
   const rootRef = useRef<HTMLDivElement>(null);
 
+  if (isLoading) {
+    return <div>Loading..</div>;
+  }
   /**
    * the idea behind this strange accordion is that each project description box has
    * position sticky and top = bottom of the project description box before it.

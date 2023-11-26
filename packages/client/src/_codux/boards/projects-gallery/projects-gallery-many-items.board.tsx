@@ -3,9 +3,11 @@ import { ProjectsGallery } from '../../../components/projects-gallery/projects-g
 import { FakeDataFakeRoutes } from '../../board-wrappers/fake-data-fake-routes';
 
 export default createBoard({
-    name: 'ProjectsGallery',
+    name: 'Projects Gallery many items',
     Board: () => (
-        <FakeDataFakeRoutes>
+        <FakeDataFakeRoutes settings={{
+            numberOfItems: 30
+        }}>
             <ProjectsGallery />
         </FakeDataFakeRoutes>
     ),

@@ -3,6 +3,7 @@ import { apiHooks } from '../../api';
 import { useParams } from 'react-router-dom';
 import { RouteParams } from '../../router/config';
 import { ProjectItem } from '../../components/project-item/project-item';
+import { getImageUrl } from '../../api/strapi-connection';
 
 export interface ItemProps {
   className?: string;
@@ -22,7 +23,7 @@ export const ProjectPage = ({ className }: ItemProps) => {
     <div className={`${styles.root} ${className}`}>
       <h3>{data?.attributes.title}</h3>
       <p className={styles.desc}>{data?.attributes.description}</p>
-      <img src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg" alt="" />
+      <img src={getImageUrl(data?.attributes.coverImage)} alt="" />
       {projectItems?.data.map((item) => <ProjectItem projectItemAttr={item.attributes} key={item.id} />)}
     </div>
   );

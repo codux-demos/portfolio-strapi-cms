@@ -16,10 +16,8 @@
     "lint": "eslint .",
     "prettify": "prettier . --write",
     "check": "npm run lint && npm run tsc -ws --if-present",
-
     "build": "npm run lint && npm run build -ws",
     "test": "npm test -ws --if-present",
-    
     "start:client:dev": "npm run -w @portfolio/client dev",
     "start:server:dev": "npm run -w @portfolio/strapi develop",
     "start:server": "npm run -w @portfolio/strapi start"

@@ -9,7 +9,7 @@ export type StrapiImage = StrapiProject['attributes']['coverImage'];
 
 export type CollectionMetaData = APIResponseCollectionMetadata;
 
-export type StrapiPath = 'projects' | 'project-items' | 'single';
+export type StrapiPath = 'projects' | 'project-items' | 'about';
 
 type StrapiProjectAttrKey = keyof StrapiProject['attributes'];
 type StrapiProjectItemAttrKey = keyof StrapiProjectItem['attributes'];

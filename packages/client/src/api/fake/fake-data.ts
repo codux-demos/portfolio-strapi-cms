@@ -25,7 +25,7 @@ export function getFakeData(settings?: FakeDataSettings) {
   const data = {
     projects: Array.from(Array(numberOfProjects)).map((val, i) => createProject(i)),
     'project-items': createProjectItems(numberOfProjects, settings?.numberOfItems || 10),
-    single: { id: 'something' },
+    about: { id: 'something' },
   } satisfies Record<StrapiPath, unknown>;
 
   globalThis.FAKE_DATA = data;

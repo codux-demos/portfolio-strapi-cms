@@ -15,7 +15,9 @@
     "clean": "rimraf -g \"./packages/*/dist\"",
     "lint": "eslint .",
     "prettify": "prettier . --write",
-    "pretest": "npm run lint && npm run tsc -ws --if-present",
+    "check": "npm run lint && npm run tsc -ws --if-present",
+
+    "build": "npm run lint && npm run build -ws",
     "test": "npm test -ws --if-present",
     
     "start:client:dev": "npm run -w @portfolio/client dev",

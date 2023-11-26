@@ -1,4 +1,4 @@
-import { Connection } from '../types';
+import { Connection, StrapiPaths } from '../types';
 import { FakeData, FakeDataSettings, fake404, fakePaginationMeta, getFakeData } from './fake-data';
 
 export class FakeConnection implements Connection {
@@ -7,7 +7,7 @@ export class FakeConnection implements Connection {
     this.data = getFakeData(setting);
   }
 
-  sendGetRequest<T>(apiPath: string[], params?: { [key: string]: string }) {
+  sendGetRequest<T>(apiPath: [StrapiPaths, ...string[]], params?: { [key: string]: string }) {
     if (apiPath.length === 0 || apiPath.length > 2) {
       throw new Error('path has to have at least one segment and no more than 2');
     }

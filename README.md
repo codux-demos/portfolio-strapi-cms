@@ -5,7 +5,7 @@
 after git clone  
 in the root run:  
 `npm i`  
-`node create-env.cjs`  
+`node create-env.cjs` or provide a port, for example `node create-env.cjs 8080` to run strapi on port 8080. It runs on 5000 by default.
 `npm run start:server:dev`
 
 in a different terminal run  

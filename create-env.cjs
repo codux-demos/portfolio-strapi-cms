@@ -4,22 +4,24 @@ const { argv } = require('node:process');
 const os = require('os');
 const path = require('path');
 
-// taking care of the '.env' file related to the strapi package
-const envExampleValues = fs
-  .readFileSync(path.join(__dirname, 'packages', 'strapi', '.env.example'))
-  .toString()
-  .split('\n');
-const envValues = envExampleValues
-  .map((line) =>
-    line.includes('[change-me]')
-      ? line.replaceAll('[change-me]', crypto.randomBytes(16).toString('base64'))
-      : line.includes('[PORT]')
-        ? line.replaceAll('[PORT]', process.argv[2] || 5000)
-        : line,
-  )
-  .join('\n');
+const modifyEnvFile = (filePath, fieldsToModify) => {
+  // fieldsToModify = [[searchString, wantedValue]], e.g: [['[PORT]', 5000], ['[change-me]', 'randomValue']]
+  const currentValues = fs.readFileSync(filePath).toString().split('\n');
+  let modifiedValues = currentValues;
+  fieldsToModify.forEach(([searchString, wantedValue]) => {
+    modifiedValues = modifiedValues.map((line) =>
+      line.includes(searchString) ? line.replaceAll(searchString, wantedValue) : line,
+    );
+  });
+  return modifiedValues.join('\n');
+};
 
-fs.writeFileSync(path.join(__dirname, 'packages', 'strapi', '.env'), envValues);
+// taking care of the '.env' file related to the strapi package
+const strapiEnvValues = modifyEnvFile(path.join(__dirname, 'packages', 'strapi', '.env.example'), [
+  ['[change-me]', crypto.randomBytes(16).toString('base64')],
+  ['[PORT]', argv[2] || 5000],
+]);
+fs.writeFileSync(path.join(__dirname, 'packages', 'strapi', '.env'), strapiEnvValues);
 
 const pkgJson = fs.readFileSync(path.join(__dirname, 'packages', 'strapi', 'package.json'), 'utf8');
 const pkgJsonObject = JSON.parse(pkgJson);
@@ -31,14 +33,7 @@ fs.writeFileSync(
 );
 
 // taking care of the '.env' file related to the client package
-{
-  const envExampleValues = fs
-    .readFileSync(path.join(__dirname, 'packages', 'client', '.env.example'))
-    .toString()
-    .split('\n');
-  const envValues = envExampleValues
-    .map((line) => (line.includes('[PORT]') ? line.replaceAll('[PORT]', argv[2] || 5000) : line))
-    .join('\n');
-
-  fs.writeFileSync(path.join(__dirname, 'packages', 'client', '.env'), envValues);
-}
+const clientEnvValues = modifyEnvFile(path.join(__dirname, 'packages', 'client', '.env.example'), [
+  ['[PORT]', argv[2] || 5000],
+]);
+fs.writeFileSync(path.join(__dirname, 'packages', 'client', '.env'), clientEnvValues);

@@ -1,16 +1,26 @@
-.root {
-}
+@import '../../styles//colors.module.scss';
+
+.root {}
 
 .topMenu {
-  display: flex;
-  gap: 16px;
+    display: flex;
+    gap: 16px;
 }
 
 .content {
-  background: yellow;
-  padding: 8px;
+    background: yellow;
+    padding: 8px;
 }
 
-.active {
-  background-color: pink;
+.Link {
+    display: block;
+
+    &.active {
+        background-color: var(--color-primary);
+    }
+
+    &:focus,
+    &:hover {
+        background-color: var(--color-primary-background);
+    }
 }

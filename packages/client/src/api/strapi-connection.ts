@@ -30,10 +30,10 @@ export class StrapiConnection implements Connection {
 }
 
 export function getImageUrl(image: StrapiImage | undefined) {
-  if (!image) {
+  if (!image || !image.data) {
     return undefined;
   }
-  const provider = image?.data.attributes.provider;
+  const provider = image.data.attributes.provider;
   if (provider === 'local') {
     return `${import.meta.env.VITE_MEDIA}${image?.data.attributes.url}`;
   }

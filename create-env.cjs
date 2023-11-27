@@ -18,7 +18,7 @@ const modifyEnvFile = (filePath, fieldsToModify) => {
 
 // taking care of the '.env' file related to the strapi package
 const strapiEnvValues = modifyEnvFile(path.join(__dirname, 'packages', 'strapi', '.env.example'), [
-  ['[change-me]', crypto.randomBytes(16).toString('base64')],
+  ['[change-me]', () => crypto.randomBytes(16).toString('base64')],
   ['[PORT]', argv[2] || 5000],
 ]);
 fs.writeFileSync(path.join(__dirname, 'packages', 'strapi', '.env'), strapiEnvValues);

@@ -5,7 +5,6 @@ export default createBoard({
   name: 'App',
   Board: () => <RealDataRealRoutes />,
   environmentProps: {
-    canvasHeight: 268,
-    canvasWidth: 501,
+    canvasWidth: 1024,
   },
 });

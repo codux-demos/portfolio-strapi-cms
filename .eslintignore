@@ -3,3 +3,4 @@ umd
 dist
 build
 vitest.config.ts
+generated

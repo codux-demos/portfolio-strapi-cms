@@ -9,6 +9,7 @@
     "npm": ">=8"
   },
   "scripts": {
+    "postinstall": "cd packages/strapi && npm i && cd ../client && npm i",
     "clean": "rimraf -g \"./packages/*/dist\"",
     "lint": "eslint .",
     "prettify": "prettier . --write",
@@ -18,5 +19,18 @@
     "start:client:dev": "npm run -w @portfolio/client dev",
     "start:server:dev": "npm run -w @portfolio/strapi develop",
     "start:server": "npm run -w @portfolio/strapi start"
-  } 
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "typescript": "~5.2.2"
+  }
 }

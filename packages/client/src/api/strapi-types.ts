@@ -8,8 +8,7 @@
  * on the strapi module and import the types.
  */
 
-import type { Attribute, Common, Utils } from '@strapi/types';
-import '@portfolio/strapi';
+import { Attribute, Common, Utils } from '@strapi/types';
 
 type IDProperty = { id: number };
 

@@ -2,7 +2,7 @@ import { Connection, StrapiImage } from './types';
 
 function buildUrl(apiName: string, params?: Record<string, string>) {
   const searchParams = new URLSearchParams(params);
-  return `${import.meta.env.VITE_API}${apiName}?${searchParams.toString()}`;
+  return `${import.meta.env.VITE_API || process.env.VITE_API}${apiName}?${searchParams.toString()}`;
 }
 
 /**
@@ -35,7 +35,7 @@ export function getImageUrl(image: StrapiImage | undefined) {
   }
   const provider = image.data.attributes.provider;
   if (provider === 'local') {
-    return `${import.meta.env.VITE_MEDIA}${image?.data.attributes.url}`;
+    return `${import.meta.env.VITE_MEDIA || process.env.VITE_MEDIA}${image?.data.attributes.url}`;
   }
   if (provider === 'faker') {
     return image?.data.attributes.url;

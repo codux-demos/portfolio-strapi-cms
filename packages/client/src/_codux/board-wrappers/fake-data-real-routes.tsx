@@ -5,7 +5,6 @@ import { ReactNode } from 'react';
 import { FakeDataSettings } from '../../api/fake/fake-data';
 
 export function FakeDataRealRoutes(props: { path?: string; children: ReactNode; settings?: FakeDataSettings }) {
-  //
   const matchingRoutes = matchRoutes(routes, props.path || '/');
   if (!matchingRoutes) {
     routes.push({ path: props.path || '/', element: props.children });

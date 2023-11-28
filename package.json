@@ -12,8 +12,7 @@
     "npm": ">=8"
   },
   "scripts": {
-    "clean": "rimraf -g \"./packages/*/dist\"",
-    "lint": "eslint .",
+    "lint": "eslint .", 
     "prettify": "prettier . --write",
     "check": "npm run lint && npm run tsc -ws --if-present",
     "build": "npm run lint && npm run build -ws",
@@ -39,7 +38,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "jsdom": "^22.1.0",
     "prettier": "^3.1.0",
-    "rimraf": "^5.0.5",
     "sass": "^1.69.5",
     "typescript": "~5.2.2",
     "vite": "^4.5.0",

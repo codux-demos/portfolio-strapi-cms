@@ -18,3 +18,12 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.markdown {
+  & ul {
+    list-style: revert;
+  }
+  & ol {
+    list-style: revert;
+  }
+}

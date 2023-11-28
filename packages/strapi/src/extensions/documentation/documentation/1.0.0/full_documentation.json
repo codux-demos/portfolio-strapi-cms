@@ -18,7 +18,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-11-27T05:07:27.663Z"
+    "x-generation-date": "2023-11-28T05:18:11.278Z"
   },
   "servers": [
     {
@@ -98,7 +98,6 @@
               "subTitle": {
                 "type": "string"
               },
-              "text": {},
               "image": {
                 "oneOf": [
                   {
@@ -109,6 +108,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "text": {
+                "type": "string"
               }
             }
           }
@@ -169,7 +171,6 @@
           "subTitle": {
             "type": "string"
           },
-          "text": {},
           "image": {
             "type": "object",
             "properties": {
@@ -791,6 +792,9 @@
                 }
               }
             }
+          },
+          "text": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",

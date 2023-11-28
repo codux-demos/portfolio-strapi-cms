@@ -29,7 +29,7 @@
         "audios"
       ]
     },
-    "text": {
+    "richtext": {
       "type": "richtext"
     }
   }

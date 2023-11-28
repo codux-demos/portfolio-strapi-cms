@@ -1,7 +1,8 @@
 import { createBoard } from '@wixc3/react-board';
-import { AboutPage } from '../../../views/about-page/about-page';
+import { RealDataRealRoutes } from '../../board-wrappers/real-data-real-routes';
+import { ROUTES } from '../../../router/config';
 
 export default createBoard({
   name: 'About Page',
-  Board: () => <AboutPage />,
+  Board: () => <RealDataRealRoutes path={ROUTES.about.to()} />,
 });

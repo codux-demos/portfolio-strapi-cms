@@ -18,7 +18,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-11-28T05:18:11.278Z"
+    "x-generation-date": "2023-11-28T10:59:12.204Z"
   },
   "servers": [
     {
@@ -109,7 +109,7 @@
                 ],
                 "example": "string or id"
               },
-              "text": {
+              "richtext": {
                 "type": "string"
               }
             }
@@ -793,7 +793,7 @@
               }
             }
           },
-          "text": {
+          "richtext": {
             "type": "string"
           },
           "createdAt": {

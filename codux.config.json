@@ -23,5 +23,11 @@
   "styling": {
     "solution": "scss modules"
   },
-  "svgLoader": "both"
+  "svgLoader": "both",
+  "previewConfiguration": {
+    "environmentVariables": {
+      "VITE_API": "http://localhost:5000/api/",
+      "VITE_MEDIA": "http://localhost:5000"
+    }
+  }
 }

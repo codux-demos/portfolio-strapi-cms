@@ -4,7 +4,7 @@ import styles from './about-page.module.scss';
 import Markdown from 'markdown-to-jsx';
 
 export interface AboutPageProps {
-  className?: string;
+    className?: string;
 }
 
 /**
@@ -12,27 +12,27 @@ export interface AboutPageProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const AboutPage = ({ className }: AboutPageProps) => {
-  const { data: aboutItem } = apiHooks.useAbout();
+    const { data: aboutItem } = apiHooks.useAbout();
 
-  if (!aboutItem) return null;
+    if (!aboutItem) return null;
 
-  return (
-    <div className={`${styles.root} ${className}`}>
-      <div>
-        <strong>Title:</strong>
-        <span>{aboutItem.data.attributes.title}</span>
-      </div>
-      <div>
-        <strong>Subtitle:</strong>
-        <span>{aboutItem.data.attributes.subTitle}</span>
-      </div>
-      <div>
-        <strong>Image:</strong>
-        {aboutItem.data.attributes.image && <img src={getImageUrl(aboutItem?.data.attributes.image)} />}
-      </div>
-      <div className="markdown">
-        <Markdown>{aboutItem.data.attributes.text || ''}</Markdown>
-      </div>
-    </div>
-  );
+    return (
+        <div className={`${styles.root} ${className}`}>
+            <div>
+                <strong>Title:</strong>
+                <span>{aboutItem.data.attributes.title}</span>
+            </div>
+            <div>
+                <strong>Subtitle:</strong>
+                <span>{aboutItem.data.attributes.subTitle}</span>
+            </div>
+            <div>
+                <strong>Image:</strong>
+                {aboutItem.data.attributes.image && <img src={getImageUrl(aboutItem?.data.attributes.image)} />}
+            </div>
+            <div className="markdown">
+                <Markdown>{aboutItem.data.attributes.richtext || ''}</Markdown>
+            </div>
+        </div>
+    );
 };

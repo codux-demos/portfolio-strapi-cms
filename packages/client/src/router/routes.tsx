@@ -1,7 +1,6 @@
 import { Navigate, RouteObject } from 'react-router-dom';
 import { SiteWrapper } from '../views/site-wrapper/site-wrapper';
 import { ProjectsPage } from '../views/projects-page/projects-page';
-import { ProjectPage } from '../views/project-page/project-page';
 import { AboutPage } from '../views/about-page/about-page';
 import { ROUTES } from './config';
 import { ItemsPage } from '../views/items-page/items-page';

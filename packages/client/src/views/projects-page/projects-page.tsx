@@ -1,5 +1,6 @@
 import styles from './projects-page.module.scss';
 import { ProjectsGallery } from '../../components/projects-gallery/projects-gallery';
+import * as theme from '../../styles/theme.module.scss';
 
 export interface ItemsProps {
   className?: string;
@@ -12,7 +13,7 @@ export const ProjectsPage = ({ className }: ItemsProps) => {
   return (
     <div className={`${styles.root} ${className}`}>
       <h3>some static description of my portfolio</h3>
-      <ProjectsGallery />
+      <ProjectsGallery headerHeight={theme.headerHeight} />
     </div>
   );
 };

@@ -8,7 +8,7 @@ import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
 export interface SiteMenuProps {
-    className?: string;
+  className?: string;
 }
 
 /**
@@ -16,44 +16,44 @@ export interface SiteMenuProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const SiteMenu = () => {
-    const { data: projects, isLoading } = apiHooks.useProjects();
+  const { data: projects, isLoading } = apiHooks.useProjects();
 
-    return (
-        <RadixMenu.Root className={styles.root}>
-            <RadixMenu.List className={styles.topMenu}>
-                <MenuItem to={ROUTES.projects.to()} text="Home" />
-                <MenuItem to={ROUTES.about.to()} text="About" />
-                <RadixMenu.Item>
-                    <FloatingContentWithTrigger text="Projects">
-                        {isLoading ? (
-                            <div>Loading...</div>
-                        ) : (
-                            <RadixMenu.List>
-                                {projects?.data.map((project) => (
-                                    <MenuItem key={project.id} to={ROUTES.project.to(project.id)} text={project.attributes.title} />
-                                ))}
-                            </RadixMenu.List>
-                        )}
-                    </FloatingContentWithTrigger>
-                </RadixMenu.Item>
-            </RadixMenu.List>
-        </RadixMenu.Root>
-    );
+  return (
+    <RadixMenu.Root className={styles.root}>
+      <RadixMenu.List className={styles.topMenu}>
+        <MenuItem to={ROUTES.projects.to()} text="Home" />
+        <MenuItem to={ROUTES.about.to()} text="About" />
+        <RadixMenu.Item>
+          <FloatingContentWithTrigger text="Projects">
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <RadixMenu.List className={styles.sub}>
+                {projects?.data.map((project) => (
+                  <MenuItem key={project.id} to={ROUTES.project.to(project.id)} text={project.attributes.title} />
+                ))}
+              </RadixMenu.List>
+            )}
+          </FloatingContentWithTrigger>
+        </RadixMenu.Item>
+      </RadixMenu.List>
+    </RadixMenu.Root>
+  );
 };
 
 function MenuItem(props: { text: string; to: string }) {
-    const match = useMatch(props.to);
-    const isActive = !!match;
+  const match = useMatch(props.to);
+  const isActive = !!match;
 
-    return (
-        <RadixMenu.Item>
-            <RadixMenu.Link active={isActive} asChild>
-                <Link to={props.to} className={`${styles.Link} ${isActive ? styles.active : ''}`}>
-                    {props.text}
-                </Link>
-            </RadixMenu.Link>
-        </RadixMenu.Item>
-    );
+  return (
+    <RadixMenu.Item>
+      <RadixMenu.Link active={isActive} asChild>
+        <Link to={props.to} className={`${styles.Link} ${isActive ? styles.active : ''}`}>
+          {props.text}
+        </Link>
+      </RadixMenu.Link>
+    </RadixMenu.Item>
+  );
 }
 
 /**
@@ -70,25 +70,27 @@ function MenuItem(props: { text: string; to: string }) {
  * @returns the sub menu wrapped with a trigger button and floating css
  */
 function FloatingContentWithTrigger(props: { children: ReactNode; text: string }) {
-    const { refs, floatingStyles } = useFloating({
-        placement: 'bottom',
-        middleware: [
-            offset(10),
-            autoPlacement({
-                allowedPlacements: ['bottom', 'bottom-end', 'bottom-start'],
-            }),
-        ],
-    });
+  const { refs, floatingStyles } = useFloating({
+    placement: 'bottom',
+    middleware: [
+      offset(10),
+      autoPlacement({
+        allowedPlacements: ['bottom', 'bottom-end', 'bottom-start'],
+      }),
+    ],
+  });
 
-    return (
-        <>
-            <RadixMenu.Trigger ref={refs.setReference} className={styles.Link}>{props.text}</RadixMenu.Trigger>
-            {createPortal(
-                <RadixMenu.Content ref={refs.setFloating} style={{ ...floatingStyles }} className={styles.content}>
-                    {props.children}
-                </RadixMenu.Content>,
-                document.body,
-            )}
-        </>
-    );
+  return (
+    <>
+      <RadixMenu.Trigger ref={refs.setReference} className={styles.Link}>
+        {props.text}
+      </RadixMenu.Trigger>
+      {createPortal(
+        <RadixMenu.Content ref={refs.setFloating} style={{ ...floatingStyles }} className={styles.content}>
+          {props.children}
+        </RadixMenu.Content>,
+        document.body,
+      )}
+    </>
+  );
 }

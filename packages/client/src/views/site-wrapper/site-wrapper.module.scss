@@ -1,4 +1,10 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
+
 .root {
     width: 100%;
+}
+
+.content {
+    top: $header-height;
+    transform: translateZ(0);
 }

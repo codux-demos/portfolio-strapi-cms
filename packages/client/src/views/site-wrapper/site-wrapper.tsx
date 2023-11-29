@@ -8,9 +8,11 @@ export function SiteWrapper() {
   return (
     <div className={SiteWrapper_module.root}>
       <ScrollRestoration />
-      <Header />
-      <Outlet />
+      <div className={SiteWrapper_module.content}>
+        <Outlet />
+      </div>
       <Footer />
+      <Header />
     </div>
   );
 }

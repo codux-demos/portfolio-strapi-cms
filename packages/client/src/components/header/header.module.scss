@@ -4,14 +4,21 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: $header-height;
+    top: 0px;
+    background-color: $background;
+    font: $text-font;
+    padding: 1rem;
 }
 
-.nav-link {
-    color: var(--color-black);
+.logo {
+    font: $logo-font;
+}
 
-    &.active {
-        color: aqua;
-    }
-
-    padding:10px;
+.leftContainer {
+    display: flex;
+    gap: 3rem;
+    
 }

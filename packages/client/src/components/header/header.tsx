@@ -12,8 +12,11 @@ export interface HeaderProps {
 export const Header = ({ className }: HeaderProps) => {
   return (
     <div className={`${styles.root} ${className}`}>
-      Header Stuff
-      <SiteMenu />
+      <div className={styles.leftContainer}>
+        <span className={styles.logo}>NAME PORT</span>
+        <SiteMenu />
+      </div>
+      <a href="#footer">Contant</a>
     </div>
   );
 };

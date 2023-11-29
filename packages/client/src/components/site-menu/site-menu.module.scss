@@ -4,7 +4,7 @@
 
 .topMenu {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
 }
 
 .content {
@@ -14,10 +14,15 @@
 
 .Link {
     display: block;
-    padding: 0.2rem;
     &.active,
     &:focus,
     &:hover {
         font-weight: 600;
+    }
+}
+
+.sub {
+    & .Link {
+        padding: 0.2rem;
     }
 }

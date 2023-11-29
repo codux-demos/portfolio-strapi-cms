@@ -5,13 +5,14 @@ import SiteWrapper_module from './site-wrapper.module.scss';
 import { ScrollRestoration } from 'react-router-dom';
 
 export function SiteWrapper() {
-    return (
-        <div className={SiteWrapper_module.root}>
-            <ScrollRestoration />
-            <div className={SiteWrapper_module.content}>
-                <Outlet /></div>
-            <Header />
-            <Footer />
-        </div>
-    );
+  return (
+    <div className={SiteWrapper_module.root}>
+      <ScrollRestoration />
+      <div className={SiteWrapper_module.content}>
+        <Outlet />
+      </div>
+      <Footer />
+      <Header />
+    </div>
+  );
 }

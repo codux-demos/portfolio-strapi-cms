@@ -8,5 +8,17 @@
     width: 100%;
     height: $header-height;
     top: 0px;
-    background-color: $grey100;
+    background-color: $background;
+    font: $text-font;
+    padding: 1rem;
+}
+
+.logo {
+    font: $logo-font;
+}
+
+.leftContainer {
+    display: flex;
+    gap: 3rem;
+    
 }

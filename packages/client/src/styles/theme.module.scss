@@ -11,8 +11,9 @@ $text-font: 400 1.2rem/1.5 $my-prettyfont;
 $tiny-font: 400 0.8rem/1.5 $my-prettyfont;
 $heading-font: 600 3rem/1.5 $my-prettyfont;
 $small-heading-font: 600 1.4rem/1.5 $my-prettyfont;
+$logo-font: 600 1.2rem/1.5 $my-prettyfont;
 
-$header-height: 5rem;
+$header-height: 4rem;
 
 :export {
   headerHeight: $header-height;

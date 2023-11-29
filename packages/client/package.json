@@ -3,9 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "exports": {
-    "./package.json": "./package.json"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:wixplosives/sample-monorepo.git",

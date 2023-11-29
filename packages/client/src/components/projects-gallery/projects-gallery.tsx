@@ -4,16 +4,16 @@ import { getImageUrl } from '../../api/strapi-connection';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
-
 export interface ProjectsGalleryProps {
   className?: string;
+  headerHeight?: string;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
+export const ProjectsGallery = ({ className, headerHeight }: ProjectsGalleryProps) => {
   const { data: projects, isLoading } = useProjects();
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -31,7 +31,7 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
    * so, since the top and height of the projects depends on the amount of the projects we have to do it
    * with inlint style.
    */
-  const boxHeight = `min(calc(100vh / ${projects?.data.length}), 4rem)`;
+  const boxHeight = `min(calc((100vh - ${headerHeight}) / ${projects?.data.length}), 4rem)`;
   return (
     <div className={`${styles.root} ${className}`} ref={rootRef}>
       {projects?.data.map((project, index) => [
@@ -39,14 +39,19 @@ export const ProjectsGallery = ({ className }: ProjectsGalleryProps) => {
           to={ROUTES.project.to(project.id)}
           key={`link_${project.id}`}
           className={styles.box}
-          style={{ top: `calc(${index} * ${boxHeight}`, height: boxHeight, position: 'sticky', minHeight: '1.5rem' }}
+          style={{
+            top: `calc(${index} * ${boxHeight} + ${headerHeight})`,
+            height: boxHeight,
+            position: 'sticky',
+            minHeight: '1.5rem',
+          }}
         >
           {project.attributes.title}
         </Link>,
         <img
           key={`img_${project.id}`}
           src={getImageUrl(project.attributes.coverImage)}
-          style={{ top: `calc(${index + 1} * ${boxHeight})`, position: 'sticky' }}
+          style={{ top: `calc(${index + 1} * ${boxHeight} + ${headerHeight})`, position: 'sticky' }}
         />,
       ])}
     </div>

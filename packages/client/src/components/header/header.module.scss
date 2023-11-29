@@ -4,6 +4,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: $header-height;
+    top: 0px;
+    background-color: $grey100;
 }
 
 .nav-link {

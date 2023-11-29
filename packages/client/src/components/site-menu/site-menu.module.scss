@@ -8,19 +8,16 @@
 }
 
 .content {
-    background: yellow;
-    padding: 8px;
+    background: $background;
+    padding: 0.5rem;
 }
 
 .Link {
     display: block;
-
-    &.active {
-        background-color: var(--color-primary);
-    }
-
+    padding: 0.2rem;
+    &.active,
     &:focus,
     &:hover {
-        background-color: var(--color-primary-background);
+        font-weight: 600;
     }
 }

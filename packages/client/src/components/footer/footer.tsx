@@ -1,7 +1,7 @@
 import styles from './footer.module.scss';
 
 export interface FooterProps {
-  className?: string;
+    className?: string;
 }
 
 /**
@@ -9,5 +9,12 @@ export interface FooterProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Footer = ({ className }: FooterProps) => {
-  return <div className={`${styles.root} ${className}`}>Footer</div>;
+    return <div className={`${styles.root} ${className}`}>
+        <a href="mailto:info@mySite.com">info@mySite.com</a>
+        <a href="/">Instagram</a>
+        <a href="/">Facebook</a>
+        <a href="/">Pinterest</a>
+        <span>123-456-7890</span>
+        <span className={styles.copyright}>© 2020 Career Karma and some more</span>
+    </div>;
 };

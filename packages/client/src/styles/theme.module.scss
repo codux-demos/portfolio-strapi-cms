@@ -1,0 +1,12 @@
+@import './colors.module.scss';
+
+// colors
+$background: $white;
+$inverted-background: $black;
+$text-color: $black;
+$inverted-text-color: $white;
+
+//typography
+$text-font: 400 1.2rem/1.5 $my-prettyfont;
+$tiny-font: 400 0.8rem/1.5 $my-prettyfont;
+$heading-font: 600 3rem/1.5 $my-prettyfont;

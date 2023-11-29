@@ -9,7 +9,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: row;
-    // column-count: 2;
     width: min-content;
 }
 
@@ -18,13 +17,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
+    padding: 3em;
+    padding-bottom: 5rem;
 
     &:nth-child(4n + 1) {
         padding-right: 0.5em;
     }
 
-    &:nth-child(3n){
+    &:nth-child(3n) {
         padding-top: 0.5em;
     }
+}
+
+.title {
+    font: $small-heading-font;
 }

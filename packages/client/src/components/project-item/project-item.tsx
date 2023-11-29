@@ -14,9 +14,13 @@ export interface ProjectItemProps {
 export const ProjectItem = ({ className, projectItemAttr }: ProjectItemProps) => {
   return (
     <div className={`${styles.root} ${className}`}>
-      <h3>{projectItemAttr.title}</h3>
-      <img src={getImageUrl(projectItemAttr.image)} alt="" />
-      <p>{projectItemAttr.description}</p>
+      <img
+        src={getImageUrl(projectItemAttr.image)}
+        alt=""
+        style={{ minWidth: projectItemAttr.image.data.attributes.width }}
+      />
+      <h3 className={styles.itemTitle}>{projectItemAttr.title}</h3>
+      <p className={styles.itemDesc}>{projectItemAttr.description}</p>
     </div>
   );
 };

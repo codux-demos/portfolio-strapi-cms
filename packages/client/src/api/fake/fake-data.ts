@@ -77,7 +77,7 @@ function createProject(id: number): StrapiProject {
     id,
     attributes: {
       title: faker.lorem.words({ min: 1, max: 3 }),
-      description: faker.lorem.sentences({ min: 0, max: 3 }),
+      description: faker.lorem.sentences({ min: 2, max: 3 }),
       coverImage: createImage(),
       ...getDates(),
     },
@@ -85,28 +85,32 @@ function createProject(id: number): StrapiProject {
 }
 
 function createProjectItem(id: number, projectId: number): ProjectItemWithProjectId {
+  const width = faker.number.int({ min: 200, max: 600 });
+  const height = faker.number.int({ min: 200, max: 400 });
   return {
     id,
     attributes: {
       title: faker.lorem.words({ min: 1, max: 3 }),
-      description: faker.lorem.paragraphs({ min: 0, max: 3 }),
-      image: createImage(),
+      description: faker.lorem.paragraphs({ min: 0, max: 2 }),
+      image: createImage({ width, height }),
       project: projectId.toString(),
     },
   };
 }
 
-export function createImage(): StrapiImage {
+export function createImage(size?: { width?: number; height?: number }): StrapiImage {
   return {
     data: {
       id: faker.number.int(1000),
       attributes: {
-        url: faker.image.url(),
+        url: faker.image.url(size),
         hash: faker.string.sample(10),
         mime: faker.system.mimeType(),
         name: faker.word.noun(),
         size: faker.number.int(100),
         provider: 'faker',
+        width: size?.width,
+        height: size?.height,
       },
     },
   };

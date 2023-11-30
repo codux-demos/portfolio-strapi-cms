@@ -3,7 +3,6 @@ import styles from './items-page.module.scss';
 import { RouteParams } from '../../router/config';
 import { apiHooks } from '../../api';
 import { ProjectItem } from '../../components/project-item/project-item';
-import { motion } from 'framer-motion';
 
 export interface ItemsPageProps {
   className?: string;
@@ -35,15 +34,9 @@ export const ItemsPage = ({ className }: ItemsPageProps) => {
           <p>{data?.attributes.description}</p>
         </div>
         {restItems.map((item) => (
-          <motion.div
-            initial={{ opacity: 0.2, marginTop: 100 }}
-            whileInView={{ opacity: 1, marginTop: 0, transition: { duration: 1 } }}
-            viewport={{ once: true, margin: '20px' }}
-            key={item.id}
-            className={styles.galleryItem}
-          >
+          <div key={item.id} className={styles.galleryItem}>
             <ProjectItem projectItemAttr={item.attributes} />
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

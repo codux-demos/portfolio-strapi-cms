@@ -67,9 +67,18 @@ function createAbout(): StrapiAbout {
       title: faker.lorem.words({ min: 1, max: 3 }),
       subTitle: faker.person.bio(),
       image: createImage(),
+      richtext: getMarkdown(),
       ...getDates(),
     },
   };
+}
+
+function getMarkdown() {
+  const string = faker.lorem.paragraphs(3).replace(/\n/gi, '\n\n');
+  const words = string.split(' ');
+  words[3] = `**${words[3]}**`;
+  words[7] = `<u>${words[7]}</u>`;
+  return words.join(' ');
 }
 
 function createProject(id: number): StrapiProject {

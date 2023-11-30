@@ -4,10 +4,15 @@ import { AboutPage } from '../../../views/about-page/about-page';
 import { FakeDataRealRoutes } from '../../board-wrappers/fake-data-real-routes';
 
 export default createBoard({
-  name: 'About Page',
-  Board: () => (
-    <FakeDataRealRoutes path={ROUTES.about.to()}>
-      <AboutPage />
-    </FakeDataRealRoutes>
-  ),
+    name: 'About Page',
+    Board: () => (
+        <FakeDataRealRoutes path={ROUTES.about.to()}>
+            <AboutPage />
+        </FakeDataRealRoutes>
+    ),
+    environmentProps: {
+        windowWidth: 1024,
+        windowHeight: 768,
+        canvasWidth: 1037
+    }
 });

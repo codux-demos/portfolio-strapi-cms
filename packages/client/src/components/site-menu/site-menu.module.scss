@@ -1,26 +1,28 @@
-@import '../../styles//colors.module.scss';
+@import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {}
 
 .topMenu {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
 }
 
 .content {
-    background: yellow;
-    padding: 8px;
+    background: $background;
+    padding: 0.5rem;
 }
 
 .Link {
     display: block;
-
-    &.active {
-        background-color: var(--color-primary);
-    }
-
+    &.active,
     &:focus,
     &:hover {
-        background-color: var(--color-primary-background);
+        font-weight: 600;
+    }
+}
+
+.sub {
+    & .Link {
+        padding: 0.2rem;
     }
 }

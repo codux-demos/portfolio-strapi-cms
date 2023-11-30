@@ -1,4 +1,28 @@
-@import '../../styles/utils.module.scss';
+@import '@portfolio/client/src/styles/theme.module.scss';
 
-.root {
+.rectangle {
+    width: 50%;
+    float: left;
+    height: 100%;
+
+    & img {
+        height: 100%;
+    }
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.title {
+    font: $heading-font;
+}
+
+.sub {
+    font: $small-heading-font;
 }

@@ -1,11 +1,19 @@
+@import '@portfolio/client/src/styles/theme.module.scss';
+
 .root {
 
     & img {
         width: 100%;
     }
 
-    .box{
+    .box {
         background-color: pink;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0rem 1rem;
+        font: $text-font;
     }
 }

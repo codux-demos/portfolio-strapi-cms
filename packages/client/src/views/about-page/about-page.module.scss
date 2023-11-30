@@ -16,4 +16,13 @@
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.title {
+    font: $heading-font;
+}
+
+.sub {
+    font: $small-heading-font;
 }

@@ -3,21 +3,22 @@ import { ProjectsGallery } from '../../components/projects-gallery/projects-gall
 import * as theme from '../../styles/theme.module.scss';
 
 export interface ItemsProps {
-    className?: string;
+  className?: string;
 }
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const ProjectsPage = ({ className }: ItemsProps) => {
-    return (
-        <div className={`${styles.root} ${className}`}>
-            <div className={`${styles.rectangle} ${styles.text}`}>
-                <h3 className={styles.title}>some static description of my portfolio</h3>
-            </div>
-            <div className={`${styles.rectangle} ${styles.img}`}></div>
+  return (
+    <div className={`${styles.root} ${className}`}>
+      <h3 className={`${styles.rectangle} ${styles.text}`}>some static description of my portfolio</h3>
+      <div className={`${styles.rectangle} ${styles.img}`}></div>
+      <div className={styles.logoWrapper}>
+        <h1 className={styles.logo}>NAME PORT</h1>
+      </div>
 
-            <ProjectsGallery className={styles.gallery} headerHeight={theme.headerHeight} />
-        </div>
-    );
+      <ProjectsGallery className={styles.gallery} headerHeight={theme.headerHeight} />
+    </div>
+  );
 };

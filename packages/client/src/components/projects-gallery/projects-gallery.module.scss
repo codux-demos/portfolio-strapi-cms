@@ -7,7 +7,7 @@
     }
 
     .box {
-        background-color: pink;
+        
         display: flex;
         flex-direction: row;
         align-content: center;
@@ -15,5 +15,15 @@
         justify-content: space-between;
         padding: 0rem 1rem;
         font: $text-font;
+
+        &:nth-child(3n){
+            background-color: pink;
+        }
+        &:nth-child(3n + 1) {
+            background-color: bisque;
+        }
+        &:nth-child(3n + 2){
+            background-color: $grey300;
+        }
     }
 }

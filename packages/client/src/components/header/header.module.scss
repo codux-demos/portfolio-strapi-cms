@@ -1,9 +1,6 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     position: fixed;
     width: 100%;
     height: $header-height;
@@ -12,12 +9,19 @@
     padding: 1rem;
 }
 
-.logo {
-    font: $logo-font;
+.leftContainer {
+    width: 50%;
+    text-align: center;
+    display: inline-block;
 }
 
-.leftContainer {
-    display: flex;
-    gap: 3rem;
-    
+.logo {
+    font: $logo-font;
+    position: absolute;
+    left: 1rem;
+}
+
+.contactLink {
+    position: absolute;
+    right: 1rem;
 }

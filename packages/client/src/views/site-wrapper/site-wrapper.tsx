@@ -27,7 +27,7 @@ export function SiteWrapper() {
         <Outlet />
       </div>
       <Footer />
-      <Header className={SiteWrapper_module.header} />
+      <Header />
     </div>
   );
 }

@@ -7,7 +7,9 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "tsc": "echo 'not a Typescript module'",
+    "test": "echo 'no tests in this module'"
   },
   "types": "types/generated/contentTypes.d.ts",
   "dependencies": {

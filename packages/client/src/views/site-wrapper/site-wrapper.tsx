@@ -8,8 +8,8 @@ import { routes } from '../../router/routes';
 
 const layouts = {
   [ROUTES.about.path]: SiteWrapper_module.full,
-  [ROUTES.project.path]: 'belowHeader',
-  [ROUTES.projects.path]: 'underHeader',
+  [ROUTES.project.path]: SiteWrapper_module.belowHeader,
+  [ROUTES.projects.path]: '',
 };
 
 export function SiteWrapper() {
@@ -27,7 +27,7 @@ export function SiteWrapper() {
         <Outlet />
       </div>
       <Footer />
-      <Header />
+      <Header className={SiteWrapper_module.header} />
     </div>
   );
 }

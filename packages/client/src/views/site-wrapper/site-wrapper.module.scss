@@ -5,6 +5,10 @@
     display: flex;
     flex-direction: column;
 
+    & .content{
+        position: relative;
+    }
+
     &.full {
         height: 100vh;
 
@@ -13,10 +17,15 @@
         }
     }
 
-    
-}
+    &.belowHeader {
+        .content {
+            top: $header-height;
+        }
 
-.contentUnderHeader {
-    top: $header-height;
-    position: relative;
+        .header {
+            background-color: $background;
+        }
+    }
+
+    
 }

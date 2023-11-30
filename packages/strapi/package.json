@@ -7,8 +7,11 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "tsc": "echo 'not a Typescript module'",
+    "test": "echo 'no tests in this module'"
   },
+  "exports": "./types/generated/contentTypes.d.ts",
   "types": "types/generated/contentTypes.d.ts",
   "dependencies": {
     "@strapi/plugin-cloud": "4.15.4",

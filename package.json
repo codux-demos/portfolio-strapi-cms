@@ -12,15 +12,13 @@
     "npm": ">=8"
   },
   "scripts": {
-    "clean": "rimraf -g \"./packages/*/dist\"",
     "lint": "eslint .",
     "prettify": "prettier . --write",
-    "check": "npm run lint && npm run tsc -ws --if-present",
-    "build": "npm run lint && npm run build -ws",
-    "test": "npm test -ws --if-present",
-    "start:client:dev": "npm run -w @portfolio/client dev",
-    "start:server:dev": "npm run -w @portfolio/strapi develop",
-    "start:server": "npm run -w @portfolio/strapi start"
+    "verify": "yarn run lint && yarn workspaces run tsc",
+    "build": "npm run lint && yarn workspaces run build",
+    "test": "yarn workspaces run test",
+    "start:client:dev": "yarn workspace @portfolio/client run dev",
+    "start:server:dev": "yarn workspace @portfolio/strapi run develop"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.23.3",
@@ -30,6 +28,7 @@
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.13.1",
     "@vitejs/plugin-react": "^4.1.1",
     "@wixc3/react-board": "^2.3.0",
     "eslint": "^8.53.0",
@@ -39,7 +38,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "jsdom": "^22.1.0",
     "prettier": "^3.1.0",
-    "rimraf": "^5.0.5",
     "sass": "^1.69.5",
     "typescript": "~5.2.2",
     "vite": "^4.5.0",

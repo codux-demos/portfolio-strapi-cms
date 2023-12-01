@@ -1,3 +1,3 @@
 export * as apiHooks from './api-hooks';
-export { APIContextProvider } from './items-api';
+export { APIContextProvider } from './data-api';
 export * from './types';

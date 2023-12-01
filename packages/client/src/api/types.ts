@@ -1,4 +1,4 @@
-import { APIResponseData, APIResponseCollectionMetadata } from './strapi-types';
+import type { APIResponseData, APIResponseCollectionMetadata } from './strapi-types';
 
 export type StrapiError = { status: number; name: string; message: string; details: unknown };
 

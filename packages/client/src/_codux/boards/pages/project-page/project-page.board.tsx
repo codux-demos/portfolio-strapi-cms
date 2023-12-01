@@ -1,7 +1,7 @@
 import { createBoard } from '@wixc3/react-board';
-import { ProjectPage } from '../../../pages/project-page/project-page';
-import { ComponentWrapper } from '../../board-wrappers/component-wrapper';
-import { ROUTES } from '../../../router/config';
+import { ProjectPage } from '../../../../pages/project-page/project-page';
+import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
+import { ROUTES } from '../../../../router/config';
 
 export default createBoard({
   name: 'Project Page',

@@ -2,13 +2,14 @@
   "$schema": "https://wixplosives.github.io/codux-config-schema/codux.config.schema.json",
   "boardGlobalSetup": "./packages/client/src/_codux/boards-global-setup.ts",
   "componentsDiscovery": {
-    "include": ["packages/client/src/components/**", "packages/client/src/views/**"],
+    "include": ["packages/client/src/components/**", "packages/client/src/pages/**"],
     "exclude": ["packages/client/src/_codux/**"]
   },
   "newComponent": {
     "componentsPath": "packages/client/src/components",
     "templatesPath": "packages/client/src/_codux/component-templates"
   },
+  "boardsPath": "src/_codux/boards/components",
   "safeRender": {
     "maxInstancesPerComponent": 1000
   },
@@ -16,7 +17,7 @@
     "install": {
       "title": "Install",
       "description": "Run install",
-      "command": "npm i",
+      "command": "yarn",
       "trigger": ["checkout", "pull", "setup"]
     }
   },

@@ -1,7 +1,7 @@
 import { createBoard } from '@wixc3/react-board';
-import { PageWrapper } from '../../board-wrappers/page-wrapper';
-import { HomePage } from '../../../pages/home-page/home-page';
-import { ROUTES } from '../../../router/config';
+import { PageWrapper } from '../../../board-wrappers/page-wrapper';
+import { HomePage } from '../../../../pages/home-page/home-page';
+import { ROUTES } from '../../../../router/config';
 
 export default createBoard({
   name: 'Home Page',

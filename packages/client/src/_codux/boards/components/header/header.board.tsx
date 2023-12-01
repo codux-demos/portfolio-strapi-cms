@@ -1,7 +1,7 @@
 import { createBoard } from '@wixc3/react-board';
-import { Header } from '../../../components/header/header';
-import { ComponentWrapper } from '../../board-wrappers/component-wrapper';
-import { ROUTES } from '../../../router/config';
+import { Header } from '../../../../components/header/header';
+import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
+import { ROUTES } from '../../../../router/config';
 
 export default createBoard({
   name: 'Header',

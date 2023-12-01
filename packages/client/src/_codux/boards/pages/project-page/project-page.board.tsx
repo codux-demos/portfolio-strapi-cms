@@ -1,14 +1,14 @@
 import { createBoard } from '@wixc3/react-board';
 import { ProjectPage } from '../../../../pages/project-page/project-page';
-import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
 import { ROUTES } from '../../../../router/config';
+import { PageWrapper } from '../../../board-wrappers/page-wrapper';
 
 export default createBoard({
   name: 'Project Page',
   Board: () => (
-    <ComponentWrapper path={ROUTES.project.to(1)} patters={ROUTES.project.path}>
+    <PageWrapper path={ROUTES.project.to(1)}>
       <ProjectPage />
-    </ComponentWrapper>
+    </PageWrapper>
   ),
   isSnippet: false,
   environmentProps: {

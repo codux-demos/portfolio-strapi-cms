@@ -68,13 +68,13 @@ Hopefully, one day Strapi will add this feature
 ## boards
 most of our components need a context to run in.  
 one context for the router and another for the data.  
-for that reason we have to wrap our components in the boards with context providers
+for that reason, we have to wrap our components in the boards with context providers
 
 #### router
 because in codux our app runs inside an iframe we have to use a [`memory router`](https://reactrouter.com/en/main/routers/create-memory-router) instead of a [`browser router`](https://reactrouter.com/en/main/routers/create-browser-router) in the real `App`  
 but we can and should use the real [routes](packages/client/src/router/routes.tsx) for page boards.
-for simple componenet boards we still should provide a router context, otherwise if there is a `Link` in the component it will throw an error. but we don't use real routes, we add a fake route
-pointint to the component we want to render in the board.
+for simple component boards we still should provide a router context, otherwise, if there is a `Link` in the component it will throw an error. but we don't use real routes, we add a fake route
+pointing to the component we want to render in the board.
 
  #### data
 we have two options here:
@@ -82,10 +82,10 @@ we have two options here:
 2. to use a fake API provider that generates fake data without actually fetching anything.
 
 ### board Wrapper components
-so we have 3 types of boards wrapper components:
-1. [`ComponentWrapper`](packages/client/src/_codux/board-wrappers/ComponentWrapper.tsx) used for simple components. with fake data and fake routes (links won't throw but won't work either)
-2. [`PageWrapper`](packages/client/src/_codux/board-wrappers/PageWrapper) used for page components. with fake data and real routes (links will work)
-3. [`RealDataWrapper`](packages/client/src/_codux/board-wrappers/RealDataWrapper) used for the App board. with real data and real routes (works only if you have the local strapi server running or the env variables in the codux config point to a remote server).
+so we have 3 types of board wrapper components:
+1. [`ComponentWrapper`](packages/client/src/_codux/board-wrappers/component-wrapper.tsx) used for simple components. with fake data and fake routes (links won't throw but won't work either)
+2. [`PageWrapper`](packages/client/src/_codux/board-wrappers/page-wrapper.tsx) used for page components. with fake data and real routes (links will work)
+3. [`RealDataWrapper`](packages/client/src/_codux/board-wrappers/real-data-wrapper.tsx) used for the App board. with real data and real routes (works only if you have the local strapi server running or the env variables in the codux config point to a remote server).
 
-you can, ofcourse, change / add wrappers as it is convinient for you.
+you can, of course, change/add wrappers as it is convenient for you.
 

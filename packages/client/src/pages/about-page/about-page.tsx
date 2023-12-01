@@ -1,6 +1,7 @@
 import { apiHooks } from '../../api';
 import { getImageUrl } from '../../api/strapi-connection';
 import styles from './about-page.module.scss';
+import '@portfolio/client/src/styles/util-classes.scss';
 import Markdown from 'markdown-to-jsx';
 
 /**

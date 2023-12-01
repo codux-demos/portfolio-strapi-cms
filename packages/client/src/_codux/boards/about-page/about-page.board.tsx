@@ -1,18 +1,18 @@
 import { createBoard } from '@wixc3/react-board';
 import { ROUTES } from '../../../router/config';
 import { AboutPage } from '../../../views/about-page/about-page';
-import { FakeDataRealRoutes } from '../../board-wrappers/fake-data-real-routes';
+import { PageWrapper } from '../../board-wrappers/page-wrapper';
 
 export default createBoard({
-    name: 'About Page',
-    Board: () => (
-        <FakeDataRealRoutes path={ROUTES.about.to()}>
-            <AboutPage />
-        </FakeDataRealRoutes>
-    ),
-    environmentProps: {
-        windowWidth: 1024,
-        windowHeight: 768,
-        canvasWidth: 1037
-    }
+  name: 'About Page',
+  Board: () => (
+    <PageWrapper path={ROUTES.about.to()}>
+      <AboutPage />
+    </PageWrapper>
+  ),
+  environmentProps: {
+    windowWidth: 1024,
+    windowHeight: 768,
+    canvasWidth: 1037,
+  },
 });

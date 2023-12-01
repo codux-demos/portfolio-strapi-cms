@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
-import styles from './items-page.module.scss';
+import styles from './project-page.module.scss';
 import { RouteParams } from '../../router/config';
 import { apiHooks } from '../../api';
 import { ProjectItem } from '../../components/project-item/project-item';
 
-export interface ItemsPageProps {
+export interface ProjectPage {
   className?: string;
 }
 
@@ -12,7 +12,7 @@ export interface ItemsPageProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-export const ItemsPage = ({ className }: ItemsPageProps) => {
+export const ProjectPage = ({ className }: ProjectPage) => {
   const { id: strId } = useParams<RouteParams['/projects/:id']>();
   const id = strId ? parseInt(strId) : -1;
 

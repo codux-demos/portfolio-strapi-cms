@@ -1,15 +1,15 @@
-import styles from './projects-page.module.scss';
+import styles from './home-page.module.scss';
 import { ProjectsGallery } from '../../components/projects-gallery/projects-gallery';
 import * as theme from '../../styles/theme.module.scss';
 
-export interface ItemsProps {
+export interface HomePageProps {
   className?: string;
 }
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-export const ProjectsPage = ({ className }: ItemsProps) => {
+export const HomePage = ({ className }: HomePageProps) => {
   return (
     <div className={`${styles.root} ${className}`}>
       <h3 className={`${styles.rectangle} ${styles.text}`}>some static description of my portfolio</h3>

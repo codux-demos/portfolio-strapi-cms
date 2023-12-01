@@ -1,10 +1,10 @@
 import { createBoard } from '@wixc3/react-board';
 import { PageWrapper } from '../../board-wrappers/page-wrapper';
-import { ProjectsPage } from '../../../views/projects-page/projects-page';
+import { HomePage } from '../../../pages/home-page/home-page';
 import { ROUTES } from '../../../router/config';
 
 export default createBoard({
-  name: 'Projects Page',
+  name: 'Home Page',
   Board: () => (
     <PageWrapper
       path={ROUTES.projects.to()}
@@ -12,7 +12,7 @@ export default createBoard({
         numberOfItems: 4,
       }}
     >
-      <ProjectsPage />
+      <HomePage />
     </PageWrapper>
   ),
   isSnippet: false,

@@ -30,5 +30,11 @@
       "VITE_API": "http://localhost:5000/api/",
       "VITE_MEDIA": "http://localhost:5000"
     }
+  },
+  "formatting": {
+    "formattingFile": {
+      "type": "editorconfig",
+      "filePath": "/.editorconfig"
+    }
   }
 }

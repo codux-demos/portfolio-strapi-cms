@@ -13,7 +13,7 @@ export default createBoard({
       <ProjectsGallery />
     </ComponentWrapper>
   ),
-  isSnippet: true,
+  isSnippet: false,
   environmentProps: {
     canvasWidth: 800,
     windowHeight: 470,

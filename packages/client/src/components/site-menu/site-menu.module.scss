@@ -4,14 +4,15 @@
 
 .topMenu {
     display: flex;
-    gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .content {
-    background: $background;
-    padding: 0.5rem;
+    background-color: $background;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    
 }
 
 .Link {
@@ -21,10 +22,16 @@
     &:hover {
         font-weight: 600;
     }
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+
 }
 
 .sub {
     & .Link {
-        padding: 0.2rem;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
     }
 }

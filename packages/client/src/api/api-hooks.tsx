@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { APIContext } from './items-api';
+import { APIContext } from './data-api';
 import useSWR, { useSWRConfig } from 'swr';
 import { StrapiProject } from './types';
 

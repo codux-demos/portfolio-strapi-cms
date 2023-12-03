@@ -15,6 +15,7 @@
         justify-content: space-between;
         padding: 0rem 1rem;
         font: $text-font;
+        border-bottom: solid $black 1px;
 
         &:nth-child(3n){
             background-color: pink;

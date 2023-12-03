@@ -320,6 +320,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'Project';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -335,6 +336,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
         maxLength: 300;
       }>;
     coverImage: Attribute.Media & Attribute.Required;
+    details: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -6,11 +6,9 @@ export default createBoard({
   name: 'ProjectItem',
   Board: () => (
     <ProjectItem
-      projectItemAttr={{
-        title: 'Project Item',
-        image: createImage({ width: 300 }),
-        description: 'this is a very long description... aldskfj alskd jflsak jflksd jflaks jflksad jflksad jflsak jfl',
-      }}
+      title="Project Item"
+      image={createImage({ width: 300 })}
+      description="this is a very long description... aldskfj alskd jflsak jflksd jflaks jflksad jflksad jflsak jfl"
     />
   ),
   isSnippet: true,

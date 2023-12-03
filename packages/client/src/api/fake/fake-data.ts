@@ -68,13 +68,18 @@ function createAbout(): StrapiAbout {
       subTitle: faker.person.bio(),
       image: createImage(),
       richtext: getMarkdown(),
+      email: faker.internet.email(),
+      phone: faker.phone.number(),
+      facebook: faker.internet.url(),
+      pinterest: faker.internet.url(),
+      instagram: faker.internet.url(),
       ...getDates(),
     },
   };
 }
 
-function getMarkdown() {
-  const string = faker.lorem.paragraphs(3).replace(/\n/gi, '\n\n');
+function getMarkdown(numOfParagraphs?: number) {
+  const string = faker.lorem.paragraphs(numOfParagraphs || 3).replace(/\n/gi, '\n\n');
   const words = string.split(' ');
   words[3] = `**${words[3]}**`;
   words[7] = `<u>${words[7]}</u>`;
@@ -91,6 +96,7 @@ function createProject(id: number): StrapiProject {
       title: faker.lorem.words({ min: 1, max: 3 }),
       description: faker.lorem.sentences({ min: 2, max: 3 }),
       coverImage: createImage(),
+      details: getMarkdown(2),
       ...getDates(),
     },
   };

@@ -14,7 +14,7 @@ export const Footer = ({ className }: FooterProps) => {
   const { data } = apiHooks.useAbout();
   return (
     <div id="footer" className={cx(styles.root, className)}>
-      <a href="mailto:info@mySite.com">info@mySite.com</a>
+      <a href={`mailto:${data?.data.attributes.email}`}>{data?.data.attributes.email}</a>
       <a href={data?.data.attributes.instagram || '/'} target="_blank" rel="noreferrer">
         Instagram
       </a>
@@ -24,7 +24,7 @@ export const Footer = ({ className }: FooterProps) => {
       <a href={data?.data.attributes.pinterest || '/'} target="_blank" rel="noreferrer">
         Pinterest
       </a>
-      <span>123-456-7890</span>
+      <span>{data?.data.attributes.phone}</span>
       <span className={styles.copyright}>© 2020 Career Karma and some more</span>
     </div>
   );

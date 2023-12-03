@@ -304,6 +304,8 @@ export interface ApiAboutAbout extends Schema.SingleType {
     facebook: Attribute.String;
     instagram: Attribute.String;
     pinterest: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -21,8 +21,11 @@ export const ProjectPage = ({ className }: ProjectPage) => {
   const { data: projectItems } = apiHooks.useProjectItems(id);
 
   const [firstItem, ...restItems] = projectItems?.data || [];
-  if (!firstItem) {
+  if (!projectItems) {
     return <div>Loading...</div>;
+  }
+  if (!firstItem) {
+    return <div>there are no items in this project</div>;
   }
   return (
     <div className={cx(styles.root, className)}>

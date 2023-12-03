@@ -1,0 +1,23 @@
+@import '@portfolio/client/src/styles/theme.module.scss';
+
+.root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    & .content{
+        position: relative;
+        flex-grow: 1;
+    }
+
+    &.full {
+        height: 100vh;
+    }
+
+    &.belowHeader {
+        .content {
+            top: $header-height;
+        }
+    }
+}

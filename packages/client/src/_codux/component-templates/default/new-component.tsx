@@ -1,4 +1,5 @@
 import styles from './new-component.module.scss';
+import '@portfolio/client/src/styles/util-classes.scss';
 
 export interface NewComponentProps {
   className?: string;

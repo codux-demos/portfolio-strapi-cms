@@ -1,10 +1,10 @@
 import { createBoard } from '@wixc3/react-board';
-import { RealDataRealRoutes } from '../../board-wrappers/real-data-real-routes';
+import { RealDataWrapper } from '../../board-wrappers/real-data-wrapper';
 
 export default createBoard({
-  name: 'App',
-  Board: () => <RealDataRealRoutes />,
+  name: 'App With Strapi Data',
+  Board: () => <RealDataWrapper />,
   environmentProps: {
-    canvasWidth: 1024,
+    windowWidth: 1024,
   },
 });

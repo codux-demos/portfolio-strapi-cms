@@ -4,12 +4,12 @@
 
 after git clone  
 in the root run:  
-`npm i`  
+`yarn`  
 `node create-env.cjs` or provide a port, for example `node create-env.cjs 8080` to run strapi on port 8080. It runs on 5000 by default.
-`npm run start:server:dev`
+`yarn start:server:dev`
 
 in a different terminal run  
-`npm run start:client:dev`
+`yarn start:client:dev`
 
 and you're good to go  
 in the browser go to `http://localhost:5000/admin` and create an admin user so you can edit use your local CMS
@@ -24,12 +24,13 @@ in Project, ProjectItem, and About check find and findOne.
 - [vite](https://vitejs.dev/): a front end development environment to build our client app
 - [npm](https://docs.npmjs.com/cli/v10/using-npm/workspaces): to create a monorepo and manage dependencies
 - [eslint](https://eslint.org/): to avoid mistakes by static analysis of the code
+- [scss](https://sass-lang.com/guide/) [modules](https://github.com/css-modules/css-modules): to write scoped css with more ease
+- [classnames](https://github.com/JedWatson/classnames): to easily assign multiple classes to elements
 - [vitest](https://vitest.dev/guide/): to write and run unit tests
 - [faker](https://fakerjs.dev/): to generate mock content. both for codux boards and unit tests
 - [SWR](https://swr.vercel.app/docs/getting-started): to cache content in the client app, to fetch new content every once in a while (polling).  
   And to have a simple api between the content cache and react components.
 - [react router](https://reactrouter.com/en/main): to create multiple routes (pages) and navigate between them
-- [scss](https://sass-lang.com/guide/) [modules](https://github.com/css-modules/css-modules): to write scoped css with more ease
 - [radix-ui navigation menu](https://www.radix-ui.com/primitives/docs/components/navigation-menu): to create an accessible site navigation menu. this component comes unstyled
 - [floatin-ui](https://floating-ui.com/docs/react): to position floating elements, like sub-menus, tooltips, popovers, etc.
 - [framer motion](https://www.framer.com/motion/animation/): to create animations 

@@ -2,17 +2,35 @@
 
 ## first run
 
+the client is initially configured to run with the wix strapi remote (deployed) server.
+
 after git clone  
 in the root run:  
-`yarn`  
-`node create-env.cjs` or provide a port, for example `node create-env.cjs 8080` to run strapi on port 8080. It runs on 5000 by default.
-`yarn start:server:dev`
+`yarn`
 
-in a different terminal run  
 `yarn start:client:dev`
 
-and you're good to go  
-in the browser go to `http://localhost:5000/admin` and create an admin user so you can edit use your local CMS
+and you can see the website.
+
+or open codux
+
+## run with local strapi server
+
+run `node create-env.cjs` or provide a port, for example `node create-env.cjs 8080` to run strapi on port 8080. It runs on 5000 by default.
+
+this script will create:
+
+- `.env` file in the strapi package
+- `.env.local` file in the client package (`.env` is pointing to the wix remote server, when you deploy your strapi server change to the appropriate domain )
+- generate a rendom project id in the `strapi/package.json`
+
+`yarn start:server:dev` to start the local strapi server
+go the the strapi admin and follow strapi instructions
+
+in a different terminal run  
+`yarn start:client:dev` to start the client web app
+
+if you want to point the App codux board to work with local strapi server you need to change the env variables in [`codux.config.json`](codux.config.json) to be the same as in your `.env.local` file.
 
 currently, we do not add the local DB to the repo so for the client app to be able to read the data you need to set read permissions to public.  
 in the Admin go to settting -> USERS & PERMISSIONS PLUGIN.Roles -> Public ->  
@@ -33,7 +51,7 @@ in Project, ProjectItem, and About check find and findOne.
 - [react router](https://reactrouter.com/en/main): to create multiple routes (pages) and navigate between them
 - [radix-ui navigation menu](https://www.radix-ui.com/primitives/docs/components/navigation-menu): to create an accessible site navigation menu. this component comes unstyled
 - [floatin-ui](https://floating-ui.com/docs/react): to position floating elements, like sub-menus, tooltips, popovers, etc.
-- [framer motion](https://www.framer.com/motion/animation/): to create animations 
+- [framer motion](https://www.framer.com/motion/animation/): to create animations
 
 ## concepts
 
@@ -67,26 +85,31 @@ The main problem with this approach is that it is our responsibility to maintain
 Hopefully, one day Strapi will add this feature
 
 ## boards
+
 most of our components need a context to run in.  
 one context for the router and another for the data.  
 for that reason, we have to wrap our components in the boards with context providers
 
 #### router
+
 because in codux our app runs inside an iframe we have to use a [`memory router`](https://reactrouter.com/en/main/routers/create-memory-router) instead of a [`browser router`](https://reactrouter.com/en/main/routers/create-browser-router) in the real `App`  
 but we can and should use the real [routes](packages/client/src/router/routes.tsx) for page boards.
 for simple component boards we still should provide a router context, otherwise, if there is a `Link` in the component it will throw an error. but we don't use real routes, we add a fake route
 pointing to the component we want to render in the board.
 
- #### data
+#### data
+
 we have two options here:
+
 1. to use the same API provider as the `App` that fetches the data from strapi (local server or remote depending on the env variables in the [codux config](codux.config.json) )
 2. to use a fake API provider that generates fake data without actually fetching anything.
 
 ### board Wrapper components
+
 so we have 3 types of board wrapper components:
+
 1. [`ComponentWrapper`](packages/client/src/_codux/board-wrappers/component-wrapper.tsx) used for simple components. with fake data and fake routes (links won't throw but won't work either)
 2. [`PageWrapper`](packages/client/src/_codux/board-wrappers/page-wrapper.tsx) used for page components. with fake data and real routes (links will work)
 3. [`RealDataWrapper`](packages/client/src/_codux/board-wrappers/real-data-wrapper.tsx) used for the App board. with real data and real routes (works only if you have the local strapi server running or the env variables in the codux config point to a remote server).
 
 you can, of course, change/add wrappers as it is convenient for you.
-

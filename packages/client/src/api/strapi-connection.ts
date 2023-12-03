@@ -34,6 +34,9 @@ export function getImageUrl(image: StrapiImage | undefined) {
     return undefined;
   }
   const provider = image.data.attributes.provider;
+  if (provider === 'strapi-provider-upload-strapi-cloud') {
+    return image.data.attributes.url;
+  }
   if (provider === 'local') {
     return `${import.meta.env.VITE_MEDIA || process.env.VITE_MEDIA}${image?.data.attributes.url}`;
   }

@@ -6,5 +6,7 @@ export default createBoard({
   Board: () => <RealDataWrapper />,
   environmentProps: {
     windowWidth: 1024,
+    windowHeight: 768,
+    canvasWidth: 1024,
   },
 });

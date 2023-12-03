@@ -3,9 +3,11 @@ import styles from './site-menu.module.scss';
 import * as RadixMenu from '@radix-ui/react-navigation-menu';
 import { ROUTES } from '../../router/config';
 import { apiHooks } from '../../api';
-import { autoPlacement, offset, useFloating } from '@floating-ui/react-dom';
+import { offset, useFloating } from '@floating-ui/react-dom';
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
+import { shift } from '@floating-ui/core';
+import cx from 'classnames';
 
 export interface SiteMenuProps {
   className?: string;
@@ -48,8 +50,8 @@ function MenuItem(props: { text: string; to: string }) {
   return (
     <RadixMenu.Item>
       <RadixMenu.Link active={isActive} asChild>
-        <Link to={props.to} className={`${styles.Link} ${isActive ? styles.active : ''}`}>
-          {props.text}
+        <Link to={props.to} className={cx(styles.Link, {[styles.active]: isActive})}>
+          <span>{props.text}</span>
         </Link>
       </RadixMenu.Link>
     </RadixMenu.Item>
@@ -71,13 +73,9 @@ function MenuItem(props: { text: string; to: string }) {
  */
 function FloatingContentWithTrigger(props: { children: ReactNode; text: string }) {
   const { refs, floatingStyles } = useFloating({
-    placement: 'bottom',
-    middleware: [
-      offset(10),
-      autoPlacement({
-        allowedPlacements: ['bottom', 'bottom-end', 'bottom-start'],
-      }),
-    ],
+    placement: 'bottom-start',
+    middleware: [offset(10), shift()],
+    open: true,
   });
 
   return (

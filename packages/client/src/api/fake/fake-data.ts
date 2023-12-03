@@ -78,7 +78,10 @@ function getMarkdown() {
   const words = string.split(' ');
   words[3] = `**${words[3]}**`;
   words[7] = `<u>${words[7]}</u>`;
-  return words.join(' ');
+  const text = words.join(' ');
+  const lines = text.split('\n\n');
+  lines[2] = `* ${lines[2]}`;
+  return lines.join('\n\n');
 }
 
 function createProject(id: number): StrapiProject {
@@ -94,7 +97,7 @@ function createProject(id: number): StrapiProject {
 }
 
 function createProjectItem(id: number, projectId: number): ProjectItemWithProjectId {
-  const width = faker.number.int({ min: 200, max: 600 });
+  const width = faker.number.int({ min: 200, max: 500 });
   const height = faker.number.int({ min: 200, max: 400 });
   return {
     id,

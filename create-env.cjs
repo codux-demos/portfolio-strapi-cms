@@ -36,4 +36,4 @@ fs.writeFileSync(
 const clientEnvValues = modifyEnvFile(path.join(__dirname, 'packages', 'client', '.env.example'), [
   ['[PORT]', argv[2] || 5000],
 ]);
-fs.writeFileSync(path.join(__dirname, 'packages', 'client', '.env'), clientEnvValues);
+fs.writeFileSync(path.join(__dirname, 'packages', 'client', '.env.local'), clientEnvValues);

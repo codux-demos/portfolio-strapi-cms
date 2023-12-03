@@ -2,7 +2,7 @@
 
 .root {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .gallery {
@@ -10,6 +10,7 @@
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: row;
     width: min-content;
+    align-self: center;
 }
 
 .galleryItem {
@@ -31,4 +32,10 @@
 
 .title {
     font: $small-heading-font;
+}
+
+.backToTop {
+    float: right;
+    margin: 4rem;
+    font: $text-font;
 }

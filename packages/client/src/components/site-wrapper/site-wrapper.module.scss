@@ -17,7 +17,7 @@
 
     &.belowHeader {
         .content {
-            top: $header-height;
+            margin-top: $header-height;
         }
     }
 }

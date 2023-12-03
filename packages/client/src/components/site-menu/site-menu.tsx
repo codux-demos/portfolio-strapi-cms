@@ -7,6 +7,7 @@ import { offset, useFloating } from '@floating-ui/react-dom';
 import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { shift } from '@floating-ui/core';
+import cx from 'classnames';
 
 export interface SiteMenuProps {
   className?: string;
@@ -49,7 +50,7 @@ function MenuItem(props: { text: string; to: string }) {
   return (
     <RadixMenu.Item>
       <RadixMenu.Link active={isActive} asChild>
-        <Link to={props.to} className={`${styles.Link} ${isActive ? styles.active : ''}`}>
+        <Link to={props.to} className={cx(styles.Link, {[styles.active]: isActive})}>
           <span>{props.text}</span>
         </Link>
       </RadixMenu.Link>

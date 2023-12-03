@@ -12,6 +12,7 @@ export interface FooterProps {
  */
 export const Footer = ({ className }: FooterProps) => {
   const { data } = apiHooks.useAbout();
+
   return (
     <div id="footer" className={cx(styles.root, className)}>
       <a href={`mailto:${data?.data.attributes.email}`}>{data?.data.attributes.email}</a>

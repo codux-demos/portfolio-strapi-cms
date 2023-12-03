@@ -3,7 +3,9 @@ import styles from './project-page.module.scss';
 import { RouteParams } from '../../router/config';
 import { apiHooks } from '../../api';
 import { ProjectItem } from '../../components/project-item/project-item';
-import cx from 'classnames'
+import cx from 'classnames';
+import Markdown from 'markdown-to-jsx';
+import '@portfolio/client/src/styles/util-classes.scss';
 
 export interface ProjectPage {
   className?: string;
@@ -28,10 +30,14 @@ export const ProjectPage = ({ className }: ProjectPage) => {
     return <div>there are no items in this project</div>;
   }
   return (
-    <div className={cx(styles.root, className)}>
+    <div id="top" className={cx(styles.root, className)}>
       <div className={styles.gallery}>
         <div key="first" className={styles.galleryItem}>
-          <ProjectItem projectItemAttr={firstItem?.attributes} />
+          <ProjectItem
+            title={firstItem.attributes.title}
+            description={firstItem.attributes.description}
+            image={firstItem.attributes.image}
+          />
         </div>
         <div key="desc" className={styles.galleryItem} style={{ maxWidth: '100%' }}>
           <h3 className={styles.title}>{data?.attributes.title}</h3>
@@ -39,9 +45,19 @@ export const ProjectPage = ({ className }: ProjectPage) => {
         </div>
         {restItems.map((item) => (
           <div key={item.id} className={styles.galleryItem}>
-            <ProjectItem projectItemAttr={item.attributes} />
+            <ProjectItem
+              title={item.attributes.title}
+              description={item.attributes.description}
+              image={item.attributes.image}
+            />
           </div>
         ))}
+      </div>
+      <Markdown className={cx('markdown', styles.details)}>{data?.attributes.details || ''}</Markdown>
+      <div>
+        <a href="#top" className={styles.backToTop}>
+          Back to top
+        </a>
       </div>
     </div>
   );

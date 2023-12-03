@@ -1,4 +1,4 @@
-import { StrapiProjectItem } from '../../api';
+import { StrapiImage } from '../../api';
 import { getImageUrl } from '../../api/strapi-connection';
 import styles from './project-item.module.scss';
 import { motion } from 'framer-motion';
@@ -6,14 +6,16 @@ import cx from 'classnames';
 
 export interface ProjectItemProps {
   className?: string;
-  projectItemAttr: StrapiProjectItem['attributes'];
+  title: string;
+  description?: string;
+  image?: StrapiImage;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-export const ProjectItem = ({ className, projectItemAttr }: ProjectItemProps) => {
+export const ProjectItem = ({ className, title, description, image }: ProjectItemProps) => {
   return (
     <motion.div
       className={cx(styles.root, className)}
@@ -21,13 +23,9 @@ export const ProjectItem = ({ className, projectItemAttr }: ProjectItemProps) =>
       whileInView={{ opacity: 1, marginTop: 0, transition: { duration: 1 } }}
       viewport={{ once: true, margin: '20px' }}
     >
-      <img
-        src={getImageUrl(projectItemAttr.image)}
-        alt=""
-        style={{ minWidth: projectItemAttr.image.data.attributes.width }}
-      />
-      <h3 className={styles.itemTitle}>{projectItemAttr.title}</h3>
-      <p className={styles.itemDesc}>{projectItemAttr.description}</p>
+      <img src={getImageUrl(image)} alt="" style={{ minWidth: image?.data.attributes.width }} />
+      <h3 className={styles.itemTitle}>{title}</h3>
+      <p className={styles.itemDesc}>{description}</p>
     </motion.div>
   );
 };

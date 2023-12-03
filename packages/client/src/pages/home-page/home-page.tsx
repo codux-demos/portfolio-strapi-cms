@@ -17,7 +17,6 @@ export const HomePage = ({ className }: HomePageProps) => {
       transition: {
         x: {
           repeat: Infinity,
-          repeatType: 'loop',
           duration: 8,
           ease: 'linear',
         },
@@ -34,7 +33,7 @@ export const HomePage = ({ className }: HomePageProps) => {
       </div>
       <div className={styles.marquee}>
         <motion.div className={styles.marqueeContent} variants={marqueeVariants} animate="animate">
-          {Array(10).fill('Animated backwards moving text block coming. ')}
+          {Array(2).fill('Describing the business and the portfolio in a short description. ')}
         </motion.div>
       </div>
       <ProjectsGallery className={styles.gallery} headerHeight={theme.headerHeight} />

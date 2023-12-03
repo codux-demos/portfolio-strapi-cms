@@ -2,6 +2,7 @@ import styles from './header.module.scss';
 import { SiteMenu } from '../site-menu/site-menu';
 import { useScroll, motion, useMotionTemplate, useMotionValue, useTransform } from 'framer-motion';
 import * as theme from '../../styles/theme.module.scss';
+import cx from 'classnames';
 
 export interface HeaderProps {
   className?: string;
@@ -23,7 +24,7 @@ export const Header = ({ className }: HeaderProps) => {
   const bg = useMotionTemplate`rgba(255, 255, 255, ${opacity})`;
 
   return (
-    <motion.div className={`${styles.root} ${className}`} style={{ background: bg }}>
+    <motion.div className={cx(styles.root, className)} style={{ background: bg }}>
       <div className={styles.leftContainer}>
         <span className={styles.logo}>NAME PORT</span>
         <SiteMenu />

@@ -2,6 +2,7 @@ import { StrapiProjectItem } from '../../api';
 import { getImageUrl } from '../../api/strapi-connection';
 import styles from './project-item.module.scss';
 import { motion } from 'framer-motion';
+import cx from 'classnames';
 
 export interface ProjectItemProps {
   className?: string;
@@ -15,7 +16,7 @@ export interface ProjectItemProps {
 export const ProjectItem = ({ className, projectItemAttr }: ProjectItemProps) => {
   return (
     <motion.div
-      className={`${styles.root} ${className}`}
+      className={cx(styles.root, className)}
       initial={{ opacity: 0.2, marginTop: 100 }}
       whileInView={{ opacity: 1, marginTop: 0, transition: { duration: 1 } }}
       viewport={{ once: true, margin: '20px' }}

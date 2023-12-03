@@ -3,6 +3,7 @@ import { getImageUrl } from '../../api/strapi-connection';
 import styles from './about-page.module.scss';
 import '@portfolio/client/src/styles/util-classes.scss';
 import Markdown from 'markdown-to-jsx';
+import cx from 'classnames';
 
 /**
  * This component was created using Codux's Default new component template.
@@ -15,7 +16,7 @@ export const AboutPage = () => {
 
     return (
         <>
-            <div className={`${styles.rectangle} ${styles.text}`}>
+            <div className={cx(styles.rectangle, styles.text)}>
                 <h3 className={styles.title}>{aboutItem.data.attributes.title}</h3>
                 <h5 className={styles.sub}>{aboutItem.data.attributes.subTitle}</h5>
                 <div className="markdown">

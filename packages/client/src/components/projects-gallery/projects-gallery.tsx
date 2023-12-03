@@ -4,6 +4,7 @@ import { getImageUrl } from '../../api/strapi-connection';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
+import cx from 'classnames';
 export interface ProjectsGalleryProps {
     className?: string;
     headerHeight?: string;
@@ -34,7 +35,7 @@ export const ProjectsGallery = ({ className, headerHeight }: ProjectsGalleryProp
      */
     const boxHeight = `min(calc((100vh - ${_headerHeight}) / ${projects?.data.length}), 4rem)`;
     return (
-        <div className={`${styles.root} ${className}`} ref={rootRef}>
+        <div className={cx(styles.root, className)} ref={rootRef}>
             {projects?.data.map((project, index) => [
                 <Link
                     to={ROUTES.project.to(project.id)}

@@ -3,6 +3,7 @@ import styles from './project-page.module.scss';
 import { RouteParams } from '../../router/config';
 import { apiHooks } from '../../api';
 import { ProjectItem } from '../../components/project-item/project-item';
+import cx from 'classnames'
 
 export interface ProjectPage {
   className?: string;
@@ -24,7 +25,7 @@ export const ProjectPage = ({ className }: ProjectPage) => {
     return <div>Loading...</div>;
   }
   return (
-    <div className={`${styles.root} ${className}`}>
+    <div className={cx(styles.root, className)}>
       <div className={styles.gallery}>
         <div key="first" className={styles.galleryItem}>
           <ProjectItem projectItemAttr={firstItem?.attributes} />

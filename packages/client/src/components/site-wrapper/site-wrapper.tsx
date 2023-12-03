@@ -5,6 +5,7 @@ import SiteWrapper_module from './site-wrapper.module.scss';
 import { ScrollRestoration, useLocation, matchRoutes } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
 import { routes } from '../../router/routes';
+import cx from 'classnames';
 
 const layouts = {
   [ROUTES.about.path]: SiteWrapper_module.full,
@@ -21,7 +22,7 @@ export function SiteWrapper() {
   const layoutClass = path ? layouts[path] : '';
 
   return (
-    <div className={`${SiteWrapper_module.root} ${layoutClass}`}>
+    <div className={cx(SiteWrapper_module.root, layoutClass)}>
       <ScrollRestoration />
       <div className={SiteWrapper_module.content}>
         <Outlet />

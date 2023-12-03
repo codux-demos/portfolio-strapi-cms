@@ -1,4 +1,5 @@
 import styles from './footer.module.scss';
+import cx from 'classnames';
 
 export interface FooterProps {
   className?: string;
@@ -10,7 +11,7 @@ export interface FooterProps {
  */
 export const Footer = ({ className }: FooterProps) => {
   return (
-    <div id="footer" className={`${styles.root} ${className}`}>
+    <div id="footer" className={cx(styles.root, className)}>
       <a href="mailto:info@mySite.com">info@mySite.com</a>
       <a href="/">Instagram</a>
       <a href="/">Facebook</a>

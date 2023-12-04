@@ -100,6 +100,7 @@ function createProject(id: number): StrapiProject {
       description: faker.lorem.sentences({ min: 2, max: 3 }),
       coverImage: createImage(),
       details: getMarkdown(2),
+      orderIndex: id,
       ...getDates(),
     },
   };
@@ -115,6 +116,7 @@ function createProjectItem(id: number, projectId: number): ProjectItemWithProjec
       description: faker.lorem.paragraphs({ min: 0, max: 2 }),
       image: createImage({ width, height }),
       project: projectId.toString(),
+      orderIndex: id
     },
   };
 }

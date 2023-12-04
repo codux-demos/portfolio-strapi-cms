@@ -28,7 +28,7 @@
 }
 
 .gallery {
-    flex: auto
+    flex: auto;
 }
 
 .img {
@@ -47,4 +47,17 @@
 .logoWrapper {
     width: 100%;
     position: relative;
+}
+
+.marquee {
+    width: 100vw;
+    overflow-x: hidden;
+    border-top: 2px solid $black;
+    border-bottom: 2px solid $black;
+}
+
+.marqueeContent {
+    white-space: nowrap;
+    font: $heading-font;
+    font-weight: 500;
 }

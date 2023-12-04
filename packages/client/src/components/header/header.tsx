@@ -30,7 +30,7 @@ export const Header = ({ className }: HeaderProps) => {
         <SiteMenu />
       </div>
       <a href="#footer" className={styles.contactLink}>
-        Contant
+        Contact
       </a>
     </motion.div>
   );

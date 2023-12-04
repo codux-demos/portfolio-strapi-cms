@@ -84,6 +84,9 @@ function getMarkdown(numOfParagraphs?: number) {
   words[3] = `**${words[3]}**`;
   words[7] = `<u>${words[7]}</u>`;
   const text = words.join(' ');
+  if (numOfParagraphs && numOfParagraphs < 3) {
+    return text;
+  }
   const lines = text.split('\n\n');
   lines[2] = `* ${lines[2]}`;
   return lines.join('\n\n');

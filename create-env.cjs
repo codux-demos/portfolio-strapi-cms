@@ -5,7 +5,7 @@ const os = require('os');
 const path = require('path');
 
 const strapiEnvPath = path.join(__dirname, 'packages', 'strapi', '.env');
-const clientEnvPath = path.join(__dirname, 'packages', 'client', '.env.local');
+const clientEnvPath = path.join(__dirname, 'packages', 'client', '.env.development.local');
 
 if (fs.existsSync(strapiEnvPath) && fs.existsSync(clientEnvPath)) {
   console.error('The .env files already exist. Please delete them and run the script again.');

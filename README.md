@@ -21,7 +21,7 @@ run `node create-env.cjs` or provide a port, for example `node create-env.cjs 80
 this script will create:
 
 - `.env` file in the strapi package
-- `.env.local` file in the client package (`.env` is pointing to the wix remote server, when you deploy your strapi server change to the appropriate domain )
+- `.env.development.local` file in the client package (`.env` is pointing to the wix remote server, when you deploy your strapi server change to the appropriate domain )
 - generate a rendom project id in the `strapi/package.json`
 
 `yarn start:server:dev` to start the local strapi server
@@ -31,15 +31,18 @@ in a different terminal run
 `yarn start:client:dev` to start the client web app
 
 ### codux boards with local strapi
+
 if you want to point the App codux board to work with local strapi server you need to change the env variables in [`codux.config.json`](codux.config.json) to be the same as in your `.env.local` file.
 
-### seed local DB with data 
+### seed local DB with data
 
 if you want you can copy our content to your local strapi DB.
-all you need to do is run 
+all you need to do is run
+
 ```
 yarn workspace @portfolio/strapi run strapi transfer --from https://determined-vitality-9514a6552e.strapiapp.com/admin --from-token b87a8467b27822083506c041a3cd24c32107cea7999bd6a00c6c672268e4b7dd53fc7920d3ffeed9d30d029103230f297890d3ff5948fe13a9fdc9711e12094388f4ae901a4634f2f175c191a6cf7be7c664570afc33345f51dc0765b3e0b517860ab5efdda8737a86fa119c080ae7ed16ef73f8b432474349b90672abe8e0d7 --only content,files
 ```
+
 in the root of the project.  
 there are a few things to pay attention to
 
@@ -49,15 +52,19 @@ there are a few things to pay attention to
 - you will probably see a warning: `warn: (Schema Integrity) Review workflows feature does not exist on destination` It's ok. there are no review workflows
 
 ## scrips
-- `yarn verify` -  will run lint and typescript on the project
+
+- `yarn verify` - will run lint and typescript on the project
 - `yarn build` - will build both strapi and client
 - `yarn test` - will run the tests in the client project (there are no tests in strapi)
 - `yarn start:client:dev` - will run the client in dev mode
 - `start:server:dev` - will run strapi in dev mode
 
+\*\* you can run `yarn start:client:dev --mode production` for the app to use the values in the `.env` file instead of the `.env.development.local` file.  
+see [vite docs](https://vitejs.dev/guide/env-and-mode#env-files)
+
 this is a monorepo using yarn workspaces.
 you can run a script in the strapi package with `yarn workspace @portfolio/strapi ...`
-or run a script in the client package with `yarn workspace @portfolio/client ...` 
+or run a script in the client package with `yarn workspace @portfolio/client ...`
 
 please read the [docs](https://classic.yarnpkg.com/en/docs/workspaces) on yarn workspaces
 

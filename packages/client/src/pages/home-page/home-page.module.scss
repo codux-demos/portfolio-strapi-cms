@@ -1,34 +1,34 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .rectangle {
-  width: 50%;
-  height: 70vh;
+    width: 50%;
+    height: 70vh;
 
-  & img {
-    height: 100%;
-  }
+    & img {
+        height: 100%;
+    }
 
-  &.text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    font: $heading-font;
-    text-align: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+    &.text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+        font: $heading-font;
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 .gallery {
-  flex: auto;
+    flex: auto;
 }
 
 .img {
@@ -36,28 +36,28 @@
 }
 
 .logo {
-  font: $logo-font;
-  position: absolute;
-  bottom: 1rem;
-  width: 100%;
-  text-align: center;
-  font-size: 3rem;
+    font: $logo-font;
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
 }
 
 .logoWrapper {
-  width: 100%;
-  position: relative;
+    width: 100%;
+    position: relative;
 }
 
 .marquee {
-  width: 100vw;
-  overflow-x: hidden;
-  border-top: 4px solid black;
-  border-bottom: 4px solid black;
+    width: 100vw;
+    overflow-x: hidden;
+    border-top: 2px solid $black;
+    border-bottom: 2px solid $black;
 }
 
 .marqueeContent {
-  white-space: nowrap;
-  font-size: 60px;
-  font-family: Helvetica, sans-serif;
+    white-space: nowrap;
+    font: $heading-font;
+    font-weight: 500;
 }

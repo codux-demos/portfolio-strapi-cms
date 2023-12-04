@@ -11,11 +11,13 @@ export function createApi(connection: Connection) {
     getProjects: () =>
       connection.sendGetRequest<APIResponseCollection<'api::project.project'>>(['projects'], {
         populate: 'coverImage',
+        sort: 'orderIndex'
       }),
     getProjectItemsByProject: (projectId: number) =>
       connection.sendGetRequest<APIResponseCollection<'api::project-item.project-item'>>(['project-items'], {
         'filters[project]': projectId.toString(),
         populate: 'image',
+        sort: 'orderIndex'
       }),
     getAbout: () =>
       connection.sendGetRequest<APIResponse<'api::about.about'>>(['about'], {

@@ -18,7 +18,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-12-03T13:59:32.785Z"
+    "x-generation-date": "2023-12-04T14:05:01.338Z"
   },
   "servers": [
     {
@@ -905,7 +905,8 @@
           "data": {
             "required": [
               "title",
-              "coverImage"
+              "coverImage",
+              "orderIndex"
             ],
             "type": "object",
             "properties": {
@@ -928,6 +929,10 @@
               },
               "details": {
                 "type": "string"
+              },
+              "orderIndex": {
+                "type": "number",
+                "format": "float"
               }
             }
           }
@@ -983,7 +988,8 @@
         "type": "object",
         "required": [
           "title",
-          "coverImage"
+          "coverImage",
+          "orderIndex"
         ],
         "properties": {
           "title": {
@@ -1617,6 +1623,10 @@
           "details": {
             "type": "string"
           },
+          "orderIndex": {
+            "type": "number",
+            "format": "float"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -1696,7 +1706,8 @@
           "data": {
             "required": [
               "title",
-              "image"
+              "image",
+              "orderIndex"
             ],
             "type": "object",
             "properties": {
@@ -1727,6 +1738,10 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "orderIndex": {
+                "type": "number",
+                "format": "float"
               }
             }
           }
@@ -1782,7 +1797,8 @@
         "type": "object",
         "required": [
           "title",
-          "image"
+          "image",
+          "orderIndex"
         ],
         "properties": {
           "title": {
@@ -2573,6 +2589,10 @@
                       "details": {
                         "type": "string"
                       },
+                      "orderIndex": {
+                        "type": "number",
+                        "format": "float"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -2624,6 +2644,10 @@
                 }
               }
             }
+          },
+          "orderIndex": {
+            "type": "number",
+            "format": "float"
           },
           "createdAt": {
             "type": "string",

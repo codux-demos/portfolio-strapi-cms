@@ -337,6 +337,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
       }>;
     coverImage: Attribute.Media & Attribute.Required;
     details: Attribute.RichText;
+    orderIndex: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -351,6 +352,7 @@ export interface ApiProjectItemProjectItem extends Schema.CollectionType {
     singularName: 'project-item';
     pluralName: 'project-items';
     displayName: 'ProjectItem';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -364,6 +366,7 @@ export interface ApiProjectItemProjectItem extends Schema.CollectionType {
     description: Attribute.Text;
     image: Attribute.Media & Attribute.Required;
     project: Attribute.Relation<'api::project-item.project-item', 'oneToOne', 'api::project.project'>;
+    orderIndex: Attribute.Decimal & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

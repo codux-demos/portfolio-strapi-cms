@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project-item",
     "pluralName": "project-items",
-    "displayName": "ProjectItem"
+    "displayName": "ProjectItem",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,17 +21,22 @@
       "type": "text"
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "project": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::project.project"
+    },
+    "orderIndex": {
+      "type": "decimal",
+      "default": 0,
+      "required": true
     }
   }
 }

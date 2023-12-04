@@ -1,4 +1,5 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
+
 .root {
     width: fit-content;
     display: inline-block;
@@ -16,4 +17,8 @@
     width: 0;
     min-width: 100%;
     text-align: center;
+}
+
+.img {
+    max-width: 40vw;
 }

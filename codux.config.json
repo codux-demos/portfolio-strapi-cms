@@ -9,7 +9,7 @@
     "componentsPath": "packages/client/src/components",
     "templatesPath": "packages/client/src/_codux/component-templates"
   },
-  "boardsPath": "src/_codux/boards/components",
+  "boardsPath": "packages/client/src/_codux/boards/components",
   "safeRender": {
     "maxInstancesPerComponent": 1000
   },

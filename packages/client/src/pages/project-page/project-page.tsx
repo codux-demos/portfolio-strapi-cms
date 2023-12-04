@@ -53,7 +53,9 @@ export const ProjectPage = ({ className }: ProjectPage) => {
           </div>
         ))}
       </div>
-      <Markdown className={cx('markdown', styles.details)}>{data?.attributes.details || ''}</Markdown>
+      <div className={cx('markdown', styles.details)}>
+        <Markdown>{data?.attributes.details || ''}</Markdown>
+      </div>
       <div>
         <a href="#top" className={styles.backToTop}>
           Back to top

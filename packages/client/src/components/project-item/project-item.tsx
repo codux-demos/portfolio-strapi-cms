@@ -23,7 +23,7 @@ export const ProjectItem = ({ className, title, description, image }: ProjectIte
       whileInView={{ opacity: 1, marginTop: 0, transition: { duration: 1 } }}
       viewport={{ once: true, margin: '20px' }}
     >
-      <img src={getImageUrl(image)} alt="" style={{ minWidth: image?.data.attributes.width }} />
+      <img src={getImageUrl(image)} alt="" style={{ width: image?.data.attributes.width }} className={styles.img} />
       <h3 className={styles.itemTitle}>{title}</h3>
       <p className={styles.itemDesc}>{description}</p>
     </motion.div>

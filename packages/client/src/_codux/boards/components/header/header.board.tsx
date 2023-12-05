@@ -4,16 +4,16 @@ import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
 import { ROUTES } from '../../../../router/config';
 
 export default createBoard({
-  name: 'Header',
-  Board: () => (
-    <ComponentWrapper path={ROUTES.projects.to()} settings={{ numberOfItems: 0 }}>
-      <Header />
-    </ComponentWrapper>
-  ),
-  isSnippet: false,
-  environmentProps: {
-    windowWidth: 1024,
-    windowHeight: 768,
-    canvasWidth: 1024,
-  },
+    name: 'Header',
+    Board: () => (
+        <ComponentWrapper path={ROUTES.projects.to()} settings={{ numberOfItems: 0 }}>
+            <Header />
+        </ComponentWrapper>
+    ),
+    isSnippet: false,
+    environmentProps: {
+        windowWidth: 375,
+        windowHeight: 667,
+        canvasWidth: 1024
+    },
 });

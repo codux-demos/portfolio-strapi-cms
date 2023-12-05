@@ -11,8 +11,8 @@
 }
 
 .leftContainer {
-    width: 50%;
     display: flex;
+    flex: 1;
 }
 
 .logo {
@@ -20,10 +20,21 @@
 }
 
 .contactLink {
-    margin-left: auto;
+    flex: 1;
+    text-align: end;
 }
 
 .menu {
     margin-right: auto;
     margin-left: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo, .contactLink {
+        display: none;
+    }
+    .menu {
+        margin-left: 0px;
+    }
+    
 }

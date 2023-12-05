@@ -15,17 +15,22 @@ export const Footer = ({ className }: FooterProps) => {
 
   return (
     <div id="footer" className={cx(styles.root, className)}>
-      <a href={`mailto:${data?.data.attributes.email}`}>{data?.data.attributes.email}</a>
-      <a href={data?.data.attributes.instagram || '/'} target="_blank" rel="noreferrer">
-        Instagram
-      </a>
-      <a href={data?.data.attributes.facebook || '/'} target="_blank" rel="noreferrer">
-        Facebook
-      </a>
-      <a href={data?.data.attributes.pinterest || '/'} target="_blank" rel="noreferrer">
-        Pinterest
-      </a>
-      <span>{data?.data.attributes.phone}</span>
+      <div>
+        <a href={`mailto:${data?.data.attributes.email}`}>{data?.data.attributes.email}</a>
+        <br />
+        <span>{data?.data.attributes.phone}</span>
+      </div>
+      <div className={styles.social}>
+        <a href={data?.data.attributes.instagram || '/'} target="_blank" rel="noreferrer">
+          Instagram
+        </a>
+        <a href={data?.data.attributes.facebook || '/'} target="_blank" rel="noreferrer">
+          Facebook
+        </a>
+        <a href={data?.data.attributes.pinterest || '/'} target="_blank" rel="noreferrer">
+          Pinterest
+        </a>
+      </div>
       <span className={styles.copyright}>© 2020 Career Karma and some more</span>
     </div>
   );

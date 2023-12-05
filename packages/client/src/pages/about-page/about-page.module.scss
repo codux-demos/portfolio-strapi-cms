@@ -8,6 +8,17 @@
     & img {
         height: 100%;
     }
+
+    @media only screen and (max-width: $mobile-width) {
+        width: 100%;
+        float: none;
+        height: auto;
+
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 
 .text {
@@ -17,6 +28,7 @@
     align-content: center;
     flex-wrap: wrap;
     padding: 2rem;
+    padding-top: calc($header-height + 1rem);
     color: $text-color;
 }
 
@@ -27,7 +39,6 @@
 .sub {
     font: $small-heading-font;
 }
-
 .description {
     font: $text-font;
 }

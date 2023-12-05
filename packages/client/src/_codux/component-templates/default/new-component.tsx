@@ -1,5 +1,4 @@
 import styles from './new-component.module.scss';
-import '@portfolio/client/src/styles/util-classes.scss';
 import cx from 'classnames';
 
 export interface NewComponentProps {

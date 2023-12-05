@@ -7,21 +7,23 @@
     top: 0px;
     font: $text-font;
     padding: 1rem;
+    display: flex;
 }
 
 .leftContainer {
     width: 50%;
-    text-align: center;
-    display: inline-block;
+    display: flex;
 }
 
 .logo {
     font: $logo-font;
-    position: absolute;
-    left: 1rem;
 }
 
 .contactLink {
-    position: absolute;
-    right: 2rem;
+    margin-left: auto;
+}
+
+.menu {
+    margin-right: auto;
+    margin-left: auto;
 }

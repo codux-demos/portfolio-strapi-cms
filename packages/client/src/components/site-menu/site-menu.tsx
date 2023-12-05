@@ -17,11 +17,11 @@ export interface SiteMenuProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-export const SiteMenu = () => {
+export const SiteMenu = ({ className }: SiteMenuProps) => {
   const { data: projects, isLoading } = apiHooks.useProjects();
 
   return (
-    <RadixMenu.Root className={styles.root}>
+    <RadixMenu.Root className={cx(styles.root, className)}>
       <RadixMenu.List className={styles.topMenu}>
         <MenuItem to={ROUTES.projects.to()} text="Home" />
         <MenuItem to={ROUTES.about.to()} text="About" />
@@ -50,7 +50,7 @@ function MenuItem(props: { text: string; to: string }) {
   return (
     <RadixMenu.Item>
       <RadixMenu.Link active={isActive} asChild>
-        <Link to={props.to} className={cx(styles.Link, {[styles.active]: isActive})}>
+        <Link to={props.to} className={cx(styles.Link, { [styles.active]: isActive })}>
           <span>{props.text}</span>
         </Link>
       </RadixMenu.Link>

@@ -11,6 +11,6 @@ export default createBoard({
         </PageWrapper>
     ),
     environmentProps: {
-        windowWidth: 375, canvasWidth: 1037, windowHeight: 667
+        windowWidth: 1024, canvasWidth: 1037, windowHeight: 768
     },
 });

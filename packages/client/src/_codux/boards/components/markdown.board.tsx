@@ -1,6 +1,5 @@
 import { createBoard } from '@wixc3/react-board';
 import Markdown from 'markdown-to-jsx';
-import '@portfolio/client/src/styles/util-classes.scss';
 
 export default createBoard({
   name: 'Markdown',

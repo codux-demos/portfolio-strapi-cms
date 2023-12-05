@@ -5,7 +5,6 @@ import { apiHooks } from '../../api';
 import { ProjectItem } from '../../components/project-item/project-item';
 import cx from 'classnames';
 import Markdown from 'markdown-to-jsx';
-import '@portfolio/client/src/styles/util-classes.scss';
 
 export interface ProjectPage {
   className?: string;

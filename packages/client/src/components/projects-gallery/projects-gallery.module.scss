@@ -18,13 +18,13 @@
         border-bottom: solid $black 1px;
 
         &:nth-child(3n){
-            background-color: pink;
+            background-color: $dirty-white;
         }
         &:nth-child(3n + 1) {
-            background-color: bisque;
+            background-color: $dana-pink;
         }
         &:nth-child(3n + 2){
-            background-color: $grey300;
+            background-color: $gold-yellow;
         }
     }
 }

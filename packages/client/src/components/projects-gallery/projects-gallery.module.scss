@@ -17,23 +17,37 @@
         font: $text-font;
         border-bottom: solid $black 1px;
 
-        &:nth-child(3n) {
+        // &:nth-child(14n) {
+        //     background-color: red;
+        // }
+
+        &:nth-child(14n + 1) {
+            background-color: $dirty-white;
+        }
+
+        &:nth-child(14n + 3) {
+            background-color: $dana-pink;
+        }
+
+        &:nth-child(14n + 5) {
+            background-color: $gold-yellow;
+        }
+
+        &:nth-child(14n + 7) {
+            background-color: $olive-green;
+            flex-wrap: nowrap;
+        }
+
+        &:nth-child(14n + 9) {
             background-color: $lavender;
         }
 
-        &:nth-child(3n + 1) {
-            background-color: $dana-pink;
-            background-image: linear-gradient(#A09D2A, #A09D2A);
-            background-position: 0%;
-            background-size: auto;
-            background-repeat: repeat;
-            background-attachment: scroll;
-            background-origin: padding-box;
-            background-clip: border-box;
+        &:nth-child(14n + 11) {
+            background-color: $aero-blue;
         }
 
-        &:nth-child(3n + 2) {
-            background-color: $gold-yellow;
+        &:nth-child(14n + 13) {
+            background-color: $olive-green;
         }
     }
 }

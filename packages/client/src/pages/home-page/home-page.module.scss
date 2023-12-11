@@ -52,12 +52,25 @@
 }
 
 .logo {
-    font: $logo-font;
     position: absolute;
     bottom: 1rem;
     width: 100%;
     text-align: center;
-    font-size: 3rem;
+    background-image: linear-gradient(white, white);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-stretch: normal;
+    font: $logo-font;
+    font-size: 6rem;
 }
 
 .logoWrapper {

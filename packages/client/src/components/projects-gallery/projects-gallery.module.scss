@@ -7,7 +7,7 @@
     }
 
     .box {
-        
+
         display: flex;
         flex-direction: row;
         align-content: center;
@@ -17,13 +17,22 @@
         font: $text-font;
         border-bottom: solid $black 1px;
 
-        &:nth-child(3n){
-            background-color: $dirty-white;
+        &:nth-child(3n) {
+            background-color: $lavender;
         }
+
         &:nth-child(3n + 1) {
             background-color: $dana-pink;
+            background-image: linear-gradient(#A09D2A, #A09D2A);
+            background-position: 0%;
+            background-size: auto;
+            background-repeat: repeat;
+            background-attachment: scroll;
+            background-origin: padding-box;
+            background-clip: border-box;
         }
-        &:nth-child(3n + 2){
+
+        &:nth-child(3n + 2) {
             background-color: $gold-yellow;
         }
     }

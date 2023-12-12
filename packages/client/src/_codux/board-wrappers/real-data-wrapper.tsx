@@ -8,7 +8,7 @@ import { APIContextProvider } from '../../api';
  * @param {string} [props.path = /] - the path to render
  * @returns
  */
-export function RealDataWrapper(props: { path?: string }) {
+export function RealDataWrapper(props: { path: string }) {
   const router = createMemoryRouter(routes, { initialEntries: [props.path || '/'] });
   return (
     <APIContextProvider>

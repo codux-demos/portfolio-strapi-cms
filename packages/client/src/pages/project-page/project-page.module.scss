@@ -37,6 +37,8 @@
     &.topDescription {
         direction: ltr;
     }
+
+    direction:ltr;
 }
 
 .title {
@@ -47,6 +49,7 @@
     margin-left: 6rem;
     width: 50vw;
     font: $text-font;
+
     @media only screen and (max-width: $mobile-width) {
         width: auto;
         margin-inline: 2rem;

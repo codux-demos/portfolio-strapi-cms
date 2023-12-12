@@ -7,7 +7,7 @@
     }
 
     .box {
-        
+
         display: flex;
         flex-direction: row;
         align-content: center;
@@ -17,14 +17,18 @@
         font: $text-font;
         border-bottom: solid $black 1px;
 
-        &:nth-child(3n){
+        &:nth-child(3n) {
             background-color: $dirty-white;
         }
+
         &:nth-child(3n + 1) {
             background-color: $dana-pink;
         }
-        &:nth-child(3n + 2){
+
+        &:nth-child(3n + 2) {
             background-color: $gold-yellow;
         }
+
+        z-index:1;
     }
 }

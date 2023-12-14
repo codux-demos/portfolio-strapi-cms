@@ -11,7 +11,7 @@
     height: 70vh;
 
     &.img {
-        background: repeat padding-box border-box 0% 0% / auto auto scroll linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%), no-repeat padding-box border-box 50% / cover scroll url("https://static.wixstatic.com/media/d9657b20f1b9473f90815b9da211bb2a.jpg/v1/fit/w_924,h_520/d9657b20f1b9473f90815b9da211bb2a.jpg");
+        background: repeat padding-box border-box 0% 0% / auto auto scroll linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%), no-repeat padding-box border-box 50% / cover scroll url('https://wixmp-b7f7090100b13623109851bc.wixmp.com/spa/HP_Cover.jpg');
     }
 
     &.text {
@@ -54,10 +54,23 @@
 .logo {
     font: $logo-font;
     position: absolute;
-    bottom: 1rem;
+    bottom: 0rem;
     width: 100%;
     text-align: center;
-    font-size: 3rem;
+    font-size: 12rem;
+    min-height: 65px;
+
+    @media only screen and (max-width: $mobile-width) {
+        font-size: 6.5rem;
+        line-height: 0.9;
+        margin-bottom: -9px;
+
+
+    }
+
+    font-style:normal;
+    line-height:0.7;
+    margin-bottom:-3px;
 }
 
 .logoWrapper {

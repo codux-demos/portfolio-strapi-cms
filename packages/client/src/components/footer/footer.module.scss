@@ -4,20 +4,44 @@
     background-color: $inverted-background;
     color: $inverted-text-color;
     font: $text-font;
-    column-gap: 2rem;
-    padding: 1rem 1rem 1rem 3rem;
+    column-gap: 4rem;
+    padding: 1rem 1rem 1rem 3.2rem;
     display: flex;
     flex-wrap: wrap;
+
+    @media only screen and (max-width: $mobile-width) {
+        font-size: 3rem;
+        line-height: 0.9;
+        margin-bottom: -9px;
+
+
+    }
+
+    flex-direction:row;
+    justify-content:space-between;
 }
 
 .copyright {
     font: $tiny-font;
     flex-basis: 100%;
     margin-top: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
 }
 
 .social {
     &>* {
         margin-right: 2rem;
     }
+
+    font-size:1.5rem;
+    row-gap:0px;
+    column-gap:50px;
+    flex-direction:row;
+    display:flex;
+}
+
+.contact {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

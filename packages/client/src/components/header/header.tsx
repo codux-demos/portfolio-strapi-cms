@@ -26,12 +26,10 @@ export const Header = ({ className }: HeaderProps) => {
     return (
         <motion.div className={cx(styles.root, className)} style={{ background: bg }}>
             <div className={styles.leftContainer}>
-                <span className={styles.logo}>NAME PORT</span>
+                <span className={styles.logo}>KOLINJS</span>
                 <SiteMenu className={styles.menu} />
             </div>
-            <a href="#footer" className={styles.contactLink}>
-                Contant
-            </a>
+            <a href="#footer" className={styles.contactLink}>Contact</a>
         </motion.div>
     );
 };

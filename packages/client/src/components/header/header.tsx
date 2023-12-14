@@ -29,9 +29,7 @@ export const Header = ({ className }: HeaderProps) => {
                 <span className={styles.logo}>NAME PORT</span>
                 <SiteMenu className={styles.menu} />
             </div>
-            <a href="#footer" className={styles.contactLink}>
-                Contant
-            </a>
+            <a href="#footer" className={styles.contactLink}>Contact</a>
         </motion.div>
     );
 };

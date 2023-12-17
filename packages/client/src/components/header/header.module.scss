@@ -13,10 +13,12 @@
 .leftContainer {
     display: flex;
     flex: 1;
+    align-items: center;
 }
 
 .logo {
     font: $logo-font;
+    height: fit-content;
 }
 
 .contactLink {
@@ -30,11 +32,14 @@
 }
 
 @media only screen and (max-width: $mobile-width) {
-    .logo, .contactLink {
+
+    .logo,
+    .contactLink {
         display: none;
     }
+
     .menu {
         margin-left: 0px;
     }
-    
+
 }

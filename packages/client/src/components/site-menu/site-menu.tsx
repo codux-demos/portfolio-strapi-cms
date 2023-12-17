@@ -11,13 +11,14 @@ import cx from 'classnames';
 
 export interface SiteMenuProps {
   className?: string;
+  isOpen?: true;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-export const SiteMenu = ({ className }: SiteMenuProps) => {
+export const SiteMenu = ({ className, isOpen }: SiteMenuProps) => {
   const { data: projects, isLoading } = apiHooks.useProjects();
 
   return (
@@ -26,7 +27,7 @@ export const SiteMenu = ({ className }: SiteMenuProps) => {
         <MenuItem to={ROUTES.projects.to()} text="Home" />
         <MenuItem to={ROUTES.about.to()} text="About" />
         <RadixMenu.Item>
-          <FloatingContentWithTrigger text="Projects">
+          <FloatingContentWithTrigger text="Projects" isOpen={isOpen}>
             {isLoading ? (
               <div>Loading...</div>
             ) : (
@@ -71,10 +72,11 @@ function MenuItem(props: { text: string; to: string }) {
  * @property text - the text on the trigger button
  * @returns the sub menu wrapped with a trigger button and floating css
  */
-function FloatingContentWithTrigger(props: { children: ReactNode; text: string }) {
+function FloatingContentWithTrigger(props: { children: ReactNode; text: string; isOpen?: true }) {
   const { refs, floatingStyles } = useFloating({
     placement: 'bottom-start',
     middleware: [offset(10), shift()],
+    open: props.isOpen,
   });
 
   return (
@@ -83,7 +85,12 @@ function FloatingContentWithTrigger(props: { children: ReactNode; text: string }
         {props.text}
       </RadixMenu.Trigger>
       {createPortal(
-        <RadixMenu.Content ref={refs.setFloating} style={{ ...floatingStyles }} className={styles.content}>
+        <RadixMenu.Content
+          forceMount={props.isOpen}
+          ref={refs.setFloating}
+          style={{ ...floatingStyles }}
+          className={styles.content}
+        >
           {props.children}
         </RadixMenu.Content>,
         document.body,

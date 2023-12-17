@@ -10,24 +10,12 @@
     display: flex;
 }
 
-.leftContainer {
-    display: flex;
-    flex: 1;
-    align-items: center;
-}
-
 .logo {
     font: $logo-font;
     height: fit-content;
 }
 
-.contactLink {
-    flex: 1;
-    text-align: end;
-}
-
 .menu {
-    margin-right: auto;
     margin-left: auto;
 }
 

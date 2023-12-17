@@ -29,7 +29,7 @@ export const HomePage = ({ className }: HomePageProps) => {
             <h3 className={cx(styles.rectangle, styles.text)}>Sophistication in Design, Excellence in Execution</h3>
             <div className={cx(styles.rectangle, styles.img)}></div>
             <div className={styles.logoWrapper}>
-                <h1 className={styles.logo}>NAME PORT</h1>
+                <h1 className={styles.logo}>KOLINJ</h1>
             </div>
             <div className={styles.marquee}>
                 <motion.div className={styles.marqueeContent} variants={marqueeVariants} animate="animate">

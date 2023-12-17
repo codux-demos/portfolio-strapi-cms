@@ -1,79 +1,93 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .rectangle {
-    width: 50%;
-    height: 70vh;
+  width: 50%;
+  height: 70vh;
+
+  &.img {
+    background-repeat: no-repeat;
+    background-image: url('https://wixmp-b7f7090100b13623109851bc.wixmp.com/spa/HP_Cover.jpg'),
+      linear-gradient(180deg, rgb(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-blend-mode: overlay;
+  }
+
+  &.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    font: $heading-font;
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media only screen and (max-width: $mobile-width) {
+    width: 100%;
 
     &.img {
-        background: repeat padding-box border-box 0% 0% / auto auto scroll linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%), no-repeat padding-box border-box 50% / cover scroll url("https://static.wixstatic.com/media/d9657b20f1b9473f90815b9da211bb2a.jpg/v1/fit/w_924,h_520/d9657b20f1b9473f90815b9da211bb2a.jpg");
+      display: none;
     }
 
     &.text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
-        font: $heading-font;
-        text-align: center;
-        padding-left: 2rem;
-        padding-right: 2rem;
+      background-repeat: no-repeat;
+      background-image: url('https://wixmp-b7f7090100b13623109851bc.wixmp.com/spa/HP_Cover.jpg');
+      background-position: 50%;
+      background-size: cover;
+      background-attachment: scroll;
+      background-origin: padding-box;
+      background-clip: border-box;
+      background-color: rgba(255, 255, 255, 0.4);
+      background-blend-mode: overlay;
     }
-
-    @media only screen and (max-width: $mobile-width) {
-        width: 100%;
-
-        &.img {
-            display: none;
-        }
-
-        &.text {
-            background-repeat: no-repeat;
-            background-image: url("https://static.wixstatic.com/media/d9657b20f1b9473f90815b9da211bb2a.jpg/v1/fit/w_924,h_520/d9657b20f1b9473f90815b9da211bb2a.jpg");
-            background-position: 50%;
-            background-size: cover;
-            background-attachment: scroll;
-            background-origin: padding-box;
-            background-clip: border-box;
-            background-color: rgba(255, 255, 255, 0.4);
-            background-blend-mode: overlay;
-        }
-    }
+  }
 }
 
 .gallery {
-    flex: auto;
+  flex: auto;
 }
 
 .logo {
-    font: $logo-font;
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
+  font: $logo-font;
+  position: absolute;
+  bottom: 0rem;
+  width: 100%;
+  text-align: center;
+  font-size: 12rem;
+  line-height: 0.685;
+
+  @media only screen and (max-width: $mobile-width) {
+    font-size: 6.5rem;
+    line-height: 0.68;
+  }
 }
 
 .logoWrapper {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
 }
 
 .marquee {
-    width: 100vw;
-    overflow-x: hidden;
-    border-top: 2px solid $black;
-    border-bottom: 2px solid $black;
+  width: 100vw;
+  overflow-x: hidden;
+  border-top: 2px solid $black;
+  border-bottom: 2px solid $black;
 }
 
 .marqueeContent {
-    white-space: nowrap;
-    font: $heading-font;
-    font-weight: 500;
+  white-space: nowrap;
+  font: $heading-font;
+  font-weight: 500;
 }

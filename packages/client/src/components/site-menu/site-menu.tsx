@@ -75,7 +75,6 @@ function FloatingContentWithTrigger(props: { children: ReactNode; text: string }
   const { refs, floatingStyles } = useFloating({
     placement: 'bottom-start',
     middleware: [offset(10), shift()],
-    open: true,
   });
 
   return (

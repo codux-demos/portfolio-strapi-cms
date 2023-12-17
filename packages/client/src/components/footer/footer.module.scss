@@ -1,23 +1,23 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {
-    background-color: $inverted-background;
-    color: $inverted-text-color;
-    font: $text-font;
-    column-gap: 2rem;
-    padding: 1rem 1rem 1rem 3rem;
-    display: flex;
-    flex-wrap: wrap;
+  background-color: $inverted-background;
+  color: $inverted-text-color;
+  font: $text-font;
+  padding: 1rem 1rem 1rem 3.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .copyright {
-    font: $tiny-font;
-    flex-basis: 100%;
-    margin-top: 1rem;
+  font: $tiny-font;
+  flex-basis: 100%;
+  margin-top: 1rem;
 }
 
 .social {
-    &>* {
-        margin-right: 2rem;
-    }
+  & > * {
+    margin-right: 2rem;
+  }
 }

@@ -14,18 +14,20 @@
     background-color: $background;
     padding-left: 0.7rem;
     padding-right: 0.7rem;
-    
+
 }
 
 .Link {
     display: block;
+
     &.active,
     &:focus,
     &:hover {
         font-weight: 600;
     }
+
     padding-left: 0.7rem;
-    padding-right: 0.7rem;
+    padding-right: 0rem;
 
 }
 

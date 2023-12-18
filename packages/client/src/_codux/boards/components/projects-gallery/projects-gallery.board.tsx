@@ -3,15 +3,15 @@ import { ProjectsGallery } from '../../../../components/projects-gallery/project
 import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
 
 export default createBoard({
-  name: 'ProjectsGallery',
-  Board: () => (
-    <ComponentWrapper>
-      <ProjectsGallery />
-    </ComponentWrapper>
-  ),
-  isSnippet: false,
-  environmentProps: {
-    canvasWidth: 800,
-    windowHeight: 470,
-  },
+    name: 'Projects Gallery',
+    Board: () => (
+        <ComponentWrapper>
+            <ProjectsGallery />
+        </ComponentWrapper>
+    ),
+    isSnippet: false,
+    environmentProps: {
+        canvasWidth: 800,
+        windowHeight: 470,
+    },
 });

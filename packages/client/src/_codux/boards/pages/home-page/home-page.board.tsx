@@ -4,7 +4,7 @@ import { HomePage } from '../../../../pages/home-page/home-page';
 import { ROUTES } from '../../../../router/config';
 
 export default createBoard({
-    name: 'Home Page',
+    name: 'Page-Home',
     Board: () => (
         <PageWrapper
             path={ROUTES.projects.to()}

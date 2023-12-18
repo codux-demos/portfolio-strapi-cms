@@ -7,3 +7,8 @@
     list-style: revert;
   }
 }
+
+.page {
+  flex-grow: 1;
+  z-index: 0;
+}

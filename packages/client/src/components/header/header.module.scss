@@ -1,34 +1,29 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {
-    position: fixed;
-    width: 100vw;
-    height: $header-height;
-    top: 0px;
-    font: $text-font;
-    padding: 1rem;
-    display: flex;
-    background-color: $white;
+  height: $header-height;
+  width: 100vw;
+  font: $text-font;
+  padding: 1rem;
+  display: flex;
+  background-color: $background;
 }
 
 .logo {
-    font: $logo-font;
-    height: fit-content;
+  font: $logo-font;
+  height: fit-content;
 }
 
 .menu {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 @media only screen and (max-width: $mobile-width) {
+  .logo {
+    display: none;
+  }
 
-    .logo,
-    .contactLink {
-        display: none;
-    }
-
-    .menu {
-        margin-left: 0px;
-    }
-
+  .menu {
+    margin-left: 0px;
+  }
 }

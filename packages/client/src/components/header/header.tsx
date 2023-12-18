@@ -1,7 +1,5 @@
 import styles from './header.module.scss';
 import { SiteMenu } from '../site-menu/site-menu';
-import { useScroll, motion, useMotionTemplate, useMotionValue, useTransform } from 'framer-motion';
-import * as theme from '../../styles/theme.module.scss';
 import cx from 'classnames';
 
 export interface HeaderProps {
@@ -13,20 +11,10 @@ export interface HeaderProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Header = ({ className }: HeaderProps) => {
-  /**
-   * here we animate the header packground from transparent to white according to the scroll
-   * scroll = 0 -> transparent
-   * scroll = header heaght -> white
-   */
-  const { scrollY } = useScroll();
-  const headerHeight = useMotionValue(parseInt(theme.headerHeight));
-  const opacity = useTransform(() => scrollY.get() / headerHeight.get());
-  const bg = useMotionTemplate`rgba(255, 255, 255, ${opacity})`;
-
   return (
-    <motion.div className={cx(styles.root, className)} style={{ background: bg }}>
+    <div className={cx(styles.root, className)}>
       <span className={styles.logo}>KOLINJ</span>
       <SiteMenu className={styles.menu} />
-    </motion.div>
+    </div>
   );
 };

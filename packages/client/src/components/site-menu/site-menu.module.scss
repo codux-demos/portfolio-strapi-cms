@@ -1,43 +1,35 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {
-    height: fit-content;
+  height: fit-content;
 }
 
 .topMenu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2.2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.2rem;
 }
 
 .content {
-    background-color: $background;
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
-
+  background-color: $background;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
 }
 
 .Link {
-    display: block;
+  display: block;
 
-    &.active,
-    &:focus,
-    &:hover {
-        font-weight: 600;
-    }
-
-
+  &.active,
+  &:focus,
+  &:hover {
+    font-weight: 600;
+  }
 }
 
 .sub {
-    & .Link {
-        padding-top: 0.2rem;
-        padding-bottom: 0.2rem;
-    }
-}
-
-.contactLink {
-    flex: 1;
-    text-align: end;
+  & .Link {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
 }

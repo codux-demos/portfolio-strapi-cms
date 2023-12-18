@@ -1,44 +1,46 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
+.root {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
 .rectangle {
-    width: 50%;
-    float: left;
+  width: 50%;
+
+  & img {
     height: 100%;
+  }
+
+  @media only screen and (max-width: $mobile-width) {
+    width: 100%;
 
     & img {
-        height: 100%;
+      width: 100%;
     }
-
-    @media only screen and (max-width: $mobile-width) {
-        width: 100%;
-        float: none;
-        height: auto;
-
-        & img {
-            width: 100%;
-            height: auto;
-        }
-    }
+  }
 }
 
 .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    padding: 2rem;
-    padding-top: calc($header-height + 1rem);
-    color: $text-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  padding-top: calc($header-height + 1rem);
+  color: $text-color;
 }
 
 .title {
-    font: $heading-font;
+  font: $heading-font;
 }
 
 .sub {
-    font: $small-heading-font;
+  font: $small-heading-font;
 }
+
 .description {
-    font: $text-font;
+  font: $text-font;
 }

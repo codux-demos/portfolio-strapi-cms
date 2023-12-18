@@ -39,6 +39,11 @@ export const SiteMenu = ({ className, isOpen }: SiteMenuProps) => {
             )}
           </FloatingContentWithTrigger>
         </RadixMenu.Item>
+        <RadixMenu.Item>
+            <a href="#footer" className={styles.Link}>
+              Contact
+            </a>
+        </RadixMenu.Item>
       </RadixMenu.List>
     </RadixMenu.Root>
   );

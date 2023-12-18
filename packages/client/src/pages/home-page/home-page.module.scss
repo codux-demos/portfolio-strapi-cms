@@ -20,6 +20,7 @@
     background-origin: padding-box;
     background-clip: border-box;
     background-blend-mode: overlay;
+    height: 90vh;
   }
 
   &.text {
@@ -30,8 +31,11 @@
     flex-wrap: wrap;
     font: $heading-font;
     text-align: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 4rem;
+    height: 62vh;
+    font-weight: 200;
+    font-size: 3rem;
   }
 
   @media only screen and (max-width: $mobile-width) {
@@ -65,13 +69,14 @@
   bottom: 0rem;
   width: 100%;
   text-align: center;
-  font-size: 12rem;
-  line-height: 0.685;
+  line-height: 0.683;
 
   @media only screen and (max-width: $mobile-width) {
     font-size: 6.5rem;
     line-height: 0.68;
   }
+
+  font-size: 20rem;
 }
 
 .logoWrapper {

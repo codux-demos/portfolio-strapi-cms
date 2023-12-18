@@ -6,8 +6,8 @@ export default createBoard({
     name: 'App With Strapi Data',
     Board: () => <RealDataWrapper path={ROUTES.projects.to()} />,
     environmentProps: {
-        windowWidth: 375,
-        windowHeight: 667,
+        windowWidth: 1024,
+        windowHeight: 768,
         canvasWidth: 1024,
     },
 });

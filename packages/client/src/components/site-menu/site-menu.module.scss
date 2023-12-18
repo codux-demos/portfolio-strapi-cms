@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 2.2rem;
 }
 
 .content {
@@ -26,15 +27,11 @@
         font-weight: 600;
     }
 
-    padding-left: 0.7rem;
-    padding-right: 0rem;
 
 }
 
 .sub {
     & .Link {
-        padding-left: 0px;
-        padding-right: 0px;
         padding-top: 0.2rem;
         padding-bottom: 0.2rem;
     }

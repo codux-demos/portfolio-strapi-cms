@@ -11,7 +11,10 @@ import {
 
 export type FakeDataSettings = {
   numberOfItems?: number;
-  fakerSeed?: number;
+  footerData?: {
+    email?: string;
+    phone?: string;
+  };
 };
 
 declare global {
@@ -25,15 +28,15 @@ export function getFakeData(settings?: FakeDataSettings) {
    * we need it to run in codux otherwise it changes the data on each change in the property panel.
    * on the other hand we want to generate different data in most test cases to avoid accidental passing tests.
    */
-  if (import.meta.env.MODE === 'development' || settings?.fakerSeed) {
-    faker.seed(settings?.fakerSeed || 111);
+  if (import.meta.env.MODE === 'development') {
+    faker.seed(111);
   }
 
   const numberOfProjects = settings?.numberOfItems || 10;
   const data = {
     projects: Array.from(Array(numberOfProjects)).map((val, i) => createProject(i)),
     'project-items': createProjectItems(numberOfProjects, settings?.numberOfItems || 10),
-    about: createAbout(),
+    about: createAbout(settings),
   } satisfies Record<StrapiPath, unknown>;
 
   globalThis.FAKE_DATA = data;
@@ -60,7 +63,8 @@ function createProjectItems(numberOfProjects: number, numberOfItems?: number) {
   return items;
 }
 
-function createAbout(): StrapiAbout {
+function createAbout(settings?: FakeDataSettings): StrapiAbout {
+  const footerData = settings?.footerData;
   return {
     id: 1,
     attributes: {
@@ -68,8 +72,8 @@ function createAbout(): StrapiAbout {
       subTitle: faker.person.bio(),
       image: createImage(),
       richtext: getMarkdown(),
-      email: faker.internet.email(),
-      phone: faker.phone.number(),
+      email: footerData?.email || faker.internet.email(),
+      phone: footerData?.phone || faker.phone.number(),
       facebook: faker.internet.url(),
       pinterest: faker.internet.url(),
       instagram: faker.internet.url(),
@@ -116,7 +120,7 @@ function createProjectItem(id: number, projectId: number): ProjectItemWithProjec
       description: faker.lorem.paragraphs({ min: 0, max: 2 }),
       image: createImage({ width, height }),
       project: projectId.toString(),
-      orderIndex: id
+      orderIndex: id,
     },
   };
 }

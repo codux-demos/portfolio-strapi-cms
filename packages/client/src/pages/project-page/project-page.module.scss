@@ -36,13 +36,18 @@
 
     &.topDescription {
         direction: ltr;
+        padding-right: 5em;
+        padding-left: 4em;
     }
 
     direction:ltr;
 }
 
 .title {
-    font: $small-heading-font;
+    font: $heading-font;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    font-weight: 200;
 }
 
 .details {
@@ -60,4 +65,11 @@
     float: right;
     margin: 4rem;
     font: $text-font;
+}
+
+.pageDescription {
+    font-size: 1.4rem;
+    line-height: 1.45;
+    font-weight: 300;
+    margin-top: 1.4rem;
 }

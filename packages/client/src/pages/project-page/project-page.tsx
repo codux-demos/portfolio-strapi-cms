@@ -28,7 +28,7 @@ export const ProjectPage = () => {
       <div className={styles.gallery}>
         <div key="desc" className={cx(styles.galleryItem, styles.topDescription)} style={{ maxWidth: '100%' }}>
           <h3 className={styles.title}>{data?.attributes.title}</h3>
-          <p>{data?.attributes.description}</p>
+          <p className={styles.pageDescription}>{data?.attributes.description}</p>
         </div>
         {projectItems.data.map((item) => (
           <div key={item.id} className={styles.galleryItem}>

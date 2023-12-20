@@ -1,26 +1,28 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {
-    background-color: $inverted-background;
-    color: $inverted-text-color;
-    font: $text-font;
-    padding: 2rem 1rem 1rem 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
+  background-color: $inverted-background;
+  color: $inverted-text-color;
+  font: $text-font;
+  padding: 2rem 1rem 1rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2.8rem;
 }
 
 .copyright {
-    font: $tiny-font;
-    flex-basis: 100%;
-    margin-top: 1rem;
+  font: $tiny-font;
+  flex-basis: 100%;
+  margin-top: 1rem;
 }
 
 .social {
-    &>* {
-        margin-right: 2.8rem;
-    }
+  display: flex;
+  column-gap: 2.8rem;
+  font-size: 2rem;
+  font-weight: 300;
 
-    font-size:2rem;
-    font-weight:300;
+  @media only screen and (max-width: $mobile-width) {
+    flex-direction: column;
+  }
 }

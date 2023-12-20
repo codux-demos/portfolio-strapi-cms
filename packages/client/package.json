@@ -3,11 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:wixplosives/sample-monorepo.git",
-    "directory": "packages/client"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

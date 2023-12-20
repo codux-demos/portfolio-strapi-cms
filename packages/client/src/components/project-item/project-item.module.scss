@@ -9,18 +9,19 @@
     font: $small-heading-font;
     width: 0;
     min-width: 100%;
-    text-align: center;
+    text-align: start;
 }
 
 .itemDesc {
     font: $text-font;
     width: 0;
     min-width: 100%;
-    text-align: center;
+    text-align: start;
 }
 
 .img {
     max-width: 40vw;
+
     @media only screen and (max-width: $mobile-width) {
         max-width: 90vw;
     }

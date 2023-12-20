@@ -72,7 +72,7 @@ function createAbout(settings?: FakeDataSettings): StrapiAbout {
       subTitle: faker.person.bio(),
       image: createImage(),
       richtext: getMarkdown(),
-      email: footerData?.email || faker.internet.email(),
+      email: footerData?.email || faker.internet.email({ provider: 'gmail' }),
       phone: footerData?.phone || faker.phone.number(),
       facebook: faker.internet.url(),
       pinterest: faker.internet.url(),

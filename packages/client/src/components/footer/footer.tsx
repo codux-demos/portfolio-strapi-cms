@@ -15,7 +15,7 @@ export const Footer = ({ className }: FooterProps) => {
 
     return (
         <div id="footer" className={cx(styles.root, className)}>
-            <div className={styles.social}>
+            <div className={styles.contact}>
                 <a href={`mailto:${data?.data.attributes.email}`}>{data?.data.attributes.email}</a>
                 <br />
                 <span>{data?.data.attributes.phone}</span>

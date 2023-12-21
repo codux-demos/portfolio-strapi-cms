@@ -45,9 +45,7 @@ export const ProjectPage = () => {
                 <Markdown>{data?.attributes.details || ''}</Markdown>
             </div>
             <div>
-                <a href="#top" className={styles.backToTop}>
-                    Back to top
-                </a>
+                <a href="#top" className={styles.backToTop}>Back to top ^</a>
             </div>
         </div>
     );

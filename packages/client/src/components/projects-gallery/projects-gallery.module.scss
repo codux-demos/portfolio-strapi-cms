@@ -17,25 +17,35 @@
         font: $text-font;
         border-bottom: solid $black 1px;
 
-       
+
         &:nth-child(14n + 1) {
             background-color: $dirty-white;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         &:nth-child(14n + 3) {
             background-color: $dana-pink;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         &:nth-child(14n + 5) {
             background-color: $gold-yellow;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         &:nth-child(14n + 7) {
             background-color: $olive-green;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         &:nth-child(14n + 9) {
             background-color: $lavender;
+            padding-left: 2rem;
+            padding-right: 2rem;
         }
 
         &:nth-child(14n + 11) {
@@ -45,6 +55,7 @@
         &:nth-child(14n + 13) {
             background-color: $olive-green;
         }
+
         z-index:1;
     }
 }

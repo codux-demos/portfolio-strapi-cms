@@ -116,7 +116,7 @@ function createProjectItem(id: number, projectId: number): ProjectItemWithProjec
   return {
     id,
     attributes: {
-      title: faker.lorem.words({ min: 1, max: 3 }),
+      title: faker.lorem.words({ min: 0, max: 3 }),
       description: faker.lorem.paragraphs({ min: 0, max: 2 }),
       image: createImage({ width, height }),
       project: projectId.toString(),

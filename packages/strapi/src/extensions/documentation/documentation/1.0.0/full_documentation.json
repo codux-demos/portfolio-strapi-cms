@@ -18,7 +18,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-12-04T14:05:01.338Z"
+    "x-generation-date": "2023-12-21T09:28:34.276Z"
   },
   "servers": [
     {
@@ -1705,7 +1705,6 @@
         "properties": {
           "data": {
             "required": [
-              "title",
               "image",
               "orderIndex"
             ],
@@ -1796,7 +1795,6 @@
       "ProjectItem": {
         "type": "object",
         "required": [
-          "title",
           "image",
           "orderIndex"
         ],

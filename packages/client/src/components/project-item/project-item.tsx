@@ -6,7 +6,7 @@ import cx from 'classnames';
 
 export interface ProjectItemProps {
   className?: string;
-  title: string;
+  title?: string;
   description?: string;
   image?: StrapiImage;
 }

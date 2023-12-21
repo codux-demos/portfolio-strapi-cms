@@ -359,7 +359,6 @@ export interface ApiProjectItemProjectItem extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String &
-      Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 120;
       }>;

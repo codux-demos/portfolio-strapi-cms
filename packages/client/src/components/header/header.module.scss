@@ -2,7 +2,7 @@
 
 .root {
   height: $header-height;
-  font: $text-font;
+  font: $nav-font;
   padding: 1.2rem 2rem 1rem;
   display: flex;
   background-color: $background;
@@ -10,7 +10,7 @@
 }
 
 .logo {
-  font: $logo-font;
+  font: 700 1.15rem/1.5 $my-prettyfont;
   height: fit-content;
 }
 

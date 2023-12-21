@@ -83,7 +83,7 @@ function createAbout(settings?: FakeDataSettings): StrapiAbout {
 }
 
 function getMarkdown(numOfParagraphs?: number) {
-  const string = faker.lorem.paragraphs(numOfParagraphs || 3).replace(/\n/gi, '\n\n');
+  const string = faker.lorem.sentences(numOfParagraphs || 3).replace(/\n/gi, '\n\n');
   const words = string.split(' ');
   words[3] = `**${words[3]}**`;
   words[7] = `<u>${words[7]}</u>`;

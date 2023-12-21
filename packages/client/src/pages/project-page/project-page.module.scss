@@ -36,8 +36,9 @@
 
     &.topDescription {
         direction: ltr;
-        padding-right: 5em;
-        padding-left: 4em;
+        padding-right: 2em;
+        padding-left: 5em;
+        padding-top: 5em;
     }
 
     direction:ltr;
@@ -69,8 +70,9 @@
 }
 
 .pageDescription {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.45;
     font-weight: 300;
     margin-top: 1.4rem;
+    padding: 0px 0px 0px 5px;
 }

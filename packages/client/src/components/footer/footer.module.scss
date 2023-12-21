@@ -8,6 +8,13 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 2.8rem;
+
+    @media only screen and (max-width: $mobile-width) {
+        flex-direction: column;
+        padding: 2rem 1rem 1rem 2rem;
+    }
+
+    row-gap:12px;
 }
 
 .copyright {
@@ -21,10 +28,17 @@
     column-gap: 2.8rem;
 
     @media only screen and (max-width: $mobile-width) {
-        flex-direction: column;
+        font: $footer-font-small;
+        flex-direction:column;
+        row-gap:5px;
     }
 }
 
 .contact {
     overflow: hidden;
+
+    @media only screen and (max-width: $mobile-width) {
+        font: $footer-font-small;
+
+    }
 }

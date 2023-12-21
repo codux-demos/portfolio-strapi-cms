@@ -8,7 +8,7 @@
 
 .rectangle {
   width: 50%;
-  height: 70vh;
+  height: 85vh;
 
   &.img {
     background-repeat: no-repeat;
@@ -20,28 +20,31 @@
     background-origin: padding-box;
     background-clip: border-box;
     background-blend-mode: overlay;
-    height: 80vh;
   }
 
-  &.text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+  & .text {
     font: $heading-font;
     text-align: center;
-    padding-left: 3rem;
-    padding-right: 4rem;
-    height: 62vh;
-    font-size: 3rem;
+    margin-top: 7rem;
+    width: 30vw;
+    max-width: 30rem;
+    font-size: 3.5vw;
+    height: 50vh;
   }
 
   @media only screen and (max-width: $mobile-width) {
     width: 100%;
+    height: 55vh;
 
     &.img {
       display: none;
+    }
+
+    & .text {
+      width: auto;
+      font-size: 2.8rem;
+      max-width: 90vw;
+      margin-top: 5rem;
     }
   }
 }
@@ -51,19 +54,19 @@
 }
 
 .logo {
-  font: $logo-font;
+  font-size: 28vw;
+  line-height: 0.683;
+  font-weight: 600;
   position: absolute;
   bottom: 0rem;
   width: 100%;
   text-align: center;
-  line-height: 0.683;
+  letter-spacing: 1vw;
 
   @media only screen and (max-width: $mobile-width) {
     font-size: 6.5rem;
     line-height: 0.68;
   }
-
-  font-size: 20rem;
 }
 
 .logoWrapper {
@@ -82,4 +85,10 @@
   white-space: nowrap;
   font: $heading-font;
   font-weight: 500;
+}
+
+.textWrapper {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
 }

@@ -1,28 +1,29 @@
 @import '@portfolio/client/src/styles/theme.module.scss';
 
 .root {
-    width: fit-content;
-    display: inline-block;
+  width: fit-content;
+  display: inline-block;
 }
 
 .itemTitle {
-    font: $small-heading-font;
-    width: 0;
-    min-width: 100%;
-    text-align: start;
+  font: $gallery-item-title;
+  width: 0;
+  min-width: 100%;
+  text-align: start;
+  margin: 20px 0px 5px 1px;
 }
 
 .itemDesc {
-    font: $text-font;
-    width: 0;
-    min-width: 100%;
-    text-align: start;
+  font: $gallery-item-description;
+  width: 0;
+  min-width: 100%;
+  text-align: start;
 }
 
 .img {
-    max-width: 40vw;
+  max-width: 40vw;
 
-    @media only screen and (max-width: $mobile-width) {
-        max-width: 90vw;
-    }
+  @media only screen and (max-width: $mobile-width) {
+    max-width: 90vw;
+  }
 }

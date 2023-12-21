@@ -8,7 +8,7 @@
 
 .rectangle {
     width: 50%;
-    height: 70vh;
+    height: 85vh;
 
     &.img {
         background-repeat: no-repeat;
@@ -20,7 +20,6 @@
         background-origin: padding-box;
         background-clip: border-box;
         background-blend-mode: overlay;
-        height: 80vh;
     }
 
     &.text {
@@ -31,11 +30,10 @@
         flex-wrap: wrap;
         font: $heading-font;
         text-align: center;
-        padding-left: 5rem;
-        padding-right: 5rem;
         height: 62vh;
         font-weight: 200;
         font-size: 3rem;
+        width: 50%;
     }
 
     @media only screen and (max-width: $mobile-width) {
@@ -64,10 +62,9 @@
 }
 
 .logo {
-    font: $logo-font;
+    font: normal normal 600 normal 1.15rem / 1.5 'DM Sans', sans-serif;
     position: absolute;
     bottom: 0rem;
-    width: 100%;
     text-align: center;
     line-height: 0.683;
 
@@ -76,7 +73,9 @@
         line-height: 0.68;
     }
 
-    font-size: 20rem;
+    font-size: 28vw;
+    width:100%;
+    letter-spacing:1vw;
 }
 
 .logoWrapper {

@@ -73,7 +73,7 @@
 
 .marquee {
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
   border-top: 2px solid $black;
   border-bottom: 2px solid $black;
 }

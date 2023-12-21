@@ -6,14 +6,15 @@
 }
 
 .itemTitle {
-    font: $small-heading-font;
+    font: $gallery-item-title;
     width: 0;
     min-width: 100%;
     text-align: start;
+    margin: 10px 0px 10px 1px;
 }
 
 .itemDesc {
-    font: $text-font;
+    font: $gallery-item-description;
     width: 0;
     min-width: 100%;
     text-align: start;

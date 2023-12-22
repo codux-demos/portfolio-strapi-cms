@@ -39,13 +39,19 @@
     padding-right: 2em;
     padding-left: 5em;
     padding-top: 5em;
+
+    & .title {
+      font: $heading-font;
+    }
+
+    & .pageDescription {
+      margin-top: 1.4rem;
+      padding: 0px 0px 0px 5px;
+      font: $sub-heading-font;
+    }
   }
 
   direction: ltr;
-}
-
-.title {
-  font: $heading-font;
 }
 
 .details {
@@ -66,13 +72,5 @@
 .backToTop {
   float: right;
   margin: 4rem;
-  font: $text-font;
-}
-
-.pageDescription {
-  font-size: 1.6rem;
-  line-height: 1.45;
-  font-weight: 300;
-  margin-top: 1.4rem;
-  padding: 0px 0px 0px 5px;
+  font: $nav-font;
 }

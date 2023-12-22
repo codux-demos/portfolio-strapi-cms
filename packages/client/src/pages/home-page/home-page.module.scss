@@ -22,6 +22,12 @@
     background-blend-mode: overlay;
   }
 
+  &.textWrapper {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+  }
+
   & .text {
     font: $heading-font;
     text-align: center;
@@ -85,10 +91,4 @@
   white-space: nowrap;
   font: $heading-font;
   font-weight: 500;
-}
-
-.textWrapper {
-  display: flex;
-  justify-content: center;
-  height: 50vh;
 }

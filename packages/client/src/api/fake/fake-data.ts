@@ -69,7 +69,6 @@ function createAbout(settings?: FakeDataSettings): StrapiAbout {
     id: 1,
     attributes: {
       title: faker.lorem.words({ min: 1, max: 3 }),
-      subTitle: faker.person.bio(),
       image: createImage(),
       richtext: getMarkdown(),
       email: footerData?.email || faker.internet.email({ provider: 'gmail', lastName: '' }),

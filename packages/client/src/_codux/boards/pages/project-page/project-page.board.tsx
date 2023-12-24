@@ -4,7 +4,7 @@ import { ROUTES } from '../../../../router/config';
 import { PageWrapper } from '../../../board-wrappers/page-wrapper';
 
 export default createBoard({
-    name: 'Page-Project',
+    name: 'Page-Project Mock Data',
     Board: () => (
         <PageWrapper path={ROUTES.project.to(1)}>
             <ProjectPage />

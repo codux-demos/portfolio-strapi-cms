@@ -1,0 +1,17 @@
+import { createBoard } from '@wixc3/react-board';
+import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
+import { Footer } from '../../../../components/footer/footer';
+
+export default createBoard({
+    name: 'Footer for Mobile',
+    Board: () => (
+        <ComponentWrapper>
+            <Footer />
+        </ComponentWrapper>
+    ),
+    isSnippet: false,
+    environmentProps: {
+        windowWidth: 414,
+        windowHeight: 896,
+    },
+});

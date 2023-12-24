@@ -4,7 +4,7 @@ import { AboutPage } from '../../../../pages/about-page/about-page';
 import { PageWrapper } from '../../../board-wrappers/page-wrapper';
 
 export default createBoard({
-    name: 'Page-About',
+    name: 'Page-About Mock Data',
     Board: () => (
         <PageWrapper path={ROUTES.about.to()}>
             <AboutPage />

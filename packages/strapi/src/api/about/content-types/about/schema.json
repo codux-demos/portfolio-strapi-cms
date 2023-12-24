@@ -15,9 +15,6 @@
     "title": {
       "type": "string"
     },
-    "subTitle": {
-      "type": "string"
-    },
     "image": {
       "type": "media",
       "multiple": false,

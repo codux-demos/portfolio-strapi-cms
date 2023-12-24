@@ -69,7 +69,6 @@ function createAbout(settings?: FakeDataSettings): StrapiAbout {
     id: 1,
     attributes: {
       title: faker.lorem.words({ min: 1, max: 3 }),
-      subTitle: faker.person.bio(),
       image: createImage(),
       richtext: getMarkdown(),
       email: footerData?.email || faker.internet.email({ provider: 'gmail', lastName: '' }),
@@ -83,7 +82,7 @@ function createAbout(settings?: FakeDataSettings): StrapiAbout {
 }
 
 function getMarkdown(numOfParagraphs?: number) {
-  const string = faker.lorem.sentences(numOfParagraphs || 3).replace(/\n/gi, '\n\n');
+  const string = faker.lorem.sentences(numOfParagraphs || 3, '\n\n');
   const words = string.split(' ');
   words[3] = `**${words[3]}**`;
   words[7] = `<u>${words[7]}</u>`;

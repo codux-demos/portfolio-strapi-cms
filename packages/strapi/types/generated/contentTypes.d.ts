@@ -298,7 +298,6 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
   attributes: {
     title: Attribute.String;
-    subTitle: Attribute.String;
     image: Attribute.Media;
     richtext: Attribute.RichText;
     facebook: Attribute.String;

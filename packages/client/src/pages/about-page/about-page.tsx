@@ -17,7 +17,6 @@ export const AboutPage = () => {
     <div className={cx(styles.root, 'page')}>
       <div className={cx(styles.rectangle, styles.text)}>
         <h3 className={styles.title}>{aboutItem.data.attributes.title}</h3>
-        <h5 className={styles.sub}>{aboutItem.data.attributes.subTitle}</h5>
         <div className={cx('markdown', styles.description)}>
           <Markdown>{aboutItem.data.attributes.richtext || ''}</Markdown>
         </div>

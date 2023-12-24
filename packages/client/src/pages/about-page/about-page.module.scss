@@ -2,8 +2,9 @@
 
 .root {
   display: flex;
-  align-items: stretch;
   flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 .rectangle {
@@ -11,6 +12,7 @@
 
   & img {
     height: 100%;
+    width: 100%;
   }
 
   @media only screen and (max-width: $mobile-width) {
@@ -25,18 +27,21 @@
 .text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
   flex-wrap: wrap;
-  padding: 2rem;
-  padding-top: calc($header-height + 1rem);
   color: $text-color;
+  align-content: center;
+  justify-content: start;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
 }
 
 .title {
   font: $heading-font;
+  width: 70%;
 }
 
 .description {
   font: $sub-heading-font;
+  margin-top: 1.4rem;
+  width: 70%;
 }

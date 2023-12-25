@@ -129,7 +129,7 @@ export function createImage(size?: { width?: number; height?: number }): StrapiI
     data: {
       id: faker.number.int(1000),
       attributes: {
-        url: faker.image.url(size),
+        url: faker.image.urlLoremFlickr({ category: 'cat', ...size }),
         hash: faker.string.sample(10),
         mime: faker.system.mimeType(),
         name: faker.word.noun(),

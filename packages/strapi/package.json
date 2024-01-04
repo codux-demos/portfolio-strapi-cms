@@ -14,22 +14,22 @@
   "exports": "./types/generated/contentTypes.d.ts",
   "types": "types/generated/contentTypes.d.ts",
   "dependencies": {
-    "@strapi/plugin-cloud": "4.15.5",
-    "@strapi/plugin-documentation": "^4.15.4",
-    "@strapi/plugin-i18n": "4.15.5",
-    "@strapi/plugin-users-permissions": "4.15.5",
-    "@strapi/strapi": "4.15.5",
-    "better-sqlite3": "^9.2.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
+    "@strapi/plugin-cloud": "^4.16.2",
+    "@strapi/plugin-documentation": "^4.16.2",
+    "@strapi/plugin-i18n": "^4.16.2",
+    "@strapi/plugin-users-permissions": "^4.16.2",
+    "@strapi/strapi": "^4.16.2",
+    "better-sqlite3": "^9.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1",
+    "styled-components": "^6.1.6"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "6e9a9907-87ec-4f09-8b41-edbb1d4b3c48"
+    "uuid": "09a5e6c2-4d38-4a64-9a9c-0797ea93ea45"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",

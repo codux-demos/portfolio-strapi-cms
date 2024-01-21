@@ -17,7 +17,7 @@
     "install": {
       "title": "Install",
       "description": "Run install",
-      "command": "yarn",
+      "command": "npx -y yarn",
       "trigger": ["checkout", "pull", "setup"]
     }
   },

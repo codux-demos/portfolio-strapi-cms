@@ -24,8 +24,12 @@ export const SiteMenu = ({ className, isOpen }: SiteMenuProps) => {
   return (
     <RadixMenu.Root className={cx(styles.root, className)}>
       <RadixMenu.List className={styles.topMenu}>
-        <MenuItem to={ROUTES.projects.to()} text="Home" />
-        <MenuItem to={ROUTES.about.to()} text="About" />
+        <RadixMenu.Item>
+          <MenuLink to={ROUTES.projects.to()} text="Home" />
+        </RadixMenu.Item>
+        <RadixMenu.Item>
+          <MenuLink to={ROUTES.about.to()} text="About" />
+        </RadixMenu.Item>
         <RadixMenu.Item>
           <FloatingContentWithTrigger text="Projects" isOpen={isOpen}>
             {isLoading ? (
@@ -33,34 +37,34 @@ export const SiteMenu = ({ className, isOpen }: SiteMenuProps) => {
             ) : (
               <RadixMenu.List className={styles.sub}>
                 {projects?.data.map((project) => (
-                  <MenuItem key={project.id} to={ROUTES.project.to(project.id)} text={project.attributes.title} />
+                  <RadixMenu.Item key={project.id}>
+                    <MenuLink to={ROUTES.project.to(project.id)} text={project.attributes.title} />
+                  </RadixMenu.Item>
                 ))}
               </RadixMenu.List>
             )}
           </FloatingContentWithTrigger>
         </RadixMenu.Item>
         <RadixMenu.Item>
-            <a href="#footer" className={styles.Link}>
-              Contact
-            </a>
+          <a href="#footer" className={styles.Link}>
+            Contact
+          </a>
         </RadixMenu.Item>
       </RadixMenu.List>
     </RadixMenu.Root>
   );
 };
 
-function MenuItem(props: { text: string; to: string }) {
+function MenuLink(props: { text: string; to: string }) {
   const match = useMatch(props.to);
   const isActive = !!match;
 
   return (
-    <RadixMenu.Item>
-      <RadixMenu.Link active={isActive} asChild>
-        <Link to={props.to} className={cx(styles.Link, { [styles.active]: isActive })}>
-          <span>{props.text}</span>
-        </Link>
-      </RadixMenu.Link>
-    </RadixMenu.Item>
+    <RadixMenu.Link active={isActive} asChild>
+      <Link to={props.to} className={cx(styles.Link, { [styles.active]: isActive })}>
+        <span>{props.text}</span>
+      </Link>
+    </RadixMenu.Link>
   );
 }
 

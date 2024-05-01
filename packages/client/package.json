@@ -11,13 +11,13 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@floating-ui/react-dom": "^2.0.8",
+    "@floating-ui/react-dom": "^2.0.9",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "classnames": "^2.5.1",
     "framer-motion": "^11.1.7",
     "markdown-to-jsx": "^7.4.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^6.21.2",
     "swr": "^2.2.5",
     "vite-plugin-svgr": "^4.2.0"

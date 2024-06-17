@@ -1,5 +1,5 @@
 import { RouterProvider, createMemoryRouter } from 'react-router';
-import { routes } from '../../router/routes';
+import { getRoutes } from '../../router/routes';
 import { APIContextProvider } from '../../api';
 
 /**
@@ -9,7 +9,7 @@ import { APIContextProvider } from '../../api';
  * @returns
  */
 export function RealDataWrapper(props: { path: string }) {
-  const router = createMemoryRouter(routes, { initialEntries: [props.path || '/'] });
+  const router = createMemoryRouter(getRoutes(), { initialEntries: [props.path || '/'] });
   return (
     <APIContextProvider>
       <RouterProvider router={router} />

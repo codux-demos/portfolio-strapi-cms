@@ -9,6 +9,14 @@
     "componentsPath": "packages/client/src/components",
     "templatesPath": "packages/client/src/_codux/component-templates"
   },
+  "newBoard": {
+    "templatesPath": "packages/client/src/_codux/board-templates",
+    "templatesConfig": {
+      "2-page-fake-data": {
+        "path": "packages/client/src/_codux/boards/pages"
+      }
+    }
+  },
   "boardsPath": "packages/client/src/_codux/boards/components",
   "safeRender": {
     "maxInstancesPerComponent": 1000

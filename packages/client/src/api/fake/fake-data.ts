@@ -10,9 +10,13 @@ import {
 } from '../types';
 
 export type FakeDataSettings = {
+  /** @important */
   numberOfItems?: number;
+  /** @important */
   footerData?: {
+    /** @important */
     email?: string;
+    /** @important */
     phone?: string;
   };
 };

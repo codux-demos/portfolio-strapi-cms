@@ -20,7 +20,7 @@
       }
     }
   },
-  "boardsPath": "packages/client/src/_codux/boards/components",
+  "boardsPath": "packages/client/src/_codux/boards",
   "safeRender": {
     "maxInstancesPerComponent": 1000
   },

@@ -16,6 +16,7 @@ export type PageWrapperProps = {
 export function PageWrapper(props: PageWrapperProps) {
   const routes = getRoutes();
   if (props.children) {
+    //we set the passed component to the current route so it will be easier to reach in the board
     replaceRouteWithChildren(routes, props.path || '/', props.children);
   }
 

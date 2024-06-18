@@ -14,6 +14,9 @@
     "templatesConfig": {
       "2-page-fake-data": {
         "path": "packages/client/src/_codux/boards/pages"
+      },
+      "1-component-with-data": {
+        "path": "packages/client/src/_codux/boards/components"
       }
     }
   },

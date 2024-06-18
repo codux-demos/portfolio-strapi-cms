@@ -3,24 +3,19 @@ import { FakeAPIContextProvider } from '../../api/fake/fake-provider';
 import { RouterProvider, createMemoryRouter } from 'react-router';
 import { FakeDataSettings } from '../../api/fake/fake-data';
 
-/**
- *
- * @param {{}} props
- * @param {ReactNode} props.children - the component to render
- * @param {string} [props.path = /] - the actual path to use ('projects/1')
- * @param {string} [props.pattern] - the route pattern to use ('projects/:id')
- * @param {FakeDataSettings} [props.settings] - settings for the fake data
- * @returns
- */
-export function ComponentWrapper(props: {
+export type ComponentWrapperProps = {
   children: ReactNode;
+  /** @important settings for the fake data */
   settings?: FakeDataSettings;
-  path?: string;
-  patters?: string;
-}) {
-  const router = createMemoryRouter([{ path: props.patters || props.path || '/', element: props.children }], {
-    initialEntries: [props.path || '/'],
-  });
+};
+
+export function ComponentWrapper(props: ComponentWrapperProps) {
+  const router = createMemoryRouter([
+    {
+      path: '*',
+      element: props.children,
+    },
+  ]);
   return (
     <FakeAPIContextProvider settings={props.settings}>
       <RouterProvider router={router} />

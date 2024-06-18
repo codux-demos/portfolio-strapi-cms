@@ -6,10 +6,10 @@ import { FakeDataSettings } from '../../api/fake/fake-data';
 import { replaceRouteWithChildren } from './set-children-to-route';
 
 export type PageWrapperProps = {
-  /** @important the path (route) of the page*/
+  /** @important the path (route) of the page */
   path?: string;
   children?: ReactNode;
-  /** @important */
+  /** @important  settings for the fake data */
   settings?: FakeDataSettings;
 };
 

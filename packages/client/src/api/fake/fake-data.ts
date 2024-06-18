@@ -76,7 +76,7 @@ function createAbout(settings?: FakeDataSettings): StrapiAbout {
       image: createImage(),
       richtext: getMarkdown(),
       email: footerData?.email || faker.internet.email({ provider: 'gmail', lastName: '' }),
-      phone: footerData?.phone || faker.phone.number('###-###-####'),
+      phone: footerData?.phone || faker.phone.number(),
       facebook: faker.internet.url(),
       pinterest: faker.internet.url(),
       instagram: faker.internet.url(),
@@ -129,18 +129,19 @@ function createProjectItem(id: number, projectId: number): ProjectItemWithProjec
 }
 
 export function createImage(size?: { width?: number; height?: number }): StrapiImage {
+  const actualSize = { width: 640, height: 480, ...size };
   return {
     data: {
       id: faker.number.int(1000),
       attributes: {
-        url: faker.image.urlLoremFlickr({ category: 'cat', ...size }),
+        url: faker.image.urlLoremFlickr({ category: 'cat', ...actualSize }),
         hash: faker.string.sample(10),
         mime: faker.system.mimeType(),
         name: faker.word.noun(),
         size: faker.number.int(100),
         provider: 'faker',
-        width: size?.width,
-        height: size?.height,
+        width: actualSize?.width,
+        height: actualSize?.height,
       },
     },
   };

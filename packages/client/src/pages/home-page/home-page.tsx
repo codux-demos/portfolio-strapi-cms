@@ -11,8 +11,7 @@ import { motion } from 'framer-motion';
 export const HomePage = () => {
   const marqueeVariants = {
     animate: {
-      //it is important that the x number here is the same as the width of the span containing the text
-      x: [0, -2100],
+      x: [0, '-50%'],
       transition: {
         x: {
           repeat: Infinity,
@@ -23,7 +22,7 @@ export const HomePage = () => {
     },
   };
 
-  const text = 'Desert Oasis • Urban Charm • Palm Elegance • Ranch Comfort • Beachside Dining  • ';
+  const text = 'Desert Oasis • Urban Charm • Palm Elegance • Ranch Comfort • Beachside Dining  •';
 
   return (
     <div className={cx(styles.root, 'page')}>

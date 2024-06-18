@@ -92,9 +92,8 @@
 
 .marqueeContent {
   width: fit-content;
-
   & > span {
     display: inline-block;
-    width: 2100px;
+    padding-inline: 10px;
   }
 }

@@ -85,10 +85,15 @@
   overflow: hidden;
   border-top: 2px solid $black;
   border-bottom: 2px solid $black;
-}
-
-.marqueeContent {
   white-space: nowrap;
   font: $heading-font;
   font-weight: 500;
+}
+
+.marqueeContent {
+  width: fit-content;
+  & > span {
+    display: inline-block;
+    padding-inline: 10px;
+  }
 }

@@ -1,17 +1,18 @@
-import { createBoard } from '@wixc3/react-board';
 import { ProjectsGallery } from '../../../../components/projects-gallery/projects-gallery';
-import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
+import { ContentSlot, createBoard } from '@wixc3/react-board';
+import { ComponentWrapper } from '/src/_codux/board-wrappers/component-wrapper';
 
 export default createBoard({
-    name: 'Projects Gallery',
-    Board: () => (
-        <ComponentWrapper>
-            <ProjectsGallery />
-        </ComponentWrapper>
-    ),
-    isSnippet: false,
-    environmentProps: {
-        canvasWidth: 800,
-        windowHeight: 470,
-    },
+  name: 'Projects Gallery',
+  Board: () => (
+    <ComponentWrapper settings={{}}>
+      <ContentSlot>
+        <ProjectsGallery />
+      </ContentSlot>
+    </ComponentWrapper>
+  ),
+  isSnippet: true,
+  environmentProps: {
+    canvasMargin: { right: 0, bottom: 0, left: 0 },
+  },
 });

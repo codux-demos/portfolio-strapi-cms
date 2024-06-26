@@ -39,7 +39,7 @@ export const HomePage = () => {
           <span>{text}</span>
         </motion.div>
       </div>
-      <ProjectsGallery className={styles.gallery} headerHeight={theme.headerHeight} />
+      <ProjectsGallery className={styles.gallery} topOfGallery={theme.headerHeight} />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { AboutPage } from '../pages/about-page/about-page';
 import { ROUTES } from './config';
 import { ProjectPage } from '../pages/project-page/project-page';
 
-export const routes: RouteObject[] = [
+export const getRoutes: () => RouteObject[] = () => [
   {
     path: '/',
     element: <SiteWrapper />,

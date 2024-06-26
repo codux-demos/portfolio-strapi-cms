@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { motion } from 'framer-motion';
 
 /**
- * This component was created using Codux's Default new component template.
+ * This component was created using Codux's Page new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const HomePage = () => {
@@ -25,7 +25,7 @@ export const HomePage = () => {
   const text = 'Desert Oasis • Urban Charm • Palm Elegance • Ranch Comfort • Beachside Dining  •';
 
   return (
-    <div className={cx(styles.root, 'page')}>
+    <div className={styles.root}>
       <div className={cx(styles.rectangle, styles.textWrapper)}>
         <h3 className={styles.text}>Sophistication in Design, Excellence in Execution</h3>
       </div>
@@ -39,7 +39,7 @@ export const HomePage = () => {
           <span>{text}</span>
         </motion.div>
       </div>
-      <ProjectsGallery className={styles.gallery} headerHeight={theme.headerHeight} />
+      <ProjectsGallery className={styles.gallery} topOfGallery={theme.headerHeight} />
     </div>
   );
 };

@@ -1,14 +1,11 @@
-import { Footer } from '../../../../components/footer/footer';
 import { ContentSlot, createBoard } from '@wixc3/react-board';
 import { ComponentWrapper } from '/src/_codux/board-wrappers/component-wrapper';
 
 export default createBoard({
-  name: 'Footer',
+  name: 'New Board',
   Board: () => (
     <ComponentWrapper settings={{}}>
-      <ContentSlot>
-        <Footer />
-      </ContentSlot>
+      <ContentSlot />
     </ComponentWrapper>
   ),
   isSnippet: true,

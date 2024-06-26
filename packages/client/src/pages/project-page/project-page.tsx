@@ -7,7 +7,7 @@ import cx from 'classnames';
 import Markdown from 'markdown-to-jsx';
 
 /**
- * This component was created using Codux's Default new component template.
+ * This component was created using Codux's Page new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const ProjectPage = () => {
@@ -24,7 +24,7 @@ export const ProjectPage = () => {
     return <div>there are no items in this project</div>;
   }
   return (
-    <div id="top" className={cx(styles.root, 'page')}>
+    <div id="top" className={styles.root}>
       <div className={styles.gallery}>
         <div key="desc" className={cx(styles.galleryItem, styles.topDescription)} style={{ maxWidth: '100%' }}>
           <h3 className={styles.title}>{data?.attributes.title}</h3>

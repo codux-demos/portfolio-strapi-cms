@@ -1,3 +1,4 @@
+import '../../styles/util-classes.scss';
 import { apiHooks } from '../../api';
 import { getImageUrl } from '../../api/strapi-connection';
 import styles from './about-page.module.scss';
@@ -5,7 +6,7 @@ import Markdown from 'markdown-to-jsx';
 import cx from 'classnames';
 
 /**
- * This component was created using Codux's Default new component template.
+ * This component was created using Codux's Page new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const AboutPage = () => {
@@ -14,10 +15,10 @@ export const AboutPage = () => {
   if (!aboutItem) return null;
 
   return (
-    <div className={cx(styles.root, 'page')}>
+    <div className={styles.root}>
       <div className={cx(styles.rectangle, styles.text)}>
         <h3 className={styles.title}>{aboutItem.data.attributes.title}</h3>
-        <div className={cx('markdown', styles.description)}>
+        <div className={cx(styles.description, 'markdown')}>
           <Markdown>{aboutItem.data.attributes.richtext || ''}</Markdown>
         </div>
       </div>

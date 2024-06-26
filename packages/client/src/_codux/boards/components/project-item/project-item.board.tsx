@@ -7,12 +7,17 @@ export default createBoard({
   Board: () => (
     <ProjectItem
       title="Project Item"
-      image={createImage({ width: 300 })}
-      description="this is a very long description... aldskfj alskd jflsak jflksd jflaks jflksad jflksad jflsak jfl"
+      image={createImage({ width: 300, height: 400 })}
+      description="this is a very long description... this is a very long description... this is a very long description..."
     />
   ),
   isSnippet: true,
   environmentProps: {
-    canvasWidth: 572,
+    canvasMargin: {
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+    },
   },
 });

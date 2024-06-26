@@ -7,18 +7,19 @@ import { ROUTES } from '../../router/config';
 import cx from 'classnames';
 export interface ProjectsGalleryProps {
   className?: string;
-  headerHeight?: string;
+  /** the absolute top of the gallery, for example 100px, we need this because of the special behavior of this gallery */
+  topOfGallery?: string;
 }
 
 /**
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
-export const ProjectsGallery = ({ className, headerHeight }: ProjectsGalleryProps) => {
+export const ProjectsGallery = ({ className, topOfGallery }: ProjectsGalleryProps) => {
   const { data: projects, isLoading } = useProjects();
   const rootRef = useRef<HTMLDivElement>(null);
 
-  const _headerHeight = headerHeight || '0px';
+  const _topOfGallery = topOfGallery || '0px';
   if (isLoading) {
     return <div>Loading..</div>;
   }
@@ -33,7 +34,7 @@ export const ProjectsGallery = ({ className, headerHeight }: ProjectsGalleryProp
    * so, since the top and height of the projects depends on the amount of the projects we have to do it
    * with inlint style.
    */
-  const boxHeight = `min(calc((100vh - ${_headerHeight}) / ${projects?.data.length}), 4rem)`;
+  const boxHeight = `min(calc((100vh - ${_topOfGallery}) / ${projects?.data.length}), 4rem)`;
   return (
     <div className={cx(styles.root, className)} ref={rootRef}>
       {projects?.data.map((project, index) => (
@@ -43,7 +44,7 @@ export const ProjectsGallery = ({ className, headerHeight }: ProjectsGalleryProp
             key={`link_${project.id}`}
             className={styles.box}
             style={{
-              top: `calc(${index} * ${boxHeight} + ${_headerHeight})`,
+              top: `calc(${index} * ${boxHeight} + ${_topOfGallery})`,
               height: boxHeight,
               position: 'sticky',
               minHeight: '1.5rem',
@@ -55,7 +56,7 @@ export const ProjectsGallery = ({ className, headerHeight }: ProjectsGalleryProp
           <img
             key={`img_${project.id}`}
             src={getImageUrl(project.attributes.coverImage)}
-            style={{ top: `calc(${index + 1} * ${boxHeight} + ${_headerHeight})`, position: 'sticky' }}
+            style={{ top: `calc(${index + 1} * ${boxHeight} + ${_topOfGallery})`, position: 'sticky' }}
           />
         </Fragment>
       ))}

@@ -1,3 +1,4 @@
+import '../../styles/util-classes.scss';
 import { apiHooks } from '../../api';
 import { getImageUrl } from '../../api/strapi-connection';
 import styles from './about-page.module.scss';
@@ -14,10 +15,10 @@ export const AboutPage = () => {
   if (!aboutItem) return null;
 
   return (
-    <div className={cx(styles.root, 'page')}>
+    <div className={styles.root}>
       <div className={cx(styles.rectangle, styles.text)}>
         <h3 className={styles.title}>{aboutItem.data.attributes.title}</h3>
-        <div className={cx('markdown', styles.description)}>
+        <div className={cx(styles.description, 'markdown')}>
           <Markdown>{aboutItem.data.attributes.richtext || ''}</Markdown>
         </div>
       </div>

@@ -24,7 +24,7 @@ export const ProjectPage = () => {
     return <div>there are no items in this project</div>;
   }
   return (
-    <div id="top" className={cx(styles.root, 'page')}>
+    <div id="top" className={styles.root}>
       <div className={styles.gallery}>
         <div key="desc" className={cx(styles.galleryItem, styles.topDescription)} style={{ maxWidth: '100%' }}>
           <h3 className={styles.title}>{data?.attributes.title}</h3>

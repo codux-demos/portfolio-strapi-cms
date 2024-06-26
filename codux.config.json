@@ -40,6 +40,9 @@
   "styling": {
     "solution": "scss modules"
   },
+  "styleFilesConfig": {
+    "commonStyleFilePattern": "**/src/styles/*.scss"
+  },
   "svgLoader": "both",
   "previewConfiguration": {
     "environmentVariables": {

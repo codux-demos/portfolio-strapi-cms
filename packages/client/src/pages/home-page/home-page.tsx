@@ -25,7 +25,7 @@ export const HomePage = () => {
   const text = 'Desert Oasis • Urban Charm • Palm Elegance • Ranch Comfort • Beachside Dining  •';
 
   return (
-    <div className={cx(styles.root, 'page')}>
+    <div className={styles.root}>
       <div className={cx(styles.rectangle, styles.textWrapper)}>
         <h3 className={styles.text}>Sophistication in Design, Excellence in Execution</h3>
       </div>

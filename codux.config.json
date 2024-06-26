@@ -14,6 +14,7 @@
       }
     }
   },
+  "boardsPath": "packages/client/src/_codux/boards",
   "newBoard": {
     "templatesPath": "packages/client/src/_codux/board-templates",
     "templatesConfig": {
@@ -25,7 +26,6 @@
       }
     }
   },
-  "boardsPath": "packages/client/src/_codux/boards",
   "safeRender": {
     "maxInstancesPerComponent": 1000
   },

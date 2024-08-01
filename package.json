@@ -21,16 +21,16 @@
     "start:server:dev": "yarn workspace @portfolio/strapi run develop"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.24.8",
+    "@babel/eslint-parser": "^7.25.1",
     "@babel/preset-react": "^7.24.7",
     "@faker-js/faker": "^8.4.1",
     "@testing-library/react": "^15.0.7",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.17.0",
-    "@typescript-eslint/parser": "^7.17.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "@vitejs/plugin-react": "^4.3.1",
-    "@wixc3/react-board": "^3.0.0",
+    "@wixc3/react-board": "^3.0.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-no-only-tests": "^3.1.0",
@@ -40,7 +40,7 @@
     "prettier": "^3.3.3",
     "sass": "^1.77.8",
     "typescript": "~5.5.4",
-    "vite": "^5.3.4",
-    "vitest": "^2.0.4"
+    "vite": "^5.3.5",
+    "vitest": "^2.0.5"
   }
 }

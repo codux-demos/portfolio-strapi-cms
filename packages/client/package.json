@@ -14,7 +14,7 @@
     "@floating-ui/react-dom": "^2.1.1",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "classnames": "^2.5.1",
-    "framer-motion": "^11.3.29",
+    "framer-motion": "^11.3.31",
     "markdown-to-jsx": "^7.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
